@@ -1,0 +1,883 @@
+<!DOCTYPE html><!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]--><!--[if gt IE 8]><!--><html class=" js flexbox flexboxlegacy canvas canvastext no-webgl touch no-geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent no-video no-audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en" style=""><!--<![endif]--><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="BigMoyan">
+  
+  <title>函数式模型API - Keras中文文档</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css">
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css">
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="https://media.readthedocs.org/css/badge_only.css" rel="stylesheet">
+  <link href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" rel="stylesheet">
+
+  
+  <script async="" src="https://www.google-analytics.com/analytics.js"></script><script>
+    // Current page data
+    var mkdocs_page_name = "函数式模型API";
+    var mkdocs_page_input_path = "models/model.md";
+    var mkdocs_page_url = "/models/model/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../readthedocs-data.js"></script>
+  <script src="https://media.readthedocs.org/static/core/js/readthedocs-doc-embed.js"></script>
+  <script src="https://media.readthedocs.org/javascript/readthedocs-analytics.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Keras中文文档</a>
+        <div role="search">
+  <form id="mkdocs-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs">
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../..info.html">主页</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>keras新手指南</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/concepts/info.html">一些基本概念</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/FAQ/info.html">常见问题与解答</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/keras_linux/info.html">Keras安装和配置指南(Linux)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/keras_windows/info.html">Keras安装和配置指南(Windows)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/trap/info.html">Keras使用陷阱</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>快速开始</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../getting_started/sequential_model/info.html">序贯模型</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../getting_started/functional_API/info.html">函数式模型</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>模型</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../about_model/info.html">关于Keras模型</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../sequential/info.html">序贯模型API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="././info.html">函数式模型API</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#_1">函数式模型接口</a></li>
+                
+                    <li><a class="toctree-l4" href="#model">常用Model属性</a></li>
+                
+                    <li><a class="toctree-l4" href="#model_1">Model模型方法</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>网络层</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/about_layer/info.html">关于Keras层</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/core_layer/info.html">常用层Core</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/convolutional_layer/info.html">卷积层Convolutional</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/pooling_layer/info.html">池化层Pooling</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/locally_connected_layer/info.html">局部连接层Locally-connented</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/recurrent_layer/info.html">循环层Recurrent</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/embedding_layer/info.html">嵌入层Embedding</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/merge/info.html">融合层Merge</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/advanced_activation_layer/info.html">高级激活层Advanced Activation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/normalization_layer/info.html">规范层BatchNormalization</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/noise_layer/info.html">噪声层Noise</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/wrapper/info.html">包装器Wrapper</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/writting_layer/info.html">编写自己的层</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>数据预处理</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../preprocessing/sequence/info.html">序列预处理</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../preprocessing/text/info.html">文本预处理</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../preprocessing/image/info.html">图片预处理</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>网络配置</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/objectives/info.html">损失函数loss</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/optimizers/info.html">优化器Optimizer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/activations/info.html">激活函数Activation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/metrics/info.html">性能评估Metrices</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/initializations/info.html">初始化方法Initializers</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/regularizers/info.html">正则项Regularizer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/constraints/info.html">约束项Constraint</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/callbacks/info.html">回调函数Callback</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>协助使用Keras</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/application/info.html">预训练模型Application</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/datasets/info.html">常用数据库Dataset</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/visualization/info.html">可视化visualization</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../utils/info.html">工具</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../../backend/info.html">keras后端Backend</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../../scikit-learn_API/info.html">scikit-learn接口</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../../acknowledgement/info.html">致谢</a>
+        
+    </li>
+<li>
+          
+        </li></ul>
+      </div>
+      &nbsp;
+    <div id="rtd-tmo75b6j" class="ethical-rtd"></div></nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Keras中文文档</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> »</li>
+    
+      
+        
+          <li>模型 »</li>
+        
+      
+    
+    <li>函数式模型API</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">函数式模型接口</h1>
+<p>为什么叫“函数式模型”，请查看“Keras新手指南”的相关部分</p>
+<p>Keras的函数式模型为<code>Model</code>，即广义的拥有输入和输出的模型，我们使用<code>Model</code>来初始化一个函数式模型</p>
+<pre><code class="python hljs"><span class="hljs-keyword">from</span> keras.models <span class="hljs-keyword">import</span> Model
+<span class="hljs-keyword">from</span> keras.layers <span class="hljs-keyword">import</span> Input, Dense
+
+a = Input(shape=(<span class="hljs-number">32</span>,))
+b = Dense(<span class="hljs-number">32</span>)(a)
+model = Model(inputs=a, outputs=b)
+</code></pre>
+
+<p>在这里，我们的模型以<code>a</code>为输入，以<code>b</code>为输出，同样我们可以构造拥有多输入和多输出的模型</p>
+<pre><code class="python hljs">model = Model(inputs=[a1, a2], outputs=[b1, b3, b3])
+</code></pre>
+
+<h2 id="model">常用Model属性</h2>
+<ul>
+<li><code>model.layers</code>：组成模型图的各个层</li>
+<li><code>model.inputs</code>：模型的输入张量列表</li>
+<li><code>model.outputs</code>：模型的输出张量列表</li>
+</ul>
+<hr>
+<h2 id="model_1">Model模型方法</h2>
+<h3 id="compile">compile</h3>
+<pre><code class="python hljs">compile(self, optimizer, loss, metrics=<span class="hljs-keyword">None</span>, loss_weights=<span class="hljs-keyword">None</span>, sample_weight_mode=<span class="hljs-keyword">None</span>, weighted_metrics=<span class="hljs-keyword">None</span>, target_tensors=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>本函数编译模型以供训练，参数有</p>
+<ul>
+<li>
+<p>optimizer：优化器，为预定义优化器名或优化器对象，参考<a href="../../other/optimizers/">优化器</a></p>
+</li>
+<li>
+<p>loss：损失函数，为预定义损失函数名或一个目标函数，参考<a href="../../other/objectives/">损失函数</a></p>
+</li>
+<li>
+<p>metrics：列表，包含评估模型在训练和测试时的性能的指标，典型用法是<code>metrics=['accuracy']</code>如果要在多输出模型中为不同的输出指定不同的指标，可像该参数传递一个字典，例如<code>metrics={'ouput_a': 'accuracy'}</code></p>
+</li>
+<li>
+<p>sample_weight_mode：如果你需要按时间步为样本赋权（2D权矩阵），将该值设为“temporal”。默认为“None”，代表按样本赋权（1D权）。如果模型有多个输出，可以向该参数传入指定sample_weight_mode的字典或列表。在下面<code>fit</code>函数的解释中有相关的参考内容。</p>
+</li>
+<li>
+<p>weighted_metrics: metrics列表，在训练和测试过程中，这些metrics将由<code>sample_weight</code>或<code>clss_weight</code>计算并赋权</p>
+</li>
+<li>
+<p>target_tensors: 默认情况下，Keras将为模型的目标创建一个占位符，该占位符在训练过程中将被目标数据代替。如果你想使用自己的目标张量（相应的，Keras将不会在训练时期望为这些目标张量载入外部的numpy数据），你可以通过该参数手动指定。目标张量可以是一个单独的张量（对应于单输出模型），也可以是一个张量列表，或者一个name-&gt;tensor的张量字典。</p>
+</li>
+<li>
+<p>kwargs：使用TensorFlow作为后端请忽略该参数，若使用Theano/CNTK作为后端，kwargs的值将会传递给 K.function。如果使用TensorFlow为后端，这里的值会被传给tf.Session.run</p>
+</li>
+</ul>
+<p>当为参数传入非法值时会抛出异常</p>
+<p>【Tips】如果你只是载入模型并利用其predict，可以不用进行compile。在Keras中，compile主要完成损失函数和优化器的一些配置，是为训练服务的。predict会在内部进行符号函数的编译工作（通过调用_make_predict_function生成函数），</p>
+<hr>
+<h3 id="fit">fit</h3>
+<pre><code class="python hljs">fit(self, x=<span class="hljs-keyword">None</span>, y=<span class="hljs-keyword">None</span>, batch_size=<span class="hljs-keyword">None</span>, epochs=<span class="hljs-number">1</span>, verbose=<span class="hljs-number">1</span>, callbacks=<span class="hljs-keyword">None</span>, validation_split=<span class="hljs-number">0.0</span>, validation_data=<span class="hljs-keyword">None</span>, shuffle=<span class="hljs-keyword">True</span>, class_weight=<span class="hljs-keyword">None</span>, sample_weight=<span class="hljs-keyword">None</span>, initial_epoch=<span class="hljs-number">0</span>, steps_per_epoch=<span class="hljs-keyword">None</span>, validation_steps=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>本函数用以训练模型，参数有：</p>
+<ul>
+<li>
+<p>x：输入数据。如果模型只有一个输入，那么x的类型是numpy array，如果模型有多个输入，那么x的类型应当为list，list的元素是对应于各个输入的numpy array。如果模型的每个输入都有名字，则可以传入一个字典，将输入名与其输入数据对应起来。</p>
+</li>
+<li>
+<p>y：标签，numpy array。如果模型有多个输出，可以传入一个numpy array的list。如果模型的输出拥有名字，则可以传入一个字典，将输出名与其标签对应起来。</p>
+</li>
+<li>
+<p>batch_size：整数，指定进行梯度下降时每个batch包含的样本数。训练时一个batch的样本会被计算一次梯度下降，使目标函数优化一步。</p>
+</li>
+<li>
+<p>epochs：整数，训练终止时的epoch值，训练将在达到该epoch值时停止，当没有设置initial_epoch时，它就是训练的总轮数，否则训练的总轮数为epochs - inital_epoch</p>
+</li>
+<li>
+<p>verbose：日志显示，0为不在标准输出流输出日志信息，1为输出进度条记录，2为每个epoch输出一行记录</p>
+</li>
+<li>
+<p>callbacks：list，其中的元素是<code>keras.callbacks.Callback</code>的对象。这个list中的回调函数将会在训练过程中的适当时机被调用，参考<a href="../../other/callbacks/"><font color="#FF0000">回调函数</font></a></p>
+</li>
+<li>
+<p>validation_split：0~1之间的浮点数，用来指定训练集的一定比例数据作为验证集。验证集将不参与训练，并在每个epoch结束后测试的模型的指标，如损失函数、精确度等。注意，validation_split的划分在shuffle之后，因此如果你的数据本身是有序的，需要先手工打乱再指定validation_split，否则可能会出现验证集样本不均匀。</p>
+</li>
+<li>
+<p>validation_data：形式为（X，y）或（X，y，sample_weights）的tuple，是指定的验证集。此参数将覆盖validation_spilt。</p>
+</li>
+<li>
+<p>shuffle：布尔值，表示是否在训练过程中每个epoch前随机打乱输入样本的顺序。</p>
+</li>
+<li>
+<p>class_weight：字典，将不同的类别映射为不同的权值，该参数用来在训练过程中调整损失函数（只能用于训练）。该参数在处理非平衡的训练数据（某些类的训练样本数很少）时，可以使得损失函数对样本数不足的数据更加关注。</p>
+</li>
+<li>
+<p>sample_weight：权值的numpy array，用于在训练时调整损失函数（仅用于训练）。可以传递一个1D的与样本等长的向量用于对样本进行1对1的加权，或者在面对时序数据时，传递一个的形式为（samples，sequence_length）的矩阵来为每个时间步上的样本赋不同的权。这种情况下请确定在编译模型时添加了<code>sample_weight_mode='temporal'</code>。</p>
+</li>
+<li>
+<p>initial_epoch: 从该参数指定的epoch开始训练，在继续之前的训练时有用。</p>
+</li>
+<li>
+<p>steps_per_epoch: 一个epoch包含的步数（每一步是一个batch的数据送入），当使用如TensorFlow数据Tensor之类的输入张量进行训练时，默认的None代表自动分割，即数据集样本数/batch样本数。</p>
+</li>
+<li>validation_steps: 仅当steps_per_epoch被指定时有用，在验证集上的step总数。</li>
+</ul>
+<p>输入数据与规定数据不匹配时会抛出错误</p>
+<p><code>fit</code>函数返回一个<code>History</code>的对象，其<code>History.history</code>属性记录了损失函数和其他指标的数值随epoch变化的情况，如果有验证集的话，也包含了验证集的这些指标变化情况</p>
+<hr>
+<p><a name="evaluate">
+<font color="#404040"></font></a></p><a name="evaluate"><font color="#404040">
+<h3 id="evaluate">evaluate</h3>
+</font></a><p><a name="evaluate"><font color="#404040"></font>
+</a></p>
+<pre><code class="python hljs">evaluate(self, x, y, batch_size=<span class="hljs-number">32</span>, verbose=<span class="hljs-number">1</span>, sample_weight=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>本函数按batch计算在某些输入数据上模型的误差，其参数有：</p>
+<ul>
+<li>
+<p>x：输入数据，与<code>fit</code>一样，是numpy array或numpy array的list</p>
+</li>
+<li>
+<p>y：标签，numpy array</p>
+</li>
+<li>
+<p>batch_size：整数，含义同<code>fit</code>的同名参数</p>
+</li>
+<li>
+<p>verbose：含义同<code>fit</code>的同名参数，但只能取0或1</p>
+</li>
+<li>
+<p>sample_weight：numpy array，含义同<code>fit</code>的同名参数</p>
+</li>
+</ul>
+<p>本函数返回一个测试误差的标量值（如果模型没有其他评价指标），或一个标量的list（如果模型还有其他的评价指标）。<code>model.metrics_names</code>将给出list中各个值的含义。</p>
+<p>如果没有特殊说明，以下函数的参数均保持与<code>fit</code>的同名参数相同的含义</p>
+<p>如果没有特殊说明，以下函数的verbose参数（如果有）均只能取0或1</p>
+<hr>
+<h3 id="predict">predict</h3>
+<pre><code class="python hljs">predict(self, x, batch_size=<span class="hljs-number">32</span>, verbose=<span class="hljs-number">0</span>)
+</code></pre>
+
+<p>本函数按batch获得输入数据对应的输出，其参数有：</p>
+<p>函数的返回值是预测值的numpy array</p>
+<hr>
+<h3 id="train_on_batch">train_on_batch</h3>
+<pre><code class="python hljs">train_on_batch(self, x, y, class_weight=<span class="hljs-keyword">None</span>, sample_weight=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>本函数在一个batch的数据上进行一次参数更新</p>
+<p>函数返回训练误差的标量值或标量值的list，与<a href="#evaluate">evaluate</a>的情形相同。</p>
+<hr>
+<h3 id="test_on_batch">test_on_batch</h3>
+<pre><code class="python hljs">test_on_batch(self, x, y, sample_weight=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>本函数在一个batch的样本上对模型进行评估</p>
+<p>函数的返回与<a href="#evaluate">evaluate</a>的情形相同</p>
+<hr>
+<h3 id="predict_on_batch">predict_on_batch</h3>
+<pre><code class="python hljs">predict_on_batch(self, x)
+</code></pre>
+
+<p>本函数在一个batch的样本上对模型进行测试</p>
+<p>函数返回模型在一个batch上的预测结果</p>
+<hr>
+<h3 id="fit_generator">fit_generator</h3>
+<pre><code class="python hljs">fit_generator(self, generator, steps_per_epoch, epochs=<span class="hljs-number">1</span>, verbose=<span class="hljs-number">1</span>, callbacks=<span class="hljs-keyword">None</span>, validation_data=<span class="hljs-keyword">None</span>, validation_steps=<span class="hljs-keyword">None</span>, class_weight=<span class="hljs-keyword">None</span>, max_q_size=<span class="hljs-number">10</span>, workers=<span class="hljs-number">1</span>, pickle_safe=<span class="hljs-keyword">False</span>, initial_epoch=<span class="hljs-number">0</span>)
+</code></pre>
+
+<p>利用Python的生成器，逐个生成数据的batch并进行训练。生成器与模型将并行执行以提高效率。例如，该函数允许我们在CPU上进行实时的数据提升，同时在GPU上进行模型训练</p>
+<p>函数的参数是：</p>
+<ul>
+<li>
+<p>generator：生成器函数，生成器的输出应该为：</p>
+<ul>
+<li>
+<p>一个形如（inputs，targets）的tuple</p>
+</li>
+<li>
+<p>一个形如（inputs, targets,sample_weight）的tuple。所有的返回值都应该包含相同数目的样本。生成器将无限在数据集上循环。每个epoch以经过模型的样本数达到<code>samples_per_epoch</code>时，记一个epoch结束</p>
+</li>
+</ul>
+</li>
+<li>
+<p>steps_per_epoch：整数，当生成器返回<code>steps_per_epoch</code>次数据时计一个epoch结束，执行下一个epoch</p>
+</li>
+<li>
+<p>epochs：整数，数据迭代的轮数</p>
+</li>
+<li>
+<p>verbose：日志显示，0为不在标准输出流输出日志信息，1为输出进度条记录，2为每个epoch输出一行记录</p>
+</li>
+<li>
+<p>validation_data：具有以下三种形式之一</p>
+<ul>
+<li>
+<p>生成验证集的生成器</p>
+</li>
+<li>
+<p>一个形如（inputs,targets）的tuple</p>
+</li>
+<li>
+<p>一个形如（inputs,targets，sample_weights）的tuple</p>
+</li>
+</ul>
+</li>
+<li>
+<p>validation_steps: 当validation_data为生成器时，本参数指定验证集的生成器返回次数</p>
+</li>
+<li>
+<p>class_weight：规定类别权重的字典，将类别映射为权重，常用于处理样本不均衡问题。</p>
+</li>
+<li>
+<p>sample_weight：权值的numpy array，用于在训练时调整损失函数（仅用于训练）。可以传递一个1D的与样本等长的向量用于对样本进行1对1的加权，或者在面对时序数据时，传递一个的形式为（samples，sequence_length）的矩阵来为每个时间步上的样本赋不同的权。这种情况下请确定在编译模型时添加了<code>sample_weight_mode='temporal'</code>。</p>
+</li>
+<li>
+<p>workers：最大进程数</p>
+</li>
+<li>
+<p>max_q_size：生成器队列的最大容量</p>
+</li>
+<li>
+<p>pickle_safe: 若为真，则使用基于进程的线程。由于该实现依赖多进程，不能传递non picklable（无法被pickle序列化）的参数到生成器中，因为无法轻易将它们传入子进程中。</p>
+</li>
+<li>
+<p>initial_epoch: 从该参数指定的epoch开始训练，在继续之前的训练时有用。</p>
+</li>
+</ul>
+<p>函数返回一个<code>History</code>对象</p>
+<p>例子</p>
+<pre><code class="python hljs"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">generate_arrays_from_file</span><span class="hljs-params">(path)</span>:</span>
+    <span class="hljs-keyword">while</span> <span class="hljs-number">1</span>:
+    f = open(path)
+    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> f:
+        <span class="hljs-comment"># create numpy arrays of input data</span>
+        <span class="hljs-comment"># and labels, from each line in the file</span>
+        x1, x2, y = process_line(line)
+        <span class="hljs-keyword">yield</span> ({<span class="hljs-string">'input_1'</span>: x1, <span class="hljs-string">'input_2'</span>: x2}, {<span class="hljs-string">'output'</span>: y})
+    f.close()
+
+model.fit_generator(generate_arrays_from_file(<span class="hljs-string">'/my_file.txt'</span>),
+        steps_per_epoch=<span class="hljs-number">10000</span>, epochs=<span class="hljs-number">10</span>)
+</code></pre>
+
+<hr>
+<h3 id="evaluate_generator">evaluate_generator</h3>
+<pre><code class="python hljs">evaluate_generator(self, generator, steps, max_q_size=<span class="hljs-number">10</span>, workers=<span class="hljs-number">1</span>, pickle_safe=<span class="hljs-keyword">False</span>)
+</code></pre>
+
+<p>本函数使用一个生成器作为数据源，来评估模型，生成器应返回与<code>test_on_batch</code>的输入数据相同类型的数据。</p>
+<p>函数的参数是：</p>
+<ul>
+<li>
+<p>generator：生成输入batch数据的生成器</p>
+</li>
+<li>
+<p>val_samples：生成器应该返回的总样本数</p>
+</li>
+<li>
+<p>steps：生成器要返回数据的轮数</p>
+</li>
+<li>
+<p>max_q_size：生成器队列的最大容量</p>
+</li>
+<li>
+<p>nb_worker：使用基于进程的多线程处理时的进程数</p>
+</li>
+<li>
+<p>pickle_safe：若设置为True，则使用基于进程的线程。注意因为它的实现依赖于多进程处理，不可传递不可pickle的参数到生成器中，因为它们不能轻易的传递到子进程中。</p>
+</li>
+</ul>
+<hr>
+<h3 id="predict_generator">predict_generator</h3>
+<pre><code class="python hljs">predict_generator(self, generator, steps, max_queue_size=<span class="hljs-number">10</span>, workers=<span class="hljs-number">1</span>, use_multiprocessing=<span class="hljs-keyword">False</span>, verbose=<span class="hljs-number">0</span>)
+</code></pre>
+
+<p>从一个生成器上获取数据并进行预测，生成器应返回与<code>predict_on_batch</code>输入类似的数据</p>
+<p>函数的参数是：</p>
+<ul>
+<li>
+<p>generator：生成输入batch数据的生成器</p>
+</li>
+<li>
+<p>val_samples：生成器应该返回的总样本数</p>
+</li>
+<li>
+<p>max_q_size：生成器队列的最大容量</p>
+</li>
+<li>
+<p>nb_worker：使用基于进程的多线程处理时的进程数</p>
+</li>
+<li>
+<p>pickle_safe：若设置为True，则使用基于进程的线程。注意因为它的实现依赖于多进程处理，不可传递不可pickle的参数到生成器中，因为它们不能轻易的传递到子进程中。</p>
+</li>
+</ul>
+<hr>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../layers/about_layer/" class="btn btn-neutral float-right" title="关于Keras层">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../sequential/" class="btn btn-neutral" title="序贯模型API"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr><div><div id="rtd-p0sers0ik" class="ethical-rtd"><div class="ethical-footer"><div class="ethical-content"><a href="https://readthedocs.org/sustainability/click/294/dc8xASwwH9t4/" rel="nofollow" target="_blank" class="ethical-image-link"><img src="https://readthedocs.org/sustainability/view/294/dc8xASwwH9t4/"></a><div class="ethical-text">A complete cloud platform designed for developers.<br><a href="https://readthedocs.org/sustainability/click/294/dc8xASwwH9t4/" rel="nofollow" target="_blank">Try it free - $100 credit</a></div></div><div class="ethical-callout"><small><em><a href="https://readthedocs.org/sustainability/advertising/">Sponsored</a><span> · </span><a href="https://docs.readthedocs.io/en/latest/ethical-advertising.html">Ads served ethically</a></em></small></div></div></div><hr></div>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions"><!-- Inserted RTD Footer -->
+<div class="injected">
+
+  
+
+      
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+         <strong> 
+        <dd><a href="https://keras-cn.readthedocs.io/en/latest/models/model/">latest</a></dd>
+         </strong> 
+        
+      </dl>
+      
+      
+
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/pdf/latest/">PDF</a></dd>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/htmlzip/latest/">HTML</a></dd>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/epub/latest/">Epub</a></dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        <!-- These are kept as relative links for internal installs that are http -->
+        <dt>On Read the Docs</dt>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/">Project Home</a>
+        </dd>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/builds/">Builds</a>
+        </dd>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/downloads/">Downloads</a>
+        </dd>
+      </dl>
+      
+
+      
+
+      
+      <dl>
+        <dt>On GitHub</dt>
+        <dd>
+          <a href="https://github.com/MoyanZitto/keras-cn/blob/master/home/docs/checkouts/readthedocs.org/user_builds/keras-cn/checkouts/latest/docs/models/model.md">View</a>
+        </dd>
+        <dd>
+          <a href="https://github.com/MoyanZitto/keras-cn/edit/master/home/docs/checkouts/readthedocs.org/user_builds/keras-cn/checkouts/latest/docs/models/model.md">Edit</a>
+        </dd>
+      </dl>
+      
+      
+
+      
+      <dl>
+        <dt>Search</dt>
+        <dd>
+          <div style="padding: 6px;">
+            <form id="flyout-search-form" class="wy-form" target="_blank" action="//readthedocs.org/projects/keras-cn/search/" method="get">
+              <input type="text" name="q" placeholder="Search docs">
+              </form>
+          </div>
+        </dd>
+      </dl>
+      
+
+
+
+      <hr>
+      
+        <small>
+          <span>Hosted by <a href="https://readthedocs.org">Read the Docs</a></span>
+          <span> · </span>
+          <a href="https://docs.readthedocs.io/en/latest/privacy-policy.html">Privacy Policy</a>
+        </small>
+      
+
+      
+
+</div>
+</div>
+  </div>
+
+
+
+</body></html>

@@ -1,0 +1,698 @@
+<!DOCTYPE html><!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]--><!--[if gt IE 8]><!--><html class=" js flexbox flexboxlegacy canvas canvastext no-webgl touch no-geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent no-video no-audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en" style=""><!--<![endif]--><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="BigMoyan">
+  
+  <title>序列预处理 - Keras中文文档</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css">
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css">
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="https://media.readthedocs.org/css/badge_only.css" rel="stylesheet">
+  <link href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" rel="stylesheet">
+
+  
+  <script async="" src="https://www.google-analytics.com/analytics.js"></script><script>
+    // Current page data
+    var mkdocs_page_name = "序列预处理";
+    var mkdocs_page_input_path = "preprocessing/sequence.md";
+    var mkdocs_page_url = "/preprocessing/sequence/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../readthedocs-data.js"></script>
+  <script src="https://media.readthedocs.org/static/core/js/readthedocs-doc-embed.js"></script>
+  <script src="https://media.readthedocs.org/javascript/readthedocs-analytics.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Keras中文文档</a>
+        <div role="search">
+  <form id="mkdocs-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs">
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../..info.html">主页</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>keras新手指南</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/concepts/info.html">一些基本概念</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/FAQ/info.html">常见问题与解答</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/keras_linux/info.html">Keras安装和配置指南(Linux)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/keras_windows/info.html">Keras安装和配置指南(Windows)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/trap/info.html">Keras使用陷阱</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>快速开始</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../getting_started/sequential_model/info.html">序贯模型</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../getting_started/functional_API/info.html">函数式模型</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>模型</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../models/about_model/info.html">关于Keras模型</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../models/sequential/info.html">序贯模型API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../models/model/info.html">函数式模型API</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>网络层</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/about_layer/info.html">关于Keras层</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/core_layer/info.html">常用层Core</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/convolutional_layer/info.html">卷积层Convolutional</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/pooling_layer/info.html">池化层Pooling</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/locally_connected_layer/info.html">局部连接层Locally-connented</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/recurrent_layer/info.html">循环层Recurrent</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/embedding_layer/info.html">嵌入层Embedding</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/merge/info.html">融合层Merge</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/advanced_activation_layer/info.html">高级激活层Advanced Activation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/normalization_layer/info.html">规范层BatchNormalization</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/noise_layer/info.html">噪声层Noise</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/wrapper/info.html">包装器Wrapper</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/writting_layer/info.html">编写自己的层</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>数据预处理</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="././info.html">序列预处理</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#_1">序列预处理</a></li>
+                
+                    <li><a class="toctree-l4" href="#pad_sequences">填充序列pad_sequences</a></li>
+                
+                    <li><a class="toctree-l4" href="#skipgrams">跳字skipgrams</a></li>
+                
+                    <li><a class="toctree-l4" href="#make_sampling_table">获取采样表make_sampling_table</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../text/info.html">文本预处理</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../image/info.html">图片预处理</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>网络配置</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/objectives/info.html">损失函数loss</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/optimizers/info.html">优化器Optimizer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/activations/info.html">激活函数Activation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/metrics/info.html">性能评估Metrices</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/initializations/info.html">初始化方法Initializers</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/regularizers/info.html">正则项Regularizer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/constraints/info.html">约束项Constraint</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/callbacks/info.html">回调函数Callback</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>协助使用Keras</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/application/info.html">预训练模型Application</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/datasets/info.html">常用数据库Dataset</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/visualization/info.html">可视化visualization</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../utils/info.html">工具</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../../backend/info.html">keras后端Backend</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../../scikit-learn_API/info.html">scikit-learn接口</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../../acknowledgement/info.html">致谢</a>
+        
+    </li>
+<li>
+          
+        </li></ul>
+      </div>
+      &nbsp;
+    <div id="rtd-9f79bjkvh" class="ethical-rtd"></div></nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Keras中文文档</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> »</li>
+    
+      
+        
+          <li>数据预处理 »</li>
+        
+      
+    
+    <li>序列预处理</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">序列预处理</h1>
+<h2 id="pad_sequences">填充序列pad_sequences</h2>
+<pre><code class="python hljs">keras.preprocessing.sequence.pad_sequences(sequences, maxlen=<span class="hljs-keyword">None</span>, dtype=<span class="hljs-string">'int32'</span>,
+    padding=<span class="hljs-string">'pre'</span>, truncating=<span class="hljs-string">'pre'</span>, value=<span class="hljs-number">0.</span>)
+</code></pre>
+
+<p>将长为<code>nb_samples</code>的序列（标量序列）转化为形如<code>(nb_samples,nb_timesteps)</code>2D numpy array。如果提供了参数<code>maxlen</code>，<code>nb_timesteps=maxlen</code>，否则其值为最长序列的长度。其他短于该长度的序列都会在后部填充0以达到该长度。长于<code>nb_timesteps</code>的序列将会被截断，以使其匹配目标长度。padding和截断发生的位置分别取决于<code>padding</code>和<code>truncating</code>.</p>
+<h3 id="_2">参数</h3>
+<ul>
+<li>
+<p>sequences：浮点数或整数构成的两层嵌套列表</p>
+</li>
+<li>
+<p>maxlen：None或整数，为序列的最大长度。大于此长度的序列将被截短，小于此长度的序列将在后部填0.</p>
+</li>
+<li>
+<p>dtype：返回的numpy array的数据类型</p>
+</li>
+<li>
+<p>padding：‘pre’或‘post’，确定当需要补0时，在序列的起始还是结尾补</p>
+</li>
+<li>
+<p>truncating：‘pre’或‘post’，确定当需要截断序列时，从起始还是结尾截断</p>
+</li>
+<li>
+<p>value：浮点数，此值将在填充时代替默认的填充值0</p>
+</li>
+</ul>
+<h3 id="_3">返回值</h3>
+<p>返回形如<code>(nb_samples,nb_timesteps)</code>的2D张量</p>
+<hr>
+<h2 id="skipgrams">跳字skipgrams</h2>
+<pre><code class="python hljs">keras.preprocessing.sequence.skipgrams(sequence, vocabulary_size,
+    window_size=<span class="hljs-number">4</span>, negative_samples=<span class="hljs-number">1.</span>, shuffle=<span class="hljs-keyword">True</span>,
+    categorical=<span class="hljs-keyword">False</span>, sampling_table=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>skipgrams将一个词向量下标的序列转化为下面的一对tuple：</p>
+<ul>
+<li>
+<p>对于正样本，转化为（word，word in the same window）</p>
+</li>
+<li>
+<p>对于负样本，转化为（word，random word from the vocabulary）</p>
+</li>
+</ul>
+<p>【Tips】根据维基百科，n-gram代表在给定序列中产生连续的n项，当序列句子时，每项就是单词，此时n-gram也称为shingles。而skip-gram的推广，skip-gram产生的n项子序列中，各个项在原序列中不连续，而是跳了k个字。例如，对于句子：</p>
+<p>“the rain in Spain falls mainly on the plain”</p>
+<p>其 2-grams为子序列集合：</p>
+<p>the rain，rain in，in Spain，Spain falls，falls mainly，mainly on，on the，the plain</p>
+<p>其 1-skip-2-grams为子序列集合：</p>
+<p>the in, rain Spain, in falls, Spain mainly, falls on, mainly the, on plain.</p>
+<p>更多详情请参考<a href="http://arxiv.org/pdf/1301.3781v3.pdf">Efficient Estimation of Word Representations in Vector Space</a></p>
+<h3 id="_4">参数</h3>
+<ul>
+<li>
+<p>sequence：下标的列表，如果使用sampling_tabel，则某个词的下标应该为它在数据库中的顺序。（从1开始）</p>
+</li>
+<li>
+<p>vocabulary_size：整数，字典大小</p>
+</li>
+<li>
+<p>window_size：整数，正样本对之间的最大距离</p>
+</li>
+<li>
+<p>negative_samples：大于0的浮点数，等于0代表没有负样本，等于1代表负样本与正样本数目相同，以此类推（即负样本的数目是正样本的<code>negative_samples</code>倍）</p>
+</li>
+<li>
+<p>shuffle：布尔值，确定是否随机打乱样本</p>
+</li>
+<li>
+<p>categorical：布尔值，确定是否要使得返回的标签具有确定类别</p>
+</li>
+<li>
+<p>sampling_table：形如<code>(vocabulary_size,)</code>的numpy array，其中<code>sampling_table[i]</code>代表没有负样本或随机负样本。等于1为与正样本的数目相同
+采样到该下标为i的单词的概率（假定该单词是数据库中第i常见的单词）</p>
+</li>
+</ul>
+<h3 id="_5">输出</h3>
+<p>函数的输出是一个<code>(couples,labels)</code>的元组，其中：</p>
+<ul>
+<li>
+<p><code>couples</code>是一个长为2的整数列表：<code>[word_index,other_word_index]</code></p>
+</li>
+<li>
+<p><code>labels</code>是一个仅由0和1构成的列表，1代表<code>other_word_index</code>在<code>word_index</code>的窗口，0代表<code>other_word_index</code>是词典里的随机单词。</p>
+</li>
+<li>
+<p>如果设置<code>categorical</code>为<code>True</code>，则标签将以one-hot的方式给出，即1变为[0,1]，0变为[1,0]</p>
+</li>
+</ul>
+<hr>
+<h2 id="make_sampling_table">获取采样表make_sampling_table</h2>
+<pre><code class="python hljs">keras.preprocessing.sequence.make_sampling_table(size, sampling_factor=<span class="hljs-number">1e-5</span>)
+</code></pre>
+
+<p>该函数用以产生<code>skipgrams</code>中所需要的参数<code>sampling_table</code>。这是一个长为<code>size</code>的向量，<code>sampling_table[i]</code>代表采样到数据集中第i常见的词的概率（为平衡期起见，对于越经常出现的词，要以越低的概率采到它）</p>
+<h3 id="_6">参数</h3>
+<ul>
+<li>
+<p>size：词典的大小</p>
+</li>
+<li>
+<p>sampling_factor：此值越低，则代表采样时更缓慢的概率衰减（即常用的词会被以更低的概率被采到），如果设置为1，则代表不进行下采样，即所有样本被采样到的概率都是1。</p>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../text/" class="btn btn-neutral float-right" title="文本预处理">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../layers/writting_layer/" class="btn btn-neutral" title="编写自己的层"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr><div><div id="rtd-bulrm0bs" class="ethical-rtd"><div class="ethical-footer"><div class="ethical-content"><a href="https://readthedocs.org/sustainability/click/294/lnrnUqHq7OXy/" rel="nofollow" target="_blank" class="ethical-image-link"><img src="https://readthedocs.org/sustainability/view/294/lnrnUqHq7OXy/"></a><div class="ethical-text">A complete cloud platform designed for developers.<br><a href="https://readthedocs.org/sustainability/click/294/lnrnUqHq7OXy/" rel="nofollow" target="_blank">Try it free - $100 credit</a></div></div><div class="ethical-callout"><small><em><a href="https://readthedocs.org/sustainability/advertising/">Sponsored</a><span> · </span><a href="https://docs.readthedocs.io/en/latest/ethical-advertising.html">Ads served ethically</a></em></small></div></div></div><hr></div>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions"><!-- Inserted RTD Footer -->
+<div class="injected">
+
+  
+
+      
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+         <strong> 
+        <dd><a href="https://keras-cn.readthedocs.io/en/latest/preprocessing/sequence/">latest</a></dd>
+         </strong> 
+        
+      </dl>
+      
+      
+
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/pdf/latest/">PDF</a></dd>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/htmlzip/latest/">HTML</a></dd>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/epub/latest/">Epub</a></dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        <!-- These are kept as relative links for internal installs that are http -->
+        <dt>On Read the Docs</dt>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/">Project Home</a>
+        </dd>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/builds/">Builds</a>
+        </dd>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/downloads/">Downloads</a>
+        </dd>
+      </dl>
+      
+
+      
+
+      
+      <dl>
+        <dt>On GitHub</dt>
+        <dd>
+          <a href="https://github.com/MoyanZitto/keras-cn/blob/master/home/docs/checkouts/readthedocs.org/user_builds/keras-cn/checkouts/latest/docs/preprocessing/sequence.md">View</a>
+        </dd>
+        <dd>
+          <a href="https://github.com/MoyanZitto/keras-cn/edit/master/home/docs/checkouts/readthedocs.org/user_builds/keras-cn/checkouts/latest/docs/preprocessing/sequence.md">Edit</a>
+        </dd>
+      </dl>
+      
+      
+
+      
+      <dl>
+        <dt>Search</dt>
+        <dd>
+          <div style="padding: 6px;">
+            <form id="flyout-search-form" class="wy-form" target="_blank" action="//readthedocs.org/projects/keras-cn/search/" method="get">
+              <input type="text" name="q" placeholder="Search docs">
+              </form>
+          </div>
+        </dd>
+      </dl>
+      
+
+
+
+      <hr>
+      
+        <small>
+          <span>Hosted by <a href="https://readthedocs.org">Read the Docs</a></span>
+          <span> · </span>
+          <a href="https://docs.readthedocs.io/en/latest/privacy-policy.html">Privacy Policy</a>
+        </small>
+      
+
+      
+
+</div>
+</div>
+  </div>
+
+
+
+</body></html>

@@ -1,0 +1,640 @@
+<!DOCTYPE html><!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]--><!--[if gt IE 8]><!--><html class=" js flexbox flexboxlegacy canvas canvastext no-webgl touch no-geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent no-video no-audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en" style=""><!--<![endif]--><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="BigMoyan">
+  
+  <title>性能评估Metrices - Keras中文文档</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css">
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css">
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="https://media.readthedocs.org/css/badge_only.css" rel="stylesheet">
+  <link href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" rel="stylesheet">
+
+  
+  <script async="" src="https://www.google-analytics.com/analytics.js"></script><script>
+    // Current page data
+    var mkdocs_page_name = "性能评估Metrices";
+    var mkdocs_page_input_path = "other/metrics.md";
+    var mkdocs_page_url = "/other/metrics/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../readthedocs-data.js"></script>
+  <script src="https://media.readthedocs.org/static/core/js/readthedocs-doc-embed.js"></script>
+  <script src="https://media.readthedocs.org/javascript/readthedocs-analytics.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Keras中文文档</a>
+        <div role="search">
+  <form id="mkdocs-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs">
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../..info.html">主页</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>keras新手指南</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/concepts/info.html">一些基本概念</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/FAQ/info.html">常见问题与解答</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/keras_linux/info.html">Keras安装和配置指南(Linux)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/keras_windows/info.html">Keras安装和配置指南(Windows)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/trap/info.html">Keras使用陷阱</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>快速开始</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../getting_started/sequential_model/info.html">序贯模型</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../getting_started/functional_API/info.html">函数式模型</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>模型</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../models/about_model/info.html">关于Keras模型</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../models/sequential/info.html">序贯模型API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../models/model/info.html">函数式模型API</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>网络层</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/about_layer/info.html">关于Keras层</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/core_layer/info.html">常用层Core</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/convolutional_layer/info.html">卷积层Convolutional</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/pooling_layer/info.html">池化层Pooling</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/locally_connected_layer/info.html">局部连接层Locally-connented</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/recurrent_layer/info.html">循环层Recurrent</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/embedding_layer/info.html">嵌入层Embedding</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/merge/info.html">融合层Merge</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/advanced_activation_layer/info.html">高级激活层Advanced Activation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/normalization_layer/info.html">规范层BatchNormalization</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/noise_layer/info.html">噪声层Noise</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/wrapper/info.html">包装器Wrapper</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/writting_layer/info.html">编写自己的层</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>数据预处理</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../preprocessing/sequence/info.html">序列预处理</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../preprocessing/text/info.html">文本预处理</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../preprocessing/image/info.html">图片预处理</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>网络配置</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../objectives/info.html">损失函数loss</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../optimizers/info.html">优化器Optimizer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../activations/info.html">激活函数Activation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="././info.html">性能评估Metrices</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#_1">性能评估</a></li>
+                
+                    <li><a class="toctree-l4" href="#_2">使用方法</a></li>
+                
+                    <li><a class="toctree-l4" href="#_5">可用预定义张量</a></li>
+                
+                    <li><a class="toctree-l4" href="#_6">定制评估函数</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../initializations/info.html">初始化方法Initializers</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../regularizers/info.html">正则项Regularizer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../constraints/info.html">约束项Constraint</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../callbacks/info.html">回调函数Callback</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>协助使用Keras</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../application/info.html">预训练模型Application</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../datasets/info.html">常用数据库Dataset</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../visualization/info.html">可视化visualization</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../utils/info.html">工具</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../../backend/info.html">keras后端Backend</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../../scikit-learn_API/info.html">scikit-learn接口</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../../acknowledgement/info.html">致谢</a>
+        
+    </li>
+<li>
+          
+        </li></ul>
+      </div>
+      &nbsp;
+    <div id="rtd-c5f73rx3" class="ethical-rtd"></div></nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Keras中文文档</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> »</li>
+    
+      
+        
+          <li>网络配置 »</li>
+        
+      
+    
+    <li>性能评估Metrices</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">性能评估</h1>
+<h2 id="_2">使用方法</h2>
+<p>性能评估模块提供了一系列用于模型性能评估的函数,这些函数在模型编译时由<code>metrics</code>关键字设置</p>
+<p>性能评估函数类似与<a href="../objectives/">目标函数</a>, 只不过该性能的评估结果讲不会用于训练.</p>
+<p>可以通过字符串来使用域定义的性能评估函数</p>
+<pre><code class="python hljs">model.compile(loss=<span class="hljs-string">'mean_squared_error'</span>,
+              optimizer=<span class="hljs-string">'sgd'</span>,
+              metrics=[<span class="hljs-string">'mae'</span>, <span class="hljs-string">'acc'</span>])
+</code></pre>
+
+<p>也可以自定义一个Theano/TensorFlow函数并使用之</p>
+<pre><code class="python hljs"><span class="hljs-keyword">from</span> keras <span class="hljs-keyword">import</span> metrics
+
+model.compile(loss=<span class="hljs-string">'mean_squared_error'</span>,
+              optimizer=<span class="hljs-string">'sgd'</span>,
+              metrics=[metrics.mae, metrics.categorical_accuracy])
+</code></pre>
+
+<h3 id="_3">参数</h3>
+<ul>
+<li>y_true:真实标签,theano/tensorflow张量</li>
+<li>y_pred:预测值, 与y_true形式相同的theano/tensorflow张量</li>
+</ul>
+<h3 id="_4">返回值</h3>
+<p>单个用以代表输出各个数据点上均值的值</p>
+<h2 id="_5">可用预定义张量</h2>
+<p>除fbeta_score额外拥有默认参数beta=1外,其他各个性能指标的参数均为y_true和y_pred</p>
+<ul>
+<li>binary_accuracy: 对二分类问题,计算在所有预测值上的平均正确率</li>
+<li>categorical_accuracy:对多分类问题,计算再所有预测值上的平均正确率</li>
+<li>sparse_categorical_accuracy:与<code>categorical_accuracy</code>相同,在对稀疏的目标值预测时有用</li>
+<li>top_k_categorical_accracy: 计算top-k正确率,当预测值的前k个值中存在目标类别即认为预测正确</li>
+<li>sparse_top_k_categorical_accuracy：与top_k_categorical_accracy作用相同，但适用于稀疏情况</li>
+</ul>
+<h2 id="_6">定制评估函数</h2>
+<p>定制的评估函数可以在模型编译时传入,该函数应该以<code>(y_true, y_pred)</code>为参数,并返回单个张量,或从<code>metric_name</code>映射到<code>metric_value</code>的字典,下面是一个示例:</p>
+<pre><code class="python hljs">(y_true, y_pred) <span class="hljs-keyword">as</span> arguments <span class="hljs-keyword">and</span> <span class="hljs-keyword">return</span> a single tensor value.
+
+<span class="hljs-keyword">import</span> keras.backend <span class="hljs-keyword">as</span> K
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">mean_pred</span><span class="hljs-params">(y_true, y_pred)</span>:</span>
+    <span class="hljs-keyword">return</span> K.mean(y_pred)
+
+model.compile(optimizer=<span class="hljs-string">'rmsprop'</span>,
+              loss=<span class="hljs-string">'binary_crossentropy'</span>,
+              metrics=[<span class="hljs-string">'accuracy'</span>, mean_pred])
+
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../initializations/" class="btn btn-neutral float-right" title="初始化方法Initializers">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../activations/" class="btn btn-neutral" title="激活函数Activation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr><div><div id="rtd-r6m692j" class="ethical-rtd"><div class="ethical-footer"><div class="ethical-content"><a href="https://readthedocs.org/sustainability/click/294/9RDSdD6OOoMl/" rel="nofollow" target="_blank" class="ethical-image-link"><img src="https://readthedocs.org/sustainability/view/294/9RDSdD6OOoMl/"></a><div class="ethical-text">A complete cloud platform designed for developers.<br><a href="https://readthedocs.org/sustainability/click/294/9RDSdD6OOoMl/" rel="nofollow" target="_blank">Try it free - $100 credit</a></div></div><div class="ethical-callout"><small><em><a href="https://readthedocs.org/sustainability/advertising/">Sponsored</a><span> · </span><a href="https://docs.readthedocs.io/en/latest/ethical-advertising.html">Ads served ethically</a></em></small></div></div></div><hr></div>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions"><!-- Inserted RTD Footer -->
+<div class="injected">
+
+  
+
+      
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+         <strong> 
+        <dd><a href="https://keras-cn.readthedocs.io/en/latest/other/metrics/">latest</a></dd>
+         </strong> 
+        
+      </dl>
+      
+      
+
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/pdf/latest/">PDF</a></dd>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/htmlzip/latest/">HTML</a></dd>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/epub/latest/">Epub</a></dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        <!-- These are kept as relative links for internal installs that are http -->
+        <dt>On Read the Docs</dt>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/">Project Home</a>
+        </dd>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/builds/">Builds</a>
+        </dd>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/downloads/">Downloads</a>
+        </dd>
+      </dl>
+      
+
+      
+
+      
+      <dl>
+        <dt>On GitHub</dt>
+        <dd>
+          <a href="https://github.com/MoyanZitto/keras-cn/blob/master/home/docs/checkouts/readthedocs.org/user_builds/keras-cn/checkouts/latest/docs/other/metrics.md">View</a>
+        </dd>
+        <dd>
+          <a href="https://github.com/MoyanZitto/keras-cn/edit/master/home/docs/checkouts/readthedocs.org/user_builds/keras-cn/checkouts/latest/docs/other/metrics.md">Edit</a>
+        </dd>
+      </dl>
+      
+      
+
+      
+      <dl>
+        <dt>Search</dt>
+        <dd>
+          <div style="padding: 6px;">
+            <form id="flyout-search-form" class="wy-form" target="_blank" action="//readthedocs.org/projects/keras-cn/search/" method="get">
+              <input type="text" name="q" placeholder="Search docs">
+              </form>
+          </div>
+        </dd>
+      </dl>
+      
+
+
+
+      <hr>
+      
+        <small>
+          <span>Hosted by <a href="https://readthedocs.org">Read the Docs</a></span>
+          <span> · </span>
+          <a href="https://docs.readthedocs.io/en/latest/privacy-policy.html">Privacy Policy</a>
+        </small>
+      
+
+      
+
+</div>
+</div>
+  </div>
+
+
+
+</body></html>

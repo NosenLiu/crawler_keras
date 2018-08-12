@@ -1,0 +1,1110 @@
+<!DOCTYPE html><!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]--><!--[if gt IE 8]><!--><html class=" js flexbox flexboxlegacy canvas canvastext no-webgl touch no-geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent no-video no-audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en" style=""><!--<![endif]--><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="BigMoyan">
+  
+  <title>卷积层Convolutional - Keras中文文档</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css">
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css">
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="https://media.readthedocs.org/css/badge_only.css" rel="stylesheet">
+  <link href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" rel="stylesheet">
+
+  
+  <script async="" src="https://www.google-analytics.com/analytics.js"></script><script>
+    // Current page data
+    var mkdocs_page_name = "卷积层Convolutional";
+    var mkdocs_page_input_path = "layers/convolutional_layer.md";
+    var mkdocs_page_url = "/layers/convolutional_layer/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../readthedocs-data.js"></script>
+  <script src="https://media.readthedocs.org/static/core/js/readthedocs-doc-embed.js"></script>
+  <script src="https://media.readthedocs.org/javascript/readthedocs-analytics.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Keras中文文档</a>
+        <div role="search">
+  <form id="mkdocs-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs">
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../..info.html">主页</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>keras新手指南</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/concepts/info.html">一些基本概念</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/FAQ/info.html">常见问题与解答</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/keras_linux/info.html">Keras安装和配置指南(Linux)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/keras_windows/info.html">Keras安装和配置指南(Windows)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/trap/info.html">Keras使用陷阱</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>快速开始</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../getting_started/sequential_model/info.html">序贯模型</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../getting_started/functional_API/info.html">函数式模型</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>模型</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../models/about_model/info.html">关于Keras模型</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../models/sequential/info.html">序贯模型API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../models/model/info.html">函数式模型API</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>网络层</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../about_layer/info.html">关于Keras层</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../core_layer/info.html">常用层Core</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="././info.html">卷积层Convolutional</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#_1">卷积层</a></li>
+                
+                    <li><a class="toctree-l4" href="#conv1d">Conv1D层</a></li>
+                
+                    <li><a class="toctree-l4" href="#conv2d">Conv2D层</a></li>
+                
+                    <li><a class="toctree-l4" href="#separableconv2d">SeparableConv2D层</a></li>
+                
+                    <li><a class="toctree-l4" href="#conv2dtranspose">Conv2DTranspose层</a></li>
+                
+                    <li><a class="toctree-l4" href="#conv3d">Conv3D层</a></li>
+                
+                    <li><a class="toctree-l4" href="#cropping1d">Cropping1D层</a></li>
+                
+                    <li><a class="toctree-l4" href="#cropping2d">Cropping2D层</a></li>
+                
+                    <li><a class="toctree-l4" href="#cropping3d">Cropping3D层</a></li>
+                
+                    <li><a class="toctree-l4" href="#upsampling1d">UpSampling1D层</a></li>
+                
+                    <li><a class="toctree-l4" href="#upsampling2d">UpSampling2D层</a></li>
+                
+                    <li><a class="toctree-l4" href="#upsampling3d">UpSampling3D层</a></li>
+                
+                    <li><a class="toctree-l4" href="#zeropadding1d">ZeroPadding1D层</a></li>
+                
+                    <li><a class="toctree-l4" href="#zeropadding2d">ZeroPadding2D层</a></li>
+                
+                    <li><a class="toctree-l4" href="#zeropadding3d">ZeroPadding3D层</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../pooling_layer/info.html">池化层Pooling</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../locally_connected_layer/info.html">局部连接层Locally-connented</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../recurrent_layer/info.html">循环层Recurrent</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../embedding_layer/info.html">嵌入层Embedding</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../merge/info.html">融合层Merge</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../advanced_activation_layer/info.html">高级激活层Advanced Activation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../normalization_layer/info.html">规范层BatchNormalization</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../noise_layer/info.html">噪声层Noise</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../wrapper/info.html">包装器Wrapper</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../writting_layer/info.html">编写自己的层</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>数据预处理</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../preprocessing/sequence/info.html">序列预处理</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../preprocessing/text/info.html">文本预处理</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../preprocessing/image/info.html">图片预处理</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>网络配置</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/objectives/info.html">损失函数loss</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/optimizers/info.html">优化器Optimizer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/activations/info.html">激活函数Activation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/metrics/info.html">性能评估Metrices</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/initializations/info.html">初始化方法Initializers</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/regularizers/info.html">正则项Regularizer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/constraints/info.html">约束项Constraint</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/callbacks/info.html">回调函数Callback</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>协助使用Keras</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/application/info.html">预训练模型Application</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/datasets/info.html">常用数据库Dataset</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/visualization/info.html">可视化visualization</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../utils/info.html">工具</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../../backend/info.html">keras后端Backend</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../../scikit-learn_API/info.html">scikit-learn接口</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../../acknowledgement/info.html">致谢</a>
+        
+    </li>
+<li>
+          
+        </li></ul>
+      </div>
+      &nbsp;
+    <div id="rtd-2r176vmt" class="ethical-rtd"></div></nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Keras中文文档</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> »</li>
+    
+      
+        
+          <li>网络层 »</li>
+        
+      
+    
+    <li>卷积层Convolutional</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">卷积层</h1>
+<h2 id="conv1d">Conv1D层</h2>
+<pre><code class="python hljs">keras.layers.convolutional.Conv1D(filters, kernel_size, strides=<span class="hljs-number">1</span>, padding=<span class="hljs-string">'valid'</span>, dilation_rate=<span class="hljs-number">1</span>, activation=<span class="hljs-keyword">None</span>, use_bias=<span class="hljs-keyword">True</span>, kernel_initializer=<span class="hljs-string">'glorot_uniform'</span>, bias_initializer=<span class="hljs-string">'zeros'</span>, kernel_regularizer=<span class="hljs-keyword">None</span>, bias_regularizer=<span class="hljs-keyword">None</span>, activity_regularizer=<span class="hljs-keyword">None</span>, kernel_constraint=<span class="hljs-keyword">None</span>, bias_constraint=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>一维卷积层（即时域卷积），用以在一维输入信号上进行邻域滤波。当使用该层作为首层时，需要提供关键字参数<code>input_shape</code>。例如<code>(10,128)</code>代表一个长为10的序列，序列中每个信号为128向量。而<code>(None, 128)</code>代表变长的128维向量序列。</p>
+<p>该层生成将输入信号与卷积核按照单一的空域（或时域）方向进行卷积。如果<code>use_bias=True</code>，则还会加上一个偏置项，若<code>activation</code>不为None，则输出为经过激活函数的输出。</p>
+<h3 id="_2">参数</h3>
+<ul>
+<li>
+<p>filters：卷积核的数目（即输出的维度）</p>
+</li>
+<li>
+<p>kernel_size：整数或由单个整数构成的list/tuple，卷积核的空域或时域窗长度</p>
+</li>
+<li>
+<p>strides：整数或由单个整数构成的list/tuple，为卷积的步长。任何不为1的strides均与任何不为1的dilation_rate均不兼容</p>
+</li>
+<li>
+<p>padding：补0策略，为“valid”, “same” 或“causal”，“causal”将产生因果（膨胀的）卷积，即output[t]不依赖于input[t+1：]。当对不能违反时间顺序的时序信号建模时有用。参考<a href="https://arxiv.org/abs/1609.03499">WaveNet: A Generative Model for Raw Audio, section 2.1.</a>。“valid”代表只进行有效的卷积，即对边界数据不处理。“same”代表保留边界处的卷积结果，通常会导致输出shape与输入shape相同。</p>
+</li>
+<li>
+<p>activation：激活函数，为预定义的激活函数名（参考<a href="../../other/activations">激活函数</a>），或逐元素（element-wise）的Theano函数。如果不指定该参数，将不会使用任何激活函数（即使用线性激活函数：a(x)=x）</p>
+</li>
+<li>
+<p>dilation_rate：整数或由单个整数构成的list/tuple，指定dilated convolution中的膨胀比例。任何不为1的dilation_rate均与任何不为1的strides均不兼容。</p>
+</li>
+<li>
+<p>use_bias:布尔值，是否使用偏置项</p>
+</li>
+<li>
+<p>kernel_initializer：权值初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>bias_initializer：权值初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>kernel_regularizer：施加在权重上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>bias_regularizer：施加在偏置向量上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>activity_regularizer：施加在输出上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>kernel_constraints：施加在权重上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>bias_constraints：施加在偏置上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+</ul>
+<h3 id="shape">输入shape</h3>
+<p>形如（samples，steps，input_dim）的3D张量</p>
+<h3 id="shape_1">输出shape</h3>
+<p>形如（samples，new_steps，nb_filter）的3D张量，因为有向量填充的原因，<code>steps</code>的值会改变</p>
+<p>【Tips】可以将Convolution1D看作Convolution2D的快捷版，对例子中（10，32）的信号进行1D卷积相当于对其进行卷积核为（filter_length, 32）的2D卷积。【@3rduncle】</p>
+<hr>
+<h2 id="conv2d">Conv2D层</h2>
+<pre><code class="python hljs">keras.layers.convolutional.Conv2D(filters, kernel_size, strides=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), padding=<span class="hljs-string">'valid'</span>, data_format=<span class="hljs-keyword">None</span>, dilation_rate=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), activation=<span class="hljs-keyword">None</span>, use_bias=<span class="hljs-keyword">True</span>, kernel_initializer=<span class="hljs-string">'glorot_uniform'</span>, bias_initializer=<span class="hljs-string">'zeros'</span>, kernel_regularizer=<span class="hljs-keyword">None</span>, bias_regularizer=<span class="hljs-keyword">None</span>, activity_regularizer=<span class="hljs-keyword">None</span>, kernel_constraint=<span class="hljs-keyword">None</span>, bias_constraint=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>二维卷积层，即对图像的空域卷积。该层对二维输入进行滑动窗卷积，当使用该层作为第一层时，应提供<code>input_shape</code>参数。例如<code>input_shape = (128,128,3)</code>代表128*128的彩色RGB图像（<code>data_format='channels_last'</code>）</p>
+<h3 id="_3">参数</h3>
+<ul>
+<li>
+<p>filters：卷积核的数目（即输出的维度）</p>
+</li>
+<li>
+<p>kernel_size：单个整数或由两个整数构成的list/tuple，卷积核的宽度和长度。如为单个整数，则表示在各个空间维度的相同长度。</p>
+</li>
+<li>
+<p>strides：单个整数或由两个整数构成的list/tuple，为卷积的步长。如为单个整数，则表示在各个空间维度的相同步长。任何不为1的strides均与任何不为1的dilation_rate均不兼容</p>
+</li>
+<li>
+<p>padding：补0策略，为“valid”, “same” 。“valid”代表只进行有效的卷积，即对边界数据不处理。“same”代表保留边界处的卷积结果，通常会导致输出shape与输入shape相同。</p>
+</li>
+<li>
+<p>activation：激活函数，为预定义的激活函数名（参考<a href="../../other/activations">激活函数</a>），或逐元素（element-wise）的Theano函数。如果不指定该参数，将不会使用任何激活函数（即使用线性激活函数：a(x)=x）</p>
+</li>
+<li>
+<p>dilation_rate：单个整数或由两个个整数构成的list/tuple，指定dilated convolution中的膨胀比例。任何不为1的dilation_rate均与任何不为1的strides均不兼容。</p>
+</li>
+<li>
+<p>data_format：字符串，“channels_first”或“channels_last”之一，代表图像的通道维的位置。该参数是Keras 1.x中的image_dim_ordering，“channels_last”对应原本的“tf”，“channels_first”对应原本的“th”。以128x128的RGB图像为例，“channels_first”应将数据组织为（3,128,128），而“channels_last”应将数据组织为（128,128,3）。该参数的默认值是<code>~/.keras/keras.json</code>中设置的值，若从未设置过，则为“channels_last”。</p>
+</li>
+<li>
+<p>use_bias:布尔值，是否使用偏置项</p>
+</li>
+<li>
+<p>kernel_initializer：权值初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>bias_initializer：权值初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>kernel_regularizer：施加在权重上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>bias_regularizer：施加在偏置向量上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>activity_regularizer：施加在输出上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>kernel_constraints：施加在权重上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>bias_constraints：施加在偏置上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+</ul>
+<h3 id="shape_2">输入shape</h3>
+<p>‘channels_first’模式下，输入形如（samples,channels，rows，cols）的4D张量</p>
+<p>‘channels_last’模式下，输入形如（samples，rows，cols，channels）的4D张量</p>
+<p>注意这里的输入shape指的是函数内部实现的输入shape，而非函数接口应指定的<code>input_shape</code>，请参考下面提供的例子。</p>
+<h3 id="shape_3">输出shape</h3>
+<p>‘channels_first’模式下，为形如（samples，nb_filter, new_rows, new_cols）的4D张量</p>
+<p>‘channels_last’模式下，为形如（samples，new_rows, new_cols，nb_filter）的4D张量</p>
+<p>输出的行列数可能会因为填充方法而改变</p>
+<hr>
+<h2 id="separableconv2d">SeparableConv2D层</h2>
+<pre><code class="python hljs">keras.layers.convolutional.SeparableConv2D(filters, kernel_size, strides=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), padding=<span class="hljs-string">'valid'</span>, data_format=<span class="hljs-keyword">None</span>, depth_multiplier=<span class="hljs-number">1</span>, activation=<span class="hljs-keyword">None</span>, use_bias=<span class="hljs-keyword">True</span>, depthwise_initializer=<span class="hljs-string">'glorot_uniform'</span>, pointwise_initializer=<span class="hljs-string">'glorot_uniform'</span>, bias_initializer=<span class="hljs-string">'zeros'</span>, depthwise_regularizer=<span class="hljs-keyword">None</span>, pointwise_regularizer=<span class="hljs-keyword">None</span>, bias_regularizer=<span class="hljs-keyword">None</span>, activity_regularizer=<span class="hljs-keyword">None</span>, depthwise_constraint=<span class="hljs-keyword">None</span>, pointwise_constraint=<span class="hljs-keyword">None</span>, bias_constraint=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>该层是在深度方向上的可分离卷积。</p>
+<p>可分离卷积首先按深度方向进行卷积（对每个输入通道分别卷积），然后逐点进行卷积，将上一步的卷积结果混合到输出通道中。参数<code>depth_multiplier</code>控制了在depthwise卷积（第一步）的过程中，每个输入通道信号产生多少个输出通道。</p>
+<p>直观来说，可分离卷积可以看做讲一个卷积核分解为两个小的卷积核，或看作Inception模块的一种极端情况。</p>
+<p>当使用该层作为第一层时，应提供<code>input_shape</code>参数。例如<code>input_shape = (3,128,128)</code>代表128*128的彩色RGB图像</p>
+<h3 id="_4">参数</h3>
+<ul>
+<li>
+<p>filters：卷积核的数目（即输出的维度）</p>
+</li>
+<li>
+<p>kernel_size：单个整数或由两个个整数构成的list/tuple，卷积核的宽度和长度。如为单个整数，则表示在各个空间维度的相同长度。</p>
+</li>
+<li>
+<p>strides：单个整数或由两个整数构成的list/tuple，为卷积的步长。如为单个整数，则表示在各个空间维度的相同步长。任何不为1的strides均与任何不为1的dilation_rate均不兼容</p>
+</li>
+<li>
+<p>padding：补0策略，为“valid”, “same” 。“valid”代表只进行有效的卷积，即对边界数据不处理。“same”代表保留边界处的卷积结果，通常会导致输出shape与输入shape相同。</p>
+</li>
+<li>
+<p>activation：激活函数，为预定义的激活函数名（参考<a href="../../other/activations">激活函数</a>），或逐元素（element-wise）的Theano函数。如果不指定该参数，将不会使用任何激活函数（即使用线性激活函数：a(x)=x）</p>
+</li>
+<li>
+<p>dilation_rate：单个整数或由两个个整数构成的list/tuple，指定dilated convolution中的膨胀比例。任何不为1的dilation_rate均与任何不为1的strides均不兼容。</p>
+</li>
+<li>
+<p>data_format：字符串，“channels_first”或“channels_last”之一，代表图像的通道维的位置。该参数是Keras 1.x中的image_dim_ordering，“channels_last”对应原本的“tf”，“channels_first”对应原本的“th”。以128x128的RGB图像为例，“channels_first”应将数据组织为（3,128,128），而“channels_last”应将数据组织为（128,128,3）。该参数的默认值是<code>~/.keras/keras.json</code>中设置的值，若从未设置过，则为“channels_last”。</p>
+</li>
+<li>
+<p>use_bias:布尔值，是否使用偏置项</p>
+</li>
+<li>
+<p>depth_multiplier：在按深度卷积的步骤中，每个输入通道使用多少个输出通道</p>
+</li>
+<li>
+<p>kernel_initializer：权值初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>bias_initializer：权值初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>depthwise_regularizer：施加在按深度卷积的权重上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>pointwise_regularizer：施加在按点卷积的权重上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>kernel_regularizer：施加在权重上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>bias_regularizer：施加在偏置向量上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>activity_regularizer：施加在输出上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>kernel_constraints：施加在权重上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>bias_constraints：施加在偏置上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>depthwise_constraint：施加在按深度卷积权重上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>pointwise_constraint施加在按点卷积权重的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+</ul>
+<h3 id="shape_4">输入shape</h3>
+<p>‘channels_first’模式下，输入形如（samples,channels，rows，cols）的4D张量</p>
+<p>‘channels_last’模式下，输入形如（samples，rows，cols，channels）的4D张量</p>
+<p>注意这里的输入shape指的是函数内部实现的输入shape，而非函数接口应指定的<code>input_shape</code>，请参考下面提供的例子。</p>
+<h3 id="shape_5">输出shape</h3>
+<p>‘channels_first’模式下，为形如（samples，nb_filter, new_rows, new_cols）的4D张量</p>
+<p>‘channels_last’模式下，为形如（samples，new_rows, new_cols，nb_filter）的4D张量</p>
+<p>输出的行列数可能会因为填充方法而改变</p>
+<hr>
+<h2 id="conv2dtranspose">Conv2DTranspose层</h2>
+<pre><code class="python hljs">keras.layers.convolutional.Conv2DTranspose(filters, kernel_size, strides=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), padding=<span class="hljs-string">'valid'</span>, data_format=<span class="hljs-keyword">None</span>, activation=<span class="hljs-keyword">None</span>, use_bias=<span class="hljs-keyword">True</span>, kernel_initializer=<span class="hljs-string">'glorot_uniform'</span>, bias_initializer=<span class="hljs-string">'zeros'</span>, kernel_regularizer=<span class="hljs-keyword">None</span>, bias_regularizer=<span class="hljs-keyword">None</span>, activity_regularizer=<span class="hljs-keyword">None</span>, kernel_constraint=<span class="hljs-keyword">None</span>, bias_constraint=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>该层是转置的卷积操作（反卷积）。需要反卷积的情况通常发生在用户想要对一个普通卷积的结果做反方向的变换。例如，将具有该卷积层输出shape的tensor转换为具有该卷积层输入shape的tensor。同时保留与卷积层兼容的连接模式。</p>
+<p>当使用该层作为第一层时，应提供<code>input_shape</code>参数。例如<code>input_shape = (3,128,128)</code>代表128*128的彩色RGB图像</p>
+<h3 id="_5">参数</h3>
+<ul>
+<li>
+<p>filters：卷积核的数目（即输出的维度）</p>
+</li>
+<li>
+<p>kernel_size：单个整数或由两个个整数构成的list/tuple，卷积核的宽度和长度。如为单个整数，则表示在各个空间维度的相同长度。</p>
+</li>
+<li>
+<p>strides：单个整数或由两个整数构成的list/tuple，为卷积的步长。如为单个整数，则表示在各个空间维度的相同步长。任何不为1的strides均与任何不为1的dilation_rate均不兼容</p>
+</li>
+<li>
+<p>padding：补0策略，为“valid”, “same” 。“valid”代表只进行有效的卷积，即对边界数据不处理。“same”代表保留边界处的卷积结果，通常会导致输出shape与输入shape相同。</p>
+</li>
+<li>
+<p>activation：激活函数，为预定义的激活函数名（参考<a href="../../other/activations">激活函数</a>），或逐元素（element-wise）的Theano函数。如果不指定该参数，将不会使用任何激活函数（即使用线性激活函数：a(x)=x）</p>
+</li>
+<li>
+<p>dilation_rate：单个整数或由两个个整数构成的list/tuple，指定dilated convolution中的膨胀比例。任何不为1的dilation_rate均与任何不为1的strides均不兼容。</p>
+</li>
+<li>
+<p>data_format：字符串，“channels_first”或“channels_last”之一，代表图像的通道维的位置。该参数是Keras 1.x中的image_dim_ordering，“channels_last”对应原本的“tf”，“channels_first”对应原本的“th”。以128x128的RGB图像为例，“channels_first”应将数据组织为（3,128,128），而“channels_last”应将数据组织为（128,128,3）。该参数的默认值是<code>~/.keras/keras.json</code>中设置的值，若从未设置过，则为“channels_last”。</p>
+</li>
+<li>
+<p>use_bias:布尔值，是否使用偏置项</p>
+</li>
+<li>
+<p>kernel_initializer：权值初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>bias_initializer：权值初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>kernel_regularizer：施加在权重上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>bias_regularizer：施加在偏置向量上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>activity_regularizer：施加在输出上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>kernel_constraints：施加在权重上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>bias_constraints：施加在偏置上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+</ul>
+<h3 id="shape_6">输入shape</h3>
+<p>‘channels_first’模式下，输入形如（samples,channels，rows，cols）的4D张量</p>
+<p>‘channels_last’模式下，输入形如（samples，rows，cols，channels）的4D张量</p>
+<p>注意这里的输入shape指的是函数内部实现的输入shape，而非函数接口应指定的<code>input_shape</code>，请参考下面提供的例子。</p>
+<h3 id="shape_7">输出shape</h3>
+<p>‘channels_first’模式下，为形如（samples，nb_filter, new_rows, new_cols）的4D张量</p>
+<p>‘channels_last’模式下，为形如（samples，new_rows, new_cols，nb_filter）的4D张量</p>
+<p>输出的行列数可能会因为填充方法而改变</p>
+<h3 id="_6">参考文献</h3>
+<ul>
+<li><a href="https://arxiv.org/abs/1603.07285">A guide to convolution arithmetic for deep learning</a></li>
+<li><a href="http://deeplearning.net/software/theano_versions/dev/tutorial/conv_arithmetic.html#transposed-convolution-arithmetic">Transposed convolution arithmetic</a></li>
+<li><a href="http://www.matthewzeiler.com/pubs/cvpr2010/cvpr2010.pdf">Deconvolutional Networks</a></li>
+</ul>
+<hr>
+<h2 id="conv3d">Conv3D层</h2>
+<pre><code class="python hljs">keras.layers.convolutional.Conv3D(filters, kernel_size, strides=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>), padding=<span class="hljs-string">'valid'</span>, data_format=<span class="hljs-keyword">None</span>, dilation_rate=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>), activation=<span class="hljs-keyword">None</span>, use_bias=<span class="hljs-keyword">True</span>, kernel_initializer=<span class="hljs-string">'glorot_uniform'</span>, bias_initializer=<span class="hljs-string">'zeros'</span>, kernel_regularizer=<span class="hljs-keyword">None</span>, bias_regularizer=<span class="hljs-keyword">None</span>, activity_regularizer=<span class="hljs-keyword">None</span>, kernel_constraint=<span class="hljs-keyword">None</span>, bias_constraint=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>三维卷积对三维的输入进行滑动窗卷积，当使用该层作为第一层时，应提供<code>input_shape</code>参数。例如<code>input_shape = (3,10,128,128)</code>代表对10帧128*128的彩色RGB图像进行卷积。数据的通道位置仍然有<code>data_format</code>参数指定。</p>
+<h3 id="_7">参数</h3>
+<ul>
+<li>
+<p>filters：卷积核的数目（即输出的维度）</p>
+</li>
+<li>
+<p>kernel_size：单个整数或由3个整数构成的list/tuple，卷积核的宽度和长度。如为单个整数，则表示在各个空间维度的相同长度。</p>
+</li>
+<li>
+<p>strides：单个整数或由3个整数构成的list/tuple，为卷积的步长。如为单个整数，则表示在各个空间维度的相同步长。任何不为1的strides均与任何不为1的dilation_rate均不兼容</p>
+</li>
+<li>
+<p>padding：补0策略，为“valid”, “same” 。“valid”代表只进行有效的卷积，即对边界数据不处理。“same”代表保留边界处的卷积结果，通常会导致输出shape与输入shape相同。</p>
+</li>
+<li>
+<p>activation：激活函数，为预定义的激活函数名（参考<a href="../../other/activations">激活函数</a>），或逐元素（element-wise）的Theano函数。如果不指定该参数，将不会使用任何激活函数（即使用线性激活函数：a(x)=x）</p>
+</li>
+<li>
+<p>dilation_rate：单个整数或由3个个整数构成的list/tuple，指定dilated convolution中的膨胀比例。任何不为1的dilation_rate均与任何不为1的strides均不兼容。</p>
+</li>
+<li>
+<p>data_format：字符串，“channels_first”或“channels_last”之一，代表数据的通道维的位置。该参数是Keras 1.x中的image_dim_ordering，“channels_last”对应原本的“tf”，“channels_first”对应原本的“th”。以128x128x128的数据为例，“channels_first”应将数据组织为（3,128,128,128），而“channels_last”应将数据组织为（128,128,128,3）。该参数的默认值是<code>~/.keras/keras.json</code>中设置的值，若从未设置过，则为“channels_last”。</p>
+</li>
+<li>
+<p>use_bias:布尔值，是否使用偏置项</p>
+</li>
+<li>
+<p>kernel_initializer：权值初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>bias_initializer：权值初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>kernel_regularizer：施加在权重上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>bias_regularizer：施加在偏置向量上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>activity_regularizer：施加在输出上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>kernel_constraints：施加在权重上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>bias_constraints：施加在偏置上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+</ul>
+<h3 id="shape_8">输入shape</h3>
+<p>‘channels_first’模式下，输入应为形如（samples，channels，input_dim1，input_dim2, input_dim3）的5D张量</p>
+<p>‘channels_last’模式下，输入应为形如（samples，input_dim1，input_dim2, input_dim3，channels）的5D张量</p>
+<p>这里的输入shape指的是函数内部实现的输入shape，而非函数接口应指定的<code>input_shape</code>。</p>
+<hr>
+<h2 id="cropping1d">Cropping1D层</h2>
+<pre><code class="python hljs">keras.layers.convolutional.Cropping1D(cropping=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>))
+</code></pre>
+
+<p>在时间轴（axis1）上对1D输入（即时间序列）进行裁剪</p>
+<h3 id="_8">参数</h3>
+<ul>
+<li>cropping：长为2的tuple，指定在序列的首尾要裁剪掉多少个元素</li>
+</ul>
+<h3 id="shape_9">输入shape</h3>
+<ul>
+<li>形如（samples，axis_to_crop，features）的3D张量</li>
+</ul>
+<h3 id="shape_10">输出shape</h3>
+<ul>
+<li>形如（samples，cropped_axis，features）的3D张量</li>
+</ul>
+<hr>
+<h2 id="cropping2d">Cropping2D层</h2>
+<pre><code class="python hljs">keras.layers.convolutional.Cropping2D(cropping=((<span class="hljs-number">0</span>, <span class="hljs-number">0</span>), (<span class="hljs-number">0</span>, <span class="hljs-number">0</span>)), data_format=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>对2D输入（图像）进行裁剪，将在空域维度，即宽和高的方向上裁剪</p>
+<h3 id="_9">参数</h3>
+<ul>
+<li>
+<p>cropping：长为2的整数tuple，分别为宽和高方向上头部与尾部需要裁剪掉的元素数</p>
+</li>
+<li>
+<p>data_format：字符串，“channels_first”或“channels_last”之一，代表图像的通道维的位置。该参数是Keras 1.x中的image_dim_ordering，“channels_last”对应原本的“tf”，“channels_first”对应原本的“th”。以128x128的RGB图像为例，“channels_first”应将数据组织为（3,128,128），而“channels_last”应将数据组织为（128,128,3）。该参数的默认值是<code>~/.keras/keras.json</code>中设置的值，若从未设置过，则为“channels_last”。</p>
+</li>
+</ul>
+<h3 id="shape_11">输入shape</h3>
+<p>形如（samples，depth, first_axis_to_crop, second_axis_to_crop）</p>
+<h3 id="shape_12">输出shape</h3>
+<p>形如(samples, depth, first_cropped_axis, second_cropped_axis)的4D张量</p>
+<hr>
+<h2 id="cropping3d">Cropping3D层</h2>
+<pre><code class="python hljs">keras.layers.convolutional.Cropping3D(cropping=((<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), (<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), (<span class="hljs-number">1</span>, <span class="hljs-number">1</span>)), data_format=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>对2D输入（图像）进行裁剪</p>
+<h3 id="_10">参数</h3>
+<ul>
+<li>
+<p>cropping：长为3的整数tuple，分别为三个方向上头部与尾部需要裁剪掉的元素数</p>
+</li>
+<li>
+<p>data_format：字符串，“channels_first”或“channels_last”之一，代表数据的通道维的位置。该参数是Keras 1.x中的image_dim_ordering，“channels_last”对应原本的“tf”，“channels_first”对应原本的“th”。以128x128x128的数据为例，“channels_first”应将数据组织为（3,128,128,128），而“channels_last”应将数据组织为（128,128,128,3）。该参数的默认值是<code>~/.keras/keras.json</code>中设置的值，若从未设置过，则为“channels_last”。</p>
+</li>
+</ul>
+<h3 id="shape_13">输入shape</h3>
+<p>形如 (samples, depth, first_axis_to_crop, second_axis_to_crop, third_axis_to_crop)的5D张量</p>
+<h3 id="shape_14">输出shape</h3>
+<p>形如(samples, depth, first_cropped_axis, second_cropped_axis, third_cropped_axis)的5D张量</p>
+<hr>
+<h2 id="upsampling1d">UpSampling1D层</h2>
+<pre><code class="python hljs">keras.layers.convolutional.UpSampling1D(size=<span class="hljs-number">2</span>)
+</code></pre>
+
+<p>在时间轴上，将每个时间步重复<code>length</code>次</p>
+<h3 id="_11">参数</h3>
+<ul>
+<li>size：上采样因子</li>
+</ul>
+<h3 id="shape_15">输入shape</h3>
+<ul>
+<li>形如（samples，steps，features）的3D张量</li>
+</ul>
+<h3 id="shape_16">输出shape</h3>
+<ul>
+<li>形如（samples，upsampled_steps，features）的3D张量</li>
+</ul>
+<hr>
+<h2 id="upsampling2d">UpSampling2D层</h2>
+<pre><code class="python hljs">keras.layers.convolutional.UpSampling2D(size=(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>), data_format=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>将数据的行和列分别重复size[0]和size[1]次</p>
+<h3 id="_12">参数</h3>
+<ul>
+<li>
+<p>size：整数tuple，分别为行和列上采样因子</p>
+</li>
+<li>
+<p>data_format：字符串，“channels_first”或“channels_last”之一，代表图像的通道维的位置。该参数是Keras 1.x中的image_dim_ordering，“channels_last”对应原本的“tf”，“channels_first”对应原本的“th”。以128x128的RGB图像为例，“channels_first”应将数据组织为（3,128,128），而“channels_last”应将数据组织为（128,128,3）。该参数的默认值是<code>~/.keras/keras.json</code>中设置的值，若从未设置过，则为“channels_last”。</p>
+</li>
+</ul>
+<h3 id="shape_17">输入shape</h3>
+<p>‘channels_first’模式下，为形如（samples，channels, rows，cols）的4D张量</p>
+<p>‘channels_last’模式下，为形如（samples，rows, cols，channels）的4D张量</p>
+<h3 id="shape_18">输出shape</h3>
+<p>‘channels_first’模式下，为形如（samples，channels, upsampled_rows, upsampled_cols）的4D张量</p>
+<p>‘channels_last’模式下，为形如（samples，upsampled_rows, upsampled_cols，channels）的4D张量</p>
+<hr>
+<h2 id="upsampling3d">UpSampling3D层</h2>
+<pre><code class="python hljs">keras.layers.convolutional.UpSampling3D(size=(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>), data_format=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>将数据的三个维度上分别重复size[0]、size[1]和ize[2]次</p>
+<p>本层目前只能在使用Theano为后端时可用</p>
+<h3 id="_13">参数</h3>
+<ul>
+<li>
+<p>size：长为3的整数tuple，代表在三个维度上的上采样因子</p>
+</li>
+<li>
+<p>data_format：字符串，“channels_first”或“channels_last”之一，代表数据的通道维的位置。该参数是Keras 1.x中的image_dim_ordering，“channels_last”对应原本的“tf”，“channels_first”对应原本的“th”。以128x128x128的数据为例，“channels_first”应将数据组织为（3,128,128,128），而“channels_last”应将数据组织为（128,128,128,3）。该参数的默认值是<code>~/.keras/keras.json</code>中设置的值，若从未设置过，则为“channels_last”。</p>
+</li>
+</ul>
+<h3 id="shape_19">输入shape</h3>
+<p>‘channels_first’模式下，为形如（samples, channels, len_pool_dim1, len_pool_dim2, len_pool_dim3）的5D张量</p>
+<p>‘channels_last’模式下，为形如（samples, len_pool_dim1, len_pool_dim2, len_pool_dim3，channels, ）的5D张量</p>
+<h3 id="shape_20">输出shape</h3>
+<p>‘channels_first’模式下，为形如（samples, channels, dim1, dim2, dim3）的5D张量</p>
+<p>‘channels_last’模式下，为形如（samples, upsampled_dim1, upsampled_dim2, upsampled_dim3,channels,）的5D张量</p>
+<hr>
+<h2 id="zeropadding1d">ZeroPadding1D层</h2>
+<pre><code class="python hljs">keras.layers.convolutional.ZeroPadding1D(padding=<span class="hljs-number">1</span>)
+</code></pre>
+
+<p>对1D输入的首尾端（如时域序列）填充0，以控制卷积以后向量的长度</p>
+<h3 id="_14">参数</h3>
+<ul>
+<li>padding：整数，表示在要填充的轴的起始和结束处填充0的数目，这里要填充的轴是轴1（第1维，第0维是样本数）</li>
+</ul>
+<h3 id="shape_21">输入shape</h3>
+<p>形如（samples，axis_to_pad，features）的3D张量</p>
+<h3 id="shape_22">输出shape</h3>
+<p>形如（samples，paded_axis，features）的3D张量</p>
+<hr>
+<h2 id="zeropadding2d">ZeroPadding2D层</h2>
+<pre><code class="python hljs">keras.layers.convolutional.ZeroPadding2D(padding=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), data_format=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>对2D输入（如图片）的边界填充0，以控制卷积以后特征图的大小</p>
+<h3 id="_15">参数</h3>
+<ul>
+<li>
+<p>padding：整数tuple，表示在要填充的轴的起始和结束处填充0的数目，这里要填充的轴是轴3和轴4（即在'th'模式下图像的行和列，在‘channels_last’模式下要填充的则是轴2，3）</p>
+</li>
+<li>
+<p>data_format：字符串，“channels_first”或“channels_last”之一，代表图像的通道维的位置。该参数是Keras 1.x中的image_dim_ordering，“channels_last”对应原本的“tf”，“channels_first”对应原本的“th”。以128x128的RGB图像为例，“channels_first”应将数据组织为（3,128,128），而“channels_last”应将数据组织为（128,128,3）。该参数的默认值是<code>~/.keras/keras.json</code>中设置的值，若从未设置过，则为“channels_last”。</p>
+</li>
+</ul>
+<h3 id="shape_23">输入shape</h3>
+<p>‘channels_first’模式下，形如（samples，channels，first_axis_to_pad，second_axis_to_pad）的4D张量</p>
+<p>‘channels_last’模式下，形如（samples，first_axis_to_pad，second_axis_to_pad, channels）的4D张量</p>
+<h3 id="shape_24">输出shape</h3>
+<p>‘channels_first’模式下，形如（samples，channels，first_paded_axis，second_paded_axis）的4D张量</p>
+<p>‘channels_last’模式下，形如（samples，first_paded_axis，second_paded_axis, channels）的4D张量</p>
+<hr>
+<h2 id="zeropadding3d">ZeroPadding3D层</h2>
+<pre><code class="python hljs">keras.layers.convolutional.ZeroPadding3D(padding=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>), data_format=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>将数据的三个维度上填充0</p>
+<p>本层目前只能在使用Theano为后端时可用</p>
+<h3 id="_16">参数</h3>
+<p>padding：整数tuple，表示在要填充的轴的起始和结束处填充0的数目，这里要填充的轴是轴3，轴4和轴5，‘channels_last’模式下则是轴2，3和4</p>
+<ul>
+<li>data_format：字符串，“channels_first”或“channels_last”之一，代表数据的通道维的位置。该参数是Keras 1.x中的image_dim_ordering，“channels_last”对应原本的“tf”，“channels_first”对应原本的“th”。以128x128x128的数据为例，“channels_first”应将数据组织为（3,128,128,128），而“channels_last”应将数据组织为（128,128,128,3）。该参数的默认值是<code>~/.keras/keras.json</code>中设置的值，若从未设置过，则为“channels_last”。</li>
+</ul>
+<h3 id="shape_25">输入shape</h3>
+<p>‘channels_first’模式下，为形如（samples, channels, first_axis_to_pad，first_axis_to_pad, first_axis_to_pad,）的5D张量</p>
+<p>‘channels_last’模式下，为形如（samples, first_axis_to_pad，first_axis_to_pad, first_axis_to_pad, channels）的5D张量</p>
+<h3 id="shape_26">输出shape</h3>
+<p>‘channels_first’模式下，为形如（samples, channels, first_paded_axis，second_paded_axis, third_paded_axis,）的5D张量</p>
+<p>‘channels_last’模式下，为形如（samples, len_pool_dim1, len_pool_dim2, len_pool_dim3，channels, ）的5D张量</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../pooling_layer/" class="btn btn-neutral float-right" title="池化层Pooling">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../core_layer/" class="btn btn-neutral" title="常用层Core"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr><div><div id="rtd-jiq9va3q" class="ethical-rtd"><div class="ethical-footer"><div class="ethical-content"><a href="https://readthedocs.org/sustainability/click/294/s1EVotSBmpQX/" rel="nofollow" target="_blank" class="ethical-image-link"><img src="https://readthedocs.org/sustainability/view/294/s1EVotSBmpQX/"></a><div class="ethical-text">A complete cloud platform designed for developers.<br><a href="https://readthedocs.org/sustainability/click/294/s1EVotSBmpQX/" rel="nofollow" target="_blank">Try it free - $100 credit</a></div></div><div class="ethical-callout"><small><em><a href="https://readthedocs.org/sustainability/advertising/">Sponsored</a><span> · </span><a href="https://docs.readthedocs.io/en/latest/ethical-advertising.html">Ads served ethically</a></em></small></div></div></div><hr></div>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions"><!-- Inserted RTD Footer -->
+<div class="injected">
+
+  
+
+      
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+         <strong> 
+        <dd><a href="https://keras-cn.readthedocs.io/en/latest/layers/convolutional_layer/">latest</a></dd>
+         </strong> 
+        
+      </dl>
+      
+      
+
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/pdf/latest/">PDF</a></dd>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/htmlzip/latest/">HTML</a></dd>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/epub/latest/">Epub</a></dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        <!-- These are kept as relative links for internal installs that are http -->
+        <dt>On Read the Docs</dt>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/">Project Home</a>
+        </dd>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/builds/">Builds</a>
+        </dd>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/downloads/">Downloads</a>
+        </dd>
+      </dl>
+      
+
+      
+
+      
+      <dl>
+        <dt>On GitHub</dt>
+        <dd>
+          <a href="https://github.com/MoyanZitto/keras-cn/blob/master/home/docs/checkouts/readthedocs.org/user_builds/keras-cn/checkouts/latest/docs/layers/convolutional_layer.md">View</a>
+        </dd>
+        <dd>
+          <a href="https://github.com/MoyanZitto/keras-cn/edit/master/home/docs/checkouts/readthedocs.org/user_builds/keras-cn/checkouts/latest/docs/layers/convolutional_layer.md">Edit</a>
+        </dd>
+      </dl>
+      
+      
+
+      
+      <dl>
+        <dt>Search</dt>
+        <dd>
+          <div style="padding: 6px;">
+            <form id="flyout-search-form" class="wy-form" target="_blank" action="//readthedocs.org/projects/keras-cn/search/" method="get">
+              <input type="text" name="q" placeholder="Search docs">
+              </form>
+          </div>
+        </dd>
+      </dl>
+      
+
+
+
+      <hr>
+      
+        <small>
+          <span>Hosted by <a href="https://readthedocs.org">Read the Docs</a></span>
+          <span> · </span>
+          <a href="https://docs.readthedocs.io/en/latest/privacy-policy.html">Privacy Policy</a>
+        </small>
+      
+
+      
+
+</div>
+</div>
+  </div>
+
+
+
+</body></html>

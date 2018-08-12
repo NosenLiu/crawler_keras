@@ -1,0 +1,947 @@
+<!DOCTYPE html><!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]--><!--[if gt IE 8]><!--><html class=" js flexbox flexboxlegacy canvas canvastext no-webgl touch no-geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent no-video no-audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en" style=""><!--<![endif]--><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="BigMoyan">
+  
+  <title>序贯模型 - Keras中文文档</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css">
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css">
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="https://media.readthedocs.org/css/badge_only.css" rel="stylesheet">
+  <link href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" rel="stylesheet">
+
+  
+  <script async="" src="https://www.google-analytics.com/analytics.js"></script><script>
+    // Current page data
+    var mkdocs_page_name = "序贯模型";
+    var mkdocs_page_input_path = "getting_started/sequential_model.md";
+    var mkdocs_page_url = "/getting_started/sequential_model/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../readthedocs-data.js"></script>
+  <script src="https://media.readthedocs.org/static/core/js/readthedocs-doc-embed.js"></script>
+  <script src="https://media.readthedocs.org/javascript/readthedocs-analytics.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Keras中文文档</a>
+        <div role="search">
+  <form id="mkdocs-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs">
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../..info.html">主页</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>keras新手指南</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/concepts/info.html">一些基本概念</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/FAQ/info.html">常见问题与解答</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/keras_linux/info.html">Keras安装和配置指南(Linux)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/keras_windows/info.html">Keras安装和配置指南(Windows)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/trap/info.html">Keras使用陷阱</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>快速开始</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="././info.html">序贯模型</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#sequential">快速开始序贯（Sequential）模型</a></li>
+                
+                    <li><a class="toctree-l4" href="#shape">指定输入数据的shape</a></li>
+                
+                    <li><a class="toctree-l4" href="#_1">编译</a></li>
+                
+                    <li><a class="toctree-l4" href="#_2">训练</a></li>
+                
+                    <li><a class="toctree-l4" href="#_3">例子</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../functional_API/info.html">函数式模型</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>模型</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../models/about_model/info.html">关于Keras模型</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../models/sequential/info.html">序贯模型API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../models/model/info.html">函数式模型API</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>网络层</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/about_layer/info.html">关于Keras层</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/core_layer/info.html">常用层Core</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/convolutional_layer/info.html">卷积层Convolutional</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/pooling_layer/info.html">池化层Pooling</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/locally_connected_layer/info.html">局部连接层Locally-connented</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/recurrent_layer/info.html">循环层Recurrent</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/embedding_layer/info.html">嵌入层Embedding</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/merge/info.html">融合层Merge</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/advanced_activation_layer/info.html">高级激活层Advanced Activation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/normalization_layer/info.html">规范层BatchNormalization</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/noise_layer/info.html">噪声层Noise</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/wrapper/info.html">包装器Wrapper</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/writting_layer/info.html">编写自己的层</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>数据预处理</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../preprocessing/sequence/info.html">序列预处理</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../preprocessing/text/info.html">文本预处理</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../preprocessing/image/info.html">图片预处理</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>网络配置</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/objectives/info.html">损失函数loss</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/optimizers/info.html">优化器Optimizer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/activations/info.html">激活函数Activation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/metrics/info.html">性能评估Metrices</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/initializations/info.html">初始化方法Initializers</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/regularizers/info.html">正则项Regularizer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/constraints/info.html">约束项Constraint</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/callbacks/info.html">回调函数Callback</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>协助使用Keras</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/application/info.html">预训练模型Application</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/datasets/info.html">常用数据库Dataset</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/visualization/info.html">可视化visualization</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../utils/info.html">工具</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../../backend/info.html">keras后端Backend</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../../scikit-learn_API/info.html">scikit-learn接口</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../../acknowledgement/info.html">致谢</a>
+        
+    </li>
+<li>
+          
+        </li></ul>
+      </div>
+      &nbsp;
+    <div id="rtd-3fi48fw1" class="ethical-rtd"></div></nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Keras中文文档</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> »</li>
+    
+      
+        
+          <li>快速开始 »</li>
+        
+      
+    
+    <li>序贯模型</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="sequential">快速开始序贯（Sequential）模型</h1>
+<p>序贯模型是多个网络层的线性堆叠，也就是“一条路走到黑”。</p>
+<p>可以通过向<code>Sequential</code>模型传递一个layer的list来构造该模型：</p>
+<pre><code class="python hljs"><span class="hljs-keyword">from</span> keras.models <span class="hljs-keyword">import</span> Sequential
+<span class="hljs-keyword">from</span> keras.layers <span class="hljs-keyword">import</span> Dense, Activation
+
+model = Sequential([
+Dense(<span class="hljs-number">32</span>, units=<span class="hljs-number">784</span>),
+Activation(<span class="hljs-string">'relu'</span>),
+Dense(<span class="hljs-number">10</span>),
+Activation(<span class="hljs-string">'softmax'</span>),
+])
+</code></pre>
+
+<p>也可以通过<code>.add()</code>方法一个个的将layer加入模型中：</p>
+<pre><code class="python hljs">model = Sequential()
+model.add(Dense(<span class="hljs-number">32</span>, input_shape=(<span class="hljs-number">784</span>,)))
+model.add(Activation(<span class="hljs-string">'relu'</span>))
+</code></pre>
+
+<hr>
+<h2 id="shape">指定输入数据的shape</h2>
+<p>模型需要知道输入数据的shape，因此，<code>Sequential</code>的第一层需要接受一个关于输入数据shape的参数，后面的各个层则可以自动的推导出中间数据的shape，因此不需要为每个层都指定这个参数。有几种方法来为第一层指定输入数据的shape</p>
+<ul>
+<li>
+<p>传递一个<code>input_shape</code>的关键字参数给第一层，<code>input_shape</code>是一个tuple类型的数据，其中也可以填入<code>None</code>，如果填入<code>None</code>则表示此位置可能是任何正整数。数据的batch大小不应包含在其中。</p>
+</li>
+<li>
+<p>有些2D层，如<code>Dense</code>，支持通过指定其输入维度<code>input_dim</code>来隐含的指定输入数据shape,是一个Int类型的数据。一些3D的时域层支持通过参数<code>input_dim</code>和<code>input_length</code>来指定输入shape。</p>
+</li>
+<li>
+<p>如果你需要为输入指定一个固定大小的batch_size（常用于stateful RNN网络），可以传递<code>batch_size</code>参数到一个层中，例如你想指定输入张量的batch大小是32，数据shape是（6，8），则你需要传递<code>batch_size=32</code>和<code>input_shape=(6,8)</code>。</p>
+</li>
+</ul>
+<pre><code class="python hljs">model = Sequential()
+model.add(Dense(<span class="hljs-number">32</span>, input_dim=<span class="hljs-number">784</span>))
+</code></pre>
+
+<pre><code class="python hljs">model = Sequential()
+model.add(Dense(<span class="hljs-number">32</span>, input_shape=(<span class="hljs-number">784</span>,)))
+</code></pre>
+
+<hr>
+<h2 id="_1">编译</h2>
+<p>在训练模型之前，我们需要通过<code>compile</code>来对学习过程进行配置。<code>compile</code>接收三个参数：</p>
+<ul>
+<li>
+<p>优化器optimizer：该参数可指定为已预定义的优化器名，如<code>rmsprop</code>、<code>adagrad</code>，或一个<code>Optimizer</code>类的对象，详情见<a href="../../other/optimizers/">optimizers</a></p>
+</li>
+<li>
+<p>损失函数loss：该参数为模型试图最小化的目标函数，它可为预定义的损失函数名，如<code>categorical_crossentropy</code>、<code>mse</code>，也可以为一个损失函数。详情见<a href="../../other/objectives/">losses</a></p>
+</li>
+<li>
+<p>指标列表metrics：对分类问题，我们一般将该列表设置为<code>metrics=['accuracy']</code>。指标可以是一个预定义指标的名字,也可以是一个用户定制的函数.指标函数应该返回单个张量,或一个完成<code>metric_name - &gt; metric_value</code>映射的字典.请参考<a href="../other/metrices.md">性能评估</a></p>
+</li>
+</ul>
+<pre><code class="python hljs"><span class="hljs-comment"># For a multi-class classification problem</span>
+model.compile(optimizer=<span class="hljs-string">'rmsprop'</span>,
+              loss=<span class="hljs-string">'categorical_crossentropy'</span>,
+              metrics=[<span class="hljs-string">'accuracy'</span>])
+
+<span class="hljs-comment"># For a binary classification problem</span>
+model.compile(optimizer=<span class="hljs-string">'rmsprop'</span>,
+              loss=<span class="hljs-string">'binary_crossentropy'</span>,
+              metrics=[<span class="hljs-string">'accuracy'</span>])
+
+<span class="hljs-comment"># For a mean squared error regression problem</span>
+model.compile(optimizer=<span class="hljs-string">'rmsprop'</span>,
+              loss=<span class="hljs-string">'mse'</span>)
+
+<span class="hljs-comment"># For custom metrics</span>
+<span class="hljs-keyword">import</span> keras.backend <span class="hljs-keyword">as</span> K
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">mean_pred</span><span class="hljs-params">(y_true, y_pred)</span>:</span>
+    <span class="hljs-keyword">return</span> K.mean(y_pred)
+
+model.compile(optimizer=<span class="hljs-string">'rmsprop'</span>,
+              loss=<span class="hljs-string">'binary_crossentropy'</span>,
+              metrics=[<span class="hljs-string">'accuracy'</span>, mean_pred])
+</code></pre>
+
+<hr>
+<h2 id="_2">训练</h2>
+<p>Keras以Numpy数组作为输入数据和标签的数据类型。训练模型一般使用<code>fit</code>函数，该函数的详情见<a href="../../models/sequential/">这里</a>。下面是一些例子。</p>
+<pre><code class="python hljs"><span class="hljs-comment"># For a single-input model with 2 classes (binary classification):</span>
+
+model = Sequential()
+model.add(Dense(<span class="hljs-number">32</span>, activation=<span class="hljs-string">'relu'</span>, input_dim=<span class="hljs-number">100</span>))
+model.add(Dense(<span class="hljs-number">1</span>, activation=<span class="hljs-string">'sigmoid'</span>))
+model.compile(optimizer=<span class="hljs-string">'rmsprop'</span>,
+              loss=<span class="hljs-string">'binary_crossentropy'</span>,
+              metrics=[<span class="hljs-string">'accuracy'</span>])
+
+<span class="hljs-comment"># Generate dummy data</span>
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+data = np.random.random((<span class="hljs-number">1000</span>, <span class="hljs-number">100</span>))
+labels = np.random.randint(<span class="hljs-number">2</span>, size=(<span class="hljs-number">1000</span>, <span class="hljs-number">1</span>))
+
+<span class="hljs-comment"># Train the model, iterating on the data in batches of 32 samples</span>
+model.fit(data, labels, epochs=<span class="hljs-number">10</span>, batch_size=<span class="hljs-number">32</span>)
+</code></pre>
+
+<pre><code class="python hljs"><span class="hljs-comment"># For a single-input model with 10 classes (categorical classification):</span>
+
+model = Sequential()
+model.add(Dense(<span class="hljs-number">32</span>, activation=<span class="hljs-string">'relu'</span>, input_dim=<span class="hljs-number">100</span>))
+model.add(Dense(<span class="hljs-number">10</span>, activation=<span class="hljs-string">'softmax'</span>))
+model.compile(optimizer=<span class="hljs-string">'rmsprop'</span>,
+              loss=<span class="hljs-string">'categorical_crossentropy'</span>,
+              metrics=[<span class="hljs-string">'accuracy'</span>])
+
+<span class="hljs-comment"># Generate dummy data</span>
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+data = np.random.random((<span class="hljs-number">1000</span>, <span class="hljs-number">100</span>))
+labels = np.random.randint(<span class="hljs-number">10</span>, size=(<span class="hljs-number">1000</span>, <span class="hljs-number">1</span>))
+
+<span class="hljs-comment"># Convert labels to categorical one-hot encoding</span>
+one_hot_labels = keras.utils.to_categorical(labels, num_classes=<span class="hljs-number">10</span>)
+
+<span class="hljs-comment"># Train the model, iterating on the data in batches of 32 samples</span>
+model.fit(data, one_hot_labels, epochs=<span class="hljs-number">10</span>, batch_size=<span class="hljs-number">32</span>)
+</code></pre>
+
+<hr>
+<h2 id="_3">例子</h2>
+<p>这里是一些帮助你开始的例子</p>
+<p>在Keras代码包的examples文件夹中，你将找到使用真实数据的示例模型：</p>
+<ul>
+<li>CIFAR10 小图片分类：使用CNN和实时数据提升</li>
+<li>IMDB 电影评论观点分类：使用LSTM处理成序列的词语</li>
+<li>Reuters（路透社）新闻主题分类：使用多层感知器（MLP）</li>
+<li>MNIST手写数字识别：使用多层感知器和CNN</li>
+<li>字符级文本生成：使用LSTM
+...</li>
+</ul>
+<h3 id="softmax">基于多层感知器的softmax多分类：</h3>
+<pre><code class="python hljs"><span class="hljs-keyword">from</span> keras.models <span class="hljs-keyword">import</span> Sequential
+<span class="hljs-keyword">from</span> keras.layers <span class="hljs-keyword">import</span> Dense, Dropout, Activation
+<span class="hljs-keyword">from</span> keras.optimizers <span class="hljs-keyword">import</span> SGD
+
+<span class="hljs-comment"># Generate dummy data</span>
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+x_train = np.random.random((<span class="hljs-number">1000</span>, <span class="hljs-number">20</span>))
+y_train = keras.utils.to_categorical(np.random.randint(<span class="hljs-number">10</span>, size=(<span class="hljs-number">1000</span>, <span class="hljs-number">1</span>)), num_classes=<span class="hljs-number">10</span>)
+x_test = np.random.random((<span class="hljs-number">100</span>, <span class="hljs-number">20</span>))
+y_test = keras.utils.to_categorical(np.random.randint(<span class="hljs-number">10</span>, size=(<span class="hljs-number">100</span>, <span class="hljs-number">1</span>)), num_classes=<span class="hljs-number">10</span>)
+
+model = Sequential()
+<span class="hljs-comment"># Dense(64) is a fully-connected layer with 64 hidden units.</span>
+<span class="hljs-comment"># in the first layer, you must specify the expected input data shape:</span>
+<span class="hljs-comment"># here, 20-dimensional vectors.</span>
+model.add(Dense(<span class="hljs-number">64</span>, activation=<span class="hljs-string">'relu'</span>, input_dim=<span class="hljs-number">20</span>))
+model.add(Dropout(<span class="hljs-number">0.5</span>))
+model.add(Dense(<span class="hljs-number">64</span>, activation=<span class="hljs-string">'relu'</span>))
+model.add(Dropout(<span class="hljs-number">0.5</span>))
+model.add(Dense(<span class="hljs-number">10</span>, activation=<span class="hljs-string">'softmax'</span>))
+
+sgd = SGD(lr=<span class="hljs-number">0.01</span>, decay=<span class="hljs-number">1e-6</span>, momentum=<span class="hljs-number">0.9</span>, nesterov=<span class="hljs-keyword">True</span>)
+model.compile(loss=<span class="hljs-string">'categorical_crossentropy'</span>,
+              optimizer=sgd,
+              metrics=[<span class="hljs-string">'accuracy'</span>])
+
+model.fit(x_train, y_train,
+          epochs=<span class="hljs-number">20</span>,
+          batch_size=<span class="hljs-number">128</span>)
+score = model.evaluate(x_test, y_test, batch_size=<span class="hljs-number">128</span>)
+</code></pre>
+
+<h3 id="mlp">MLP的二分类：</h3>
+<pre><code class="python hljs"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">from</span> keras.models <span class="hljs-keyword">import</span> Sequential
+<span class="hljs-keyword">from</span> keras.layers <span class="hljs-keyword">import</span> Dense, Dropout
+
+<span class="hljs-comment"># Generate dummy data</span>
+x_train = np.random.random((<span class="hljs-number">1000</span>, <span class="hljs-number">20</span>))
+y_train = np.random.randint(<span class="hljs-number">2</span>, size=(<span class="hljs-number">1000</span>, <span class="hljs-number">1</span>))
+x_test = np.random.random((<span class="hljs-number">100</span>, <span class="hljs-number">20</span>))
+y_test = np.random.randint(<span class="hljs-number">2</span>, size=(<span class="hljs-number">100</span>, <span class="hljs-number">1</span>))
+
+model = Sequential()
+model.add(Dense(<span class="hljs-number">64</span>, input_dim=<span class="hljs-number">20</span>, activation=<span class="hljs-string">'relu'</span>))
+model.add(Dropout(<span class="hljs-number">0.5</span>))
+model.add(Dense(<span class="hljs-number">64</span>, activation=<span class="hljs-string">'relu'</span>))
+model.add(Dropout(<span class="hljs-number">0.5</span>))
+model.add(Dense(<span class="hljs-number">1</span>, activation=<span class="hljs-string">'sigmoid'</span>))
+
+model.compile(loss=<span class="hljs-string">'binary_crossentropy'</span>,
+              optimizer=<span class="hljs-string">'rmsprop'</span>,
+              metrics=[<span class="hljs-string">'accuracy'</span>])
+model.fit(x_train, y_train,
+          epochs=<span class="hljs-number">20</span>,
+          batch_size=<span class="hljs-number">128</span>)
+score = model.evaluate(x_test, y_test, batch_size=<span class="hljs-number">128</span>)
+</code></pre>
+
+<h3 id="vgg">类似VGG的卷积神经网络：</h3>
+<pre><code class="python hljs"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> keras
+<span class="hljs-keyword">from</span> keras.models <span class="hljs-keyword">import</span> Sequential
+<span class="hljs-keyword">from</span> keras.layers <span class="hljs-keyword">import</span> Dense, Dropout, Flatten
+<span class="hljs-keyword">from</span> keras.layers <span class="hljs-keyword">import</span> Conv2D, MaxPooling2D
+<span class="hljs-keyword">from</span> keras.optimizers <span class="hljs-keyword">import</span> SGD
+
+<span class="hljs-comment"># Generate dummy data</span>
+x_train = np.random.random((<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">3</span>))
+y_train = keras.utils.to_categorical(np.random.randint(<span class="hljs-number">10</span>, size=(<span class="hljs-number">100</span>, <span class="hljs-number">1</span>)), num_classes=<span class="hljs-number">10</span>)
+x_test = np.random.random((<span class="hljs-number">20</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">3</span>))
+y_test = keras.utils.to_categorical(np.random.randint(<span class="hljs-number">10</span>, size=(<span class="hljs-number">20</span>, <span class="hljs-number">1</span>)), num_classes=<span class="hljs-number">10</span>)
+
+model = Sequential()
+<span class="hljs-comment"># input: 100x100 images with 3 channels -&gt; (100, 100, 3) tensors.</span>
+<span class="hljs-comment"># this applies 32 convolution filters of size 3x3 each.</span>
+model.add(Conv2D(<span class="hljs-number">32</span>, (<span class="hljs-number">3</span>, <span class="hljs-number">3</span>), activation=<span class="hljs-string">'relu'</span>, input_shape=(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">3</span>)))
+model.add(Conv2D(<span class="hljs-number">32</span>, (<span class="hljs-number">3</span>, <span class="hljs-number">3</span>), activation=<span class="hljs-string">'relu'</span>))
+model.add(MaxPooling2D(pool_size=(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>)))
+model.add(Dropout(<span class="hljs-number">0.25</span>))
+
+model.add(Conv2D(<span class="hljs-number">64</span>, (<span class="hljs-number">3</span>, <span class="hljs-number">3</span>), activation=<span class="hljs-string">'relu'</span>))
+model.add(Conv2D(<span class="hljs-number">64</span>, (<span class="hljs-number">3</span>, <span class="hljs-number">3</span>), activation=<span class="hljs-string">'relu'</span>))
+model.add(MaxPooling2D(pool_size=(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>)))
+model.add(Dropout(<span class="hljs-number">0.25</span>))
+
+model.add(Flatten())
+model.add(Dense(<span class="hljs-number">256</span>, activation=<span class="hljs-string">'relu'</span>))
+model.add(Dropout(<span class="hljs-number">0.5</span>))
+model.add(Dense(<span class="hljs-number">10</span>, activation=<span class="hljs-string">'softmax'</span>))
+
+sgd = SGD(lr=<span class="hljs-number">0.01</span>, decay=<span class="hljs-number">1e-6</span>, momentum=<span class="hljs-number">0.9</span>, nesterov=<span class="hljs-keyword">True</span>)
+model.compile(loss=<span class="hljs-string">'categorical_crossentropy'</span>, optimizer=sgd)
+
+model.fit(x_train, y_train, batch_size=<span class="hljs-number">32</span>, epochs=<span class="hljs-number">10</span>)
+score = model.evaluate(x_test, y_test, batch_size=<span class="hljs-number">32</span>)
+</code></pre>
+
+<h3 id="lstm">使用LSTM的序列分类</h3>
+<pre><code class="python hljs"><span class="hljs-keyword">from</span> keras.models <span class="hljs-keyword">import</span> Sequential
+<span class="hljs-keyword">from</span> keras.layers <span class="hljs-keyword">import</span> Dense, Dropout
+<span class="hljs-keyword">from</span> keras.layers <span class="hljs-keyword">import</span> Embedding
+<span class="hljs-keyword">from</span> keras.layers <span class="hljs-keyword">import</span> LSTM
+
+model = Sequential()
+model.add(Embedding(max_features, output_dim=<span class="hljs-number">256</span>))
+model.add(LSTM(<span class="hljs-number">128</span>))
+model.add(Dropout(<span class="hljs-number">0.5</span>))
+model.add(Dense(<span class="hljs-number">1</span>, activation=<span class="hljs-string">'sigmoid'</span>))
+
+model.compile(loss=<span class="hljs-string">'binary_crossentropy'</span>,
+              optimizer=<span class="hljs-string">'rmsprop'</span>,
+              metrics=[<span class="hljs-string">'accuracy'</span>])
+
+model.fit(x_train, y_train, batch_size=<span class="hljs-number">16</span>, epochs=<span class="hljs-number">10</span>)
+score = model.evaluate(x_test, y_test, batch_size=<span class="hljs-number">16</span>)
+</code></pre>
+
+<h3 id="1d">使用1D卷积的序列分类</h3>
+<pre><code class="python hljs"><span class="hljs-keyword">from</span> keras.models <span class="hljs-keyword">import</span> Sequential
+<span class="hljs-keyword">from</span> keras.layers <span class="hljs-keyword">import</span> Dense, Dropout
+<span class="hljs-keyword">from</span> keras.layers <span class="hljs-keyword">import</span> Embedding
+<span class="hljs-keyword">from</span> keras.layers <span class="hljs-keyword">import</span> Conv1D, GlobalAveragePooling1D, MaxPooling1D
+
+model = Sequential()
+model.add(Conv1D(<span class="hljs-number">64</span>, <span class="hljs-number">3</span>, activation=<span class="hljs-string">'relu'</span>, input_shape=(seq_length, <span class="hljs-number">100</span>)))
+model.add(Conv1D(<span class="hljs-number">64</span>, <span class="hljs-number">3</span>, activation=<span class="hljs-string">'relu'</span>))
+model.add(MaxPooling1D(<span class="hljs-number">3</span>))
+model.add(Conv1D(<span class="hljs-number">128</span>, <span class="hljs-number">3</span>, activation=<span class="hljs-string">'relu'</span>))
+model.add(Conv1D(<span class="hljs-number">128</span>, <span class="hljs-number">3</span>, activation=<span class="hljs-string">'relu'</span>))
+model.add(GlobalAveragePooling1D())
+model.add(Dropout(<span class="hljs-number">0.5</span>))
+model.add(Dense(<span class="hljs-number">1</span>, activation=<span class="hljs-string">'sigmoid'</span>))
+
+model.compile(loss=<span class="hljs-string">'binary_crossentropy'</span>,
+              optimizer=<span class="hljs-string">'rmsprop'</span>,
+              metrics=[<span class="hljs-string">'accuracy'</span>])
+
+model.fit(x_train, y_train, batch_size=<span class="hljs-number">16</span>, epochs=<span class="hljs-number">10</span>)
+score = model.evaluate(x_test, y_test, batch_size=<span class="hljs-number">16</span>)
+</code></pre>
+
+<h3 id="lstm_1">用于序列分类的栈式LSTM</h3>
+<p>在该模型中，我们将三个LSTM堆叠在一起，是该模型能够学习更高层次的时域特征表示。</p>
+<p>开始的两层LSTM返回其全部输出序列，而第三层LSTM只返回其输出序列的最后一步结果，从而其时域维度降低（即将输入序列转换为单个向量）</p>
+<p><img alt="regular_stacked_lstm" src="../../images/regular_stacked_lstm.png"></p>
+<pre><code class="python hljs"><span class="hljs-keyword">from</span> keras.models <span class="hljs-keyword">import</span> Sequential
+<span class="hljs-keyword">from</span> keras.layers <span class="hljs-keyword">import</span> LSTM, Dense
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+data_dim = <span class="hljs-number">16</span>
+timesteps = <span class="hljs-number">8</span>
+num_classes = <span class="hljs-number">10</span>
+
+<span class="hljs-comment"># expected input data shape: (batch_size, timesteps, data_dim)</span>
+model = Sequential()
+model.add(LSTM(<span class="hljs-number">32</span>, return_sequences=<span class="hljs-keyword">True</span>,
+               input_shape=(timesteps, data_dim)))  <span class="hljs-comment"># returns a sequence of vectors of dimension 32</span>
+model.add(LSTM(<span class="hljs-number">32</span>, return_sequences=<span class="hljs-keyword">True</span>))  <span class="hljs-comment"># returns a sequence of vectors of dimension 32</span>
+model.add(LSTM(<span class="hljs-number">32</span>))  <span class="hljs-comment"># return a single vector of dimension 32</span>
+model.add(Dense(<span class="hljs-number">10</span>, activation=<span class="hljs-string">'softmax'</span>))
+
+model.compile(loss=<span class="hljs-string">'categorical_crossentropy'</span>,
+              optimizer=<span class="hljs-string">'rmsprop'</span>,
+              metrics=[<span class="hljs-string">'accuracy'</span>])
+
+<span class="hljs-comment"># Generate dummy training data</span>
+x_train = np.random.random((<span class="hljs-number">1000</span>, timesteps, data_dim))
+y_train = np.random.random((<span class="hljs-number">1000</span>, num_classes))
+
+<span class="hljs-comment"># Generate dummy validation data</span>
+x_val = np.random.random((<span class="hljs-number">100</span>, timesteps, data_dim))
+y_val = np.random.random((<span class="hljs-number">100</span>, num_classes))
+
+model.fit(x_train, y_train,
+          batch_size=<span class="hljs-number">64</span>, epochs=<span class="hljs-number">5</span>,
+          validation_data=(x_val, y_val))
+</code></pre>
+
+<h3 id="stateful-lstm">采用stateful LSTM的相同模型</h3>
+<p>stateful LSTM的特点是，在处理过一个batch的训练数据后，其内部状态（记忆）会被作为下一个batch的训练数据的初始状态。状态LSTM使得我们可以在合理的计算复杂度内处理较长序列</p>
+<p>请FAQ中关于<a href="../../for_beginners/FAQ/">stateful LSTM</a>的部分获取更多信息</p>
+<pre><code class="python hljs"><span class="hljs-keyword">from</span> keras.models <span class="hljs-keyword">import</span> Sequential
+<span class="hljs-keyword">from</span> keras.layers <span class="hljs-keyword">import</span> LSTM, Dense
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+data_dim = <span class="hljs-number">16</span>
+timesteps = <span class="hljs-number">8</span>
+num_classes = <span class="hljs-number">10</span>
+batch_size = <span class="hljs-number">32</span>
+
+<span class="hljs-comment"># Expected input batch shape: (batch_size, timesteps, data_dim)</span>
+<span class="hljs-comment"># Note that we have to provide the full batch_input_shape since the network is stateful.</span>
+<span class="hljs-comment"># the sample of index i in batch k is the follow-up for the sample i in batch k-1.</span>
+model = Sequential()
+model.add(LSTM(<span class="hljs-number">32</span>, return_sequences=<span class="hljs-keyword">True</span>, stateful=<span class="hljs-keyword">True</span>,
+               batch_input_shape=(batch_size, timesteps, data_dim)))
+model.add(LSTM(<span class="hljs-number">32</span>, return_sequences=<span class="hljs-keyword">True</span>, stateful=<span class="hljs-keyword">True</span>))
+model.add(LSTM(<span class="hljs-number">32</span>, stateful=<span class="hljs-keyword">True</span>))
+model.add(Dense(<span class="hljs-number">10</span>, activation=<span class="hljs-string">'softmax'</span>))
+
+model.compile(loss=<span class="hljs-string">'categorical_crossentropy'</span>,
+              optimizer=<span class="hljs-string">'rmsprop'</span>,
+              metrics=[<span class="hljs-string">'accuracy'</span>])
+
+<span class="hljs-comment"># Generate dummy training data</span>
+x_train = np.random.random((batch_size * <span class="hljs-number">10</span>, timesteps, data_dim))
+y_train = np.random.random((batch_size * <span class="hljs-number">10</span>, num_classes))
+
+<span class="hljs-comment"># Generate dummy validation data</span>
+x_val = np.random.random((batch_size * <span class="hljs-number">3</span>, timesteps, data_dim))
+y_val = np.random.random((batch_size * <span class="hljs-number">3</span>, num_classes))
+
+model.fit(x_train, y_train,
+          batch_size=batch_size, epochs=<span class="hljs-number">5</span>, shuffle=<span class="hljs-keyword">False</span>,
+          validation_data=(x_val, y_val))
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../functional_API/" class="btn btn-neutral float-right" title="函数式模型">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../for_beginners/trap/" class="btn btn-neutral" title="Keras使用陷阱"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr><div><div id="rtd-zc194iv0h" class="ethical-rtd"><div class="ethical-footer"><div class="ethical-content"><a href="https://readthedocs.org/sustainability/click/294/ItjBqHDynOQk/" rel="nofollow" target="_blank" class="ethical-image-link"><img src="https://readthedocs.org/sustainability/view/294/ItjBqHDynOQk/"></a><div class="ethical-text">A complete cloud platform designed for developers.<br><a href="https://readthedocs.org/sustainability/click/294/ItjBqHDynOQk/" rel="nofollow" target="_blank">Try it free - $100 credit</a></div></div><div class="ethical-callout"><small><em><a href="https://readthedocs.org/sustainability/advertising/">Sponsored</a><span> · </span><a href="https://docs.readthedocs.io/en/latest/ethical-advertising.html">Ads served ethically</a></em></small></div></div></div><hr></div>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions"><!-- Inserted RTD Footer -->
+<div class="injected">
+
+  
+
+      
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+         <strong> 
+        <dd><a href="https://keras-cn.readthedocs.io/en/latest/getting_started/sequential_model/">latest</a></dd>
+         </strong> 
+        
+      </dl>
+      
+      
+
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/pdf/latest/">PDF</a></dd>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/htmlzip/latest/">HTML</a></dd>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/epub/latest/">Epub</a></dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        <!-- These are kept as relative links for internal installs that are http -->
+        <dt>On Read the Docs</dt>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/">Project Home</a>
+        </dd>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/builds/">Builds</a>
+        </dd>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/downloads/">Downloads</a>
+        </dd>
+      </dl>
+      
+
+      
+
+      
+      <dl>
+        <dt>On GitHub</dt>
+        <dd>
+          <a href="https://github.com/MoyanZitto/keras-cn/blob/master/home/docs/checkouts/readthedocs.org/user_builds/keras-cn/checkouts/latest/docs/getting_started/sequential_model.md">View</a>
+        </dd>
+        <dd>
+          <a href="https://github.com/MoyanZitto/keras-cn/edit/master/home/docs/checkouts/readthedocs.org/user_builds/keras-cn/checkouts/latest/docs/getting_started/sequential_model.md">Edit</a>
+        </dd>
+      </dl>
+      
+      
+
+      
+      <dl>
+        <dt>Search</dt>
+        <dd>
+          <div style="padding: 6px;">
+            <form id="flyout-search-form" class="wy-form" target="_blank" action="//readthedocs.org/projects/keras-cn/search/" method="get">
+              <input type="text" name="q" placeholder="Search docs">
+              </form>
+          </div>
+        </dd>
+      </dl>
+      
+
+
+
+      <hr>
+      
+        <small>
+          <span>Hosted by <a href="https://readthedocs.org">Read the Docs</a></span>
+          <span> · </span>
+          <a href="https://docs.readthedocs.io/en/latest/privacy-policy.html">Privacy Policy</a>
+        </small>
+      
+
+      
+
+</div>
+</div>
+  </div>
+
+
+
+</body></html>

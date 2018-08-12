@@ -1,0 +1,1216 @@
+<!DOCTYPE html><!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]--><!--[if gt IE 8]><!--><html class=" js flexbox flexboxlegacy canvas canvastext no-webgl touch no-geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent no-video no-audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en" style=""><!--<![endif]--><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="BigMoyan">
+  
+  <title>循环层Recurrent - Keras中文文档</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css">
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css">
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="https://media.readthedocs.org/css/badge_only.css" rel="stylesheet">
+  <link href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" rel="stylesheet">
+
+  
+  <script async="" src="https://www.google-analytics.com/analytics.js"></script><script>
+    // Current page data
+    var mkdocs_page_name = "循环层Recurrent";
+    var mkdocs_page_input_path = "layers/recurrent_layer.md";
+    var mkdocs_page_url = "/layers/recurrent_layer/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../readthedocs-data.js"></script>
+  <script src="https://media.readthedocs.org/static/core/js/readthedocs-doc-embed.js"></script>
+  <script src="https://media.readthedocs.org/javascript/readthedocs-analytics.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Keras中文文档</a>
+        <div role="search">
+  <form id="mkdocs-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs">
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../..info.html">主页</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>keras新手指南</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/concepts/info.html">一些基本概念</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/FAQ/info.html">常见问题与解答</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/keras_linux/info.html">Keras安装和配置指南(Linux)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/keras_windows/info.html">Keras安装和配置指南(Windows)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/trap/info.html">Keras使用陷阱</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>快速开始</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../getting_started/sequential_model/info.html">序贯模型</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../getting_started/functional_API/info.html">函数式模型</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>模型</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../models/about_model/info.html">关于Keras模型</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../models/sequential/info.html">序贯模型API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../models/model/info.html">函数式模型API</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>网络层</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../about_layer/info.html">关于Keras层</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../core_layer/info.html">常用层Core</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../convolutional_layer/info.html">卷积层Convolutional</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../pooling_layer/info.html">池化层Pooling</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../locally_connected_layer/info.html">局部连接层Locally-connented</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="././info.html">循环层Recurrent</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#recurrent">循环层Recurrent</a></li>
+                
+                    <li><a class="toctree-l4" href="#recurrent_1">Recurrent层</a></li>
+                
+                    <li><a class="toctree-l4" href="#simplernn">SimpleRNN层</a></li>
+                
+                    <li><a class="toctree-l4" href="#gru">GRU层</a></li>
+                
+                    <li><a class="toctree-l4" href="#lstm">LSTM层</a></li>
+                
+                    <li><a class="toctree-l4" href="#convlstm2d">ConvLSTM2D层</a></li>
+                
+                    <li><a class="toctree-l4" href="#simplernncell">SimpleRNNCell层</a></li>
+                
+                    <li><a class="toctree-l4" href="#grucell">GRUCell层</a></li>
+                
+                    <li><a class="toctree-l4" href="#lstmcell">LSTMCell层</a></li>
+                
+                    <li><a class="toctree-l4" href="#stackedrnncells">StackedRNNCells层</a></li>
+                
+                    <li><a class="toctree-l4" href="#cudnngru">CuDNNGRU层</a></li>
+                
+                    <li><a class="toctree-l4" href="#cudnnlstm">CuDNNLSTM层</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../embedding_layer/info.html">嵌入层Embedding</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../merge/info.html">融合层Merge</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../advanced_activation_layer/info.html">高级激活层Advanced Activation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../normalization_layer/info.html">规范层BatchNormalization</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../noise_layer/info.html">噪声层Noise</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../wrapper/info.html">包装器Wrapper</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../writting_layer/info.html">编写自己的层</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>数据预处理</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../preprocessing/sequence/info.html">序列预处理</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../preprocessing/text/info.html">文本预处理</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../preprocessing/image/info.html">图片预处理</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>网络配置</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/objectives/info.html">损失函数loss</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/optimizers/info.html">优化器Optimizer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/activations/info.html">激活函数Activation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/metrics/info.html">性能评估Metrices</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/initializations/info.html">初始化方法Initializers</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/regularizers/info.html">正则项Regularizer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/constraints/info.html">约束项Constraint</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/callbacks/info.html">回调函数Callback</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>协助使用Keras</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/application/info.html">预训练模型Application</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/datasets/info.html">常用数据库Dataset</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/visualization/info.html">可视化visualization</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../utils/info.html">工具</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../../backend/info.html">keras后端Backend</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../../scikit-learn_API/info.html">scikit-learn接口</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../../acknowledgement/info.html">致谢</a>
+        
+    </li>
+<li>
+          
+        </li></ul>
+      </div>
+      &nbsp;
+    <div id="rtd-ph096eey" class="ethical-rtd"></div></nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Keras中文文档</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> »</li>
+    
+      
+        
+          <li>网络层 »</li>
+        
+      
+    
+    <li>循环层Recurrent</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="recurrent">循环层Recurrent</h1>
+<h2 id="recurrent_1">Recurrent层</h2>
+<pre><code class="python hljs">keras.layers.recurrent.Recurrent(return_sequences=<span class="hljs-keyword">False</span>, go_backwards=<span class="hljs-keyword">False</span>, stateful=<span class="hljs-keyword">False</span>, unroll=<span class="hljs-keyword">False</span>, implementation=<span class="hljs-number">0</span>)
+</code></pre>
+
+<p>这是循环层的抽象类，请不要在模型中直接应用该层（因为它是抽象类，无法实例化任何对象）。请使用它的子类<code>LSTM</code>，<code>GRU</code>或<code>SimpleRNN</code>。</p>
+<p>所有的循环层（<code>LSTM</code>,<code>GRU</code>,<code>SimpleRNN</code>）都继承本层，因此下面的参数可以在任何循环层中使用。</p>
+<h3 id="_1">参数</h3>
+<ul>
+<li>
+<p>weights：numpy array的list，用以初始化权重。该list形如<code>[(input_dim, output_dim),(output_dim, output_dim),(output_dim,)]</code></p>
+</li>
+<li>
+<p>return_sequences：布尔值，默认<code>False</code>，控制返回类型。若为<code>True</code>则返回整个序列，否则仅返回输出序列的最后一个输出</p>
+</li>
+<li>
+<p>go_backwards：布尔值，默认为<code>False</code>，若为<code>True</code>，则逆向处理输入序列并返回逆序后的序列</p>
+</li>
+<li>
+<p>stateful：布尔值，默认为<code>False</code>，若为<code>True</code>，则一个batch中下标为i的样本的最终状态将会用作下一个batch同样下标的样本的初始状态。</p>
+</li>
+<li>
+<p>unroll：布尔值，默认为<code>False</code>，若为<code>True</code>，则循环层将被展开，否则就使用符号化的循环。当使用TensorFlow为后端时，循环网络本来就是展开的，因此该层不做任何事情。层展开会占用更多的内存，但会加速RNN的运算。层展开只适用于短序列。</p>
+</li>
+<li>
+<p>implementation：0，1或2， 若为0，则RNN将以更少但是更大的矩阵乘法实现，因此在CPU上运行更快，但消耗更多的内存。如果设为1，则RNN将以更多但更小的矩阵乘法实现，因此在CPU上运行更慢，在GPU上运行更快，并且消耗更少的内存。如果设为2（仅LSTM和GRU可以设为2），则RNN将把输入门、遗忘门和输出门合并为单个矩阵，以获得更加在GPU上更加高效的实现。注意，RNN dropout必须在所有门上共享，并导致正则效果性能微弱降低。</p>
+</li>
+<li>
+<p>input_dim：输入维度，当使用该层为模型首层时，应指定该值（或等价的指定input_shape)</p>
+</li>
+<li>
+<p>input_length：当输入序列的长度固定时，该参数为输入序列的长度。当需要在该层后连接<code>Flatten</code>层，然后又要连接<code>Dense</code>层时，需要指定该参数，否则全连接的输出无法计算出来。注意，如果循环层不是网络的第一层，你需要在网络的第一层中指定序列的长度（通过<code>input_shape</code>指定）。</p>
+</li>
+</ul>
+<h3 id="shape">输入shape</h3>
+<p>形如（samples，timesteps，input_dim）的3D张量</p>
+<h3 id="shape_1">输出shape</h3>
+<p>如果<code>return_sequences=True</code>：返回形如（samples，timesteps，output_dim）的3D张量</p>
+<p>否则，返回形如（samples，output_dim）的2D张量</p>
+<h3 id="_2">例子</h3>
+<pre><code class="python hljs"><span class="hljs-comment"># as the first layer in a Sequential model</span>
+model = Sequential()
+model.add(LSTM(<span class="hljs-number">32</span>, input_shape=(<span class="hljs-number">10</span>, <span class="hljs-number">64</span>)))
+<span class="hljs-comment"># now model.output_shape == (None, 32)</span>
+<span class="hljs-comment"># note: `None` is the batch dimension.</span>
+
+<span class="hljs-comment"># the following is identical:</span>
+model = Sequential()
+model.add(LSTM(<span class="hljs-number">32</span>, input_dim=<span class="hljs-number">64</span>, input_length=<span class="hljs-number">10</span>))
+
+<span class="hljs-comment"># for subsequent layers, no need to specify the input size:</span>
+         model.add(LSTM(<span class="hljs-number">16</span>))
+
+<span class="hljs-comment"># to stack recurrent layers, you must use return_sequences=True</span>
+<span class="hljs-comment"># on any recurrent layer that feeds into another recurrent layer.</span>
+<span class="hljs-comment"># note that you only need to specify the input size on the first layer.</span>
+model = Sequential()
+model.add(LSTM(<span class="hljs-number">64</span>, input_dim=<span class="hljs-number">64</span>, input_length=<span class="hljs-number">10</span>, return_sequences=<span class="hljs-keyword">True</span>))
+model.add(LSTM(<span class="hljs-number">32</span>, return_sequences=<span class="hljs-keyword">True</span>))
+model.add(LSTM(<span class="hljs-number">10</span>))
+</code></pre>
+
+<h3 id="rnn">指定RNN初始状态的注意事项</h3>
+<p>可以通过设置<code>initial_state</code>用符号式的方式指定RNN层的初始状态。即，<code>initial_stat</code>的值应该为一个tensor或一个tensor列表，代表RNN层的初始状态。</p>
+<p>也可以通过设置<code>reset_states</code>参数用数值的方法设置RNN的初始状态，状态的值应该为numpy数组或numpy数组的列表，代表RNN层的初始状态。</p>
+<h3 id="masking">屏蔽输入数据（Masking）</h3>
+<p>循环层支持通过时间步变量对输入数据进行Masking，如果想将输入数据的一部分屏蔽掉，请使用<a href="../embedding_layer">Embedding</a>层并将参数<code>mask_zero</code>设为<code>True</code>。</p>
+<h3 id="rnn_1">使用状态RNN的注意事项</h3>
+<p>可以将RNN设置为‘stateful’，意味着由每个batch计算出的状态都会被重用于初始化下一个batch的初始状态。状态RNN假设连续的两个batch之中，相同下标的元素有一一映射关系。</p>
+<p>要启用状态RNN，请在实例化层对象时指定参数<code>stateful=True</code>，并在Sequential模型使用固定大小的batch：通过在模型的第一层传入<code>batch_size=(...)</code>和<code>input_shape</code>来实现。在函数式模型中，对所有的输入都要指定相同的<code>batch_size</code>。</p>
+<p>如果要将循环层的状态重置，请调用<code>.reset_states()</code>，对模型调用将重置模型中所有状态RNN的状态。对单个层调用则只重置该层的状态。</p>
+<hr>
+<h2 id="simplernn">SimpleRNN层</h2>
+<pre><code class="python hljs">keras.layers.GRU(units, activation=<span class="hljs-string">'tanh'</span>, recurrent_activation=<span class="hljs-string">'hard_sigmoid'</span>, use_bias=<span class="hljs-keyword">True</span>, kernel_initializer=<span class="hljs-string">'glorot_uniform'</span>, recurrent_initializer=<span class="hljs-string">'orthogonal'</span>, bias_initializer=<span class="hljs-string">'zeros'</span>, kernel_regularizer=<span class="hljs-keyword">None</span>, recurrent_regularizer=<span class="hljs-keyword">None</span>, bias_regularizer=<span class="hljs-keyword">None</span>, activity_regularizer=<span class="hljs-keyword">None</span>, kernel_constraint=<span class="hljs-keyword">None</span>, recurrent_constraint=<span class="hljs-keyword">None</span>, bias_constraint=<span class="hljs-keyword">None</span>, dropout=<span class="hljs-number">0.0</span>, recurrent_dropout=<span class="hljs-number">0.0</span>, implementation=<span class="hljs-number">1</span>, return_sequences=<span class="hljs-keyword">False</span>, return_state=<span class="hljs-keyword">False</span>, go_backwards=<span class="hljs-keyword">False</span>, stateful=<span class="hljs-keyword">False</span>, unroll=<span class="hljs-keyword">False</span>)
+</code></pre>
+
+<p>全连接RNN网络，RNN的输出会被回馈到输入</p>
+<h3 id="_3">参数</h3>
+<ul>
+<li>
+<p>units：输出维度</p>
+</li>
+<li>
+<p>activation：激活函数，为预定义的激活函数名（参考<a href="../../other/activations">激活函数</a>）</p>
+</li>
+<li>
+<p>use_bias: 布尔值，是否使用偏置项</p>
+</li>
+<li>
+<p>kernel_initializer：权值初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>recurrent_initializer：循环核的初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>bias_initializer：权值初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>kernel_regularizer：施加在权重上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>bias_regularizer：施加在偏置向量上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>recurrent_regularizer：施加在循环核上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>activity_regularizer：施加在输出上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>kernel_constraints：施加在权重上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>recurrent_constraints：施加在循环核上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>bias_constraints：施加在偏置上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>dropout：0~1之间的浮点数，控制输入线性变换的神经元断开比例</p>
+</li>
+<li>
+<p>recurrent_dropout：0~1之间的浮点数，控制循环状态的线性变换的神经元断开比例</p>
+</li>
+<li>
+<p>其他参数参考Recurrent的说明</p>
+</li>
+</ul>
+<h3 id="_4">参考文献</h3>
+<ul>
+<li><a href="http://arxiv.org/abs/1512.05287">A Theoretically Grounded Application of Dropout in Recurrent Neural Networks</a></li>
+</ul>
+<hr>
+<h2 id="gru">GRU层</h2>
+<pre><code class="python hljs">keras.layers.recurrent.GRU(units, activation=<span class="hljs-string">'tanh'</span>, recurrent_activation=<span class="hljs-string">'hard_sigmoid'</span>, use_bias=<span class="hljs-keyword">True</span>, kernel_initializer=<span class="hljs-string">'glorot_uniform'</span>, recurrent_initializer=<span class="hljs-string">'orthogonal'</span>, bias_initializer=<span class="hljs-string">'zeros'</span>, kernel_regularizer=<span class="hljs-keyword">None</span>, recurrent_regularizer=<span class="hljs-keyword">None</span>, bias_regularizer=<span class="hljs-keyword">None</span>, activity_regularizer=<span class="hljs-keyword">None</span>, kernel_constraint=<span class="hljs-keyword">None</span>, recurrent_constraint=<span class="hljs-keyword">None</span>, bias_constraint=<span class="hljs-keyword">None</span>, dropout=<span class="hljs-number">0.0</span>, recurrent_dropout=<span class="hljs-number">0.0</span>)
+</code></pre>
+
+<p>门限循环单元（详见参考文献）</p>
+<h3 id="_5">参数</h3>
+<ul>
+<li>
+<p>units：输出维度</p>
+</li>
+<li>
+<p>activation：激活函数，为预定义的激活函数名（参考<a href="../../other/activations">激活函数</a>）</p>
+</li>
+<li>
+<p>use_bias: 布尔值，是否使用偏置项</p>
+</li>
+<li>
+<p>kernel_initializer：权值初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>recurrent_initializer：循环核的初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>bias_initializer：权值初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>kernel_regularizer：施加在权重上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>bias_regularizer：施加在偏置向量上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>recurrent_regularizer：施加在循环核上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>activity_regularizer：施加在输出上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>kernel_constraints：施加在权重上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>recurrent_constraints：施加在循环核上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>bias_constraints：施加在偏置上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>dropout：0~1之间的浮点数，控制输入线性变换的神经元断开比例</p>
+</li>
+<li>
+<p>recurrent_dropout：0~1之间的浮点数，控制循环状态的线性变换的神经元断开比例</p>
+</li>
+<li>
+<p>其他参数参考Recurrent的说明</p>
+</li>
+</ul>
+<h3 id="_6">参考文献</h3>
+<ul>
+<li>
+<p><a href="http://www.aclweb.org/anthology/W14-4012">On the Properties of Neural Machine Translation: Encoder–Decoder Approaches</a></p>
+</li>
+<li>
+<p><a href="http://arxiv.org/pdf/1412.3555v1.pdf">Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling</a></p>
+</li>
+<li>
+<p><a href="http://arxiv.org/abs/1512.05287">A Theoretically Grounded Application of Dropout in Recurrent Neural Networks</a></p>
+</li>
+</ul>
+<hr>
+<h2 id="lstm">LSTM层</h2>
+<pre><code class="python hljs">keras.layers.recurrent.LSTM(units, activation=<span class="hljs-string">'tanh'</span>, recurrent_activation=<span class="hljs-string">'hard_sigmoid'</span>, use_bias=<span class="hljs-keyword">True</span>, kernel_initializer=<span class="hljs-string">'glorot_uniform'</span>, recurrent_initializer=<span class="hljs-string">'orthogonal'</span>, bias_initializer=<span class="hljs-string">'zeros'</span>, unit_forget_bias=<span class="hljs-keyword">True</span>, kernel_regularizer=<span class="hljs-keyword">None</span>, recurrent_regularizer=<span class="hljs-keyword">None</span>, bias_regularizer=<span class="hljs-keyword">None</span>, activity_regularizer=<span class="hljs-keyword">None</span>, kernel_constraint=<span class="hljs-keyword">None</span>, recurrent_constraint=<span class="hljs-keyword">None</span>, bias_constraint=<span class="hljs-keyword">None</span>, dropout=<span class="hljs-number">0.0</span>, recurrent_dropout=<span class="hljs-number">0.0</span>)
+</code></pre>
+
+<p>Keras长短期记忆模型，关于此算法的详情，请参考<a href="http://deeplearning.net/tutorial/lstm.html">本教程</a></p>
+<h3 id="_7">参数</h3>
+<ul>
+<li>
+<p>units：输出维度</p>
+</li>
+<li>
+<p>activation：激活函数，为预定义的激活函数名（参考<a href="../../other/activations">激活函数</a>）</p>
+</li>
+<li>
+<p>recurrent_activation: 为循环步施加的激活函数（参考<a href="../../other/activations">激活函数</a>）</p>
+</li>
+<li>
+<p>use_bias: 布尔值，是否使用偏置项</p>
+</li>
+<li>
+<p>kernel_initializer：权值初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>recurrent_initializer：循环核的初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>bias_initializer：权值初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>kernel_regularizer：施加在权重上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>bias_regularizer：施加在偏置向量上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>recurrent_regularizer：施加在循环核上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>activity_regularizer：施加在输出上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>kernel_constraints：施加在权重上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>recurrent_constraints：施加在循环核上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>bias_constraints：施加在偏置上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>dropout：0~1之间的浮点数，控制输入线性变换的神经元断开比例</p>
+</li>
+<li>
+<p>recurrent_dropout：0~1之间的浮点数，控制循环状态的线性变换的神经元断开比例</p>
+</li>
+<li>
+<p>其他参数参考Recurrent的说明</p>
+</li>
+</ul>
+<h3 id="_8">参考文献</h3>
+<ul>
+<li>
+<p><a href="http://deeplearning.cs.cmu.edu/pdfs/Hochreiter97_lstm.pdf">Long short-term memory</a>（original 1997 paper）</p>
+</li>
+<li>
+<p><a href="http://www.mitpressjournals.org/doi/pdf/10.1162/089976600300015015">Learning to forget: Continual prediction with LSTM</a></p>
+</li>
+<li>
+<p><a href="http://www.cs.toronto.edu/~graves/preprint.pdf">Supervised sequence labelling with recurrent neural networks</a></p>
+</li>
+<li>
+<p><a href="http://arxiv.org/abs/1512.05287">A Theoretically Grounded Application of Dropout in Recurrent Neural Networks</a></p>
+</li>
+</ul>
+<h2 id="convlstm2d">ConvLSTM2D层</h2>
+<pre><code class="python hljs">keras.layers.ConvLSTM2D(filters, kernel_size, strides=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), padding=<span class="hljs-string">'valid'</span>, data_format=<span class="hljs-keyword">None</span>, dilation_rate=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), activation=<span class="hljs-string">'tanh'</span>, recurrent_activation=<span class="hljs-string">'hard_sigmoid'</span>, use_bias=<span class="hljs-keyword">True</span>, kernel_initializer=<span class="hljs-string">'glorot_uniform'</span>, recurrent_initializer=<span class="hljs-string">'orthogonal'</span>, bias_initializer=<span class="hljs-string">'zeros'</span>, unit_forget_bias=<span class="hljs-keyword">True</span>, kernel_regularizer=<span class="hljs-keyword">None</span>, recurrent_regularizer=<span class="hljs-keyword">None</span>, bias_regularizer=<span class="hljs-keyword">None</span>, activity_regularizer=<span class="hljs-keyword">None</span>, kernel_constraint=<span class="hljs-keyword">None</span>, recurrent_constraint=<span class="hljs-keyword">None</span>, bias_constraint=<span class="hljs-keyword">None</span>, return_sequences=<span class="hljs-keyword">False</span>, go_backwards=<span class="hljs-keyword">False</span>, stateful=<span class="hljs-keyword">False</span>, dropout=<span class="hljs-number">0.0</span>, recurrent_dropout=<span class="hljs-number">0.0</span>)
+</code></pre>
+
+<p>ConvLSTM2D是一个LSTM网络，但它的输入变换和循环变换是通过卷积实现的</p>
+<h3 id="_9">参数</h3>
+<ul>
+<li>filters: 整数，输出的维度，该参数含义同普通卷积层的filters</li>
+<li>kernel_size: 整数或含有n个整数的tuple/list，指定卷积窗口的大小</li>
+<li>strides: 整数或含有n个整数的tuple/list，指定卷积步长，当不等于1时，无法使用dilation功能，即dialation_rate必须为1.</li>
+<li>padding: "valid" 或 "same" 之一</li>
+<li>data_format: * data_format：字符串，“channels_first”或“channels_last”之一，代表图像的通道维的位置。该参数是Keras 1.x中的image_dim_ordering，“channels_last”对应原本的“tf”，“channels_first”对应原本的“th”。以128x128的RGB图像为例，“channels_first”应将数据组织为（3,128,128），而“channels_last”应将数据组织为（128,128,3）。该参数的默认值是<code>~/.keras/keras.json</code>中设置的值，若从未设置过，则为“channels_last”。</li>
+<li>dilation_rate: 单个整数或由两个个整数构成的list/tuple，指定dilated convolution中的膨胀比例。任何不为1的dilation_rate均与任何不为1的strides均不兼容。</li>
+<li>activation: activation：激活函数，为预定义的激活函数名（参考<a href="../../other/activations">激活函数</a>），或逐元素（element-wise）的Theano函数。如果不指定该参数，将不会使用任何激活函数（即使用线性激活函数：a(x)=x）</li>
+<li>recurrent_activation: 用在recurrent部分的激活函数，为预定义的激活函数名（参考<a href="../../other/activations">激活函数</a>），或逐元素（element-wise）的Theano函数。如果不指定该参数，将不会使用任何激活函数（即使用线性激活函数：a(x)=x）</li>
+<li>use_bias: Boolean, whether the layer uses a bias vector.</li>
+<li>kernel_initializer：权值初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></li>
+<li>recurrent_initializer：循环核的初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></li>
+<li>bias_initializer：权值初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></li>
+<li>kernel_regularizer：施加在权重上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</li>
+<li>bias_regularizer：施加在偏置向量上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</li>
+<li>recurrent_regularizer：施加在循环核上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</li>
+<li>activity_regularizer：施加在输出上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</li>
+<li>kernel_constraints：施加在权重上的约束项，为<a href="../../other/constraints">Constraints</a>对象</li>
+<li>recurrent_constraints：施加在循环核上的约束项，为<a href="../../other/constraints">Constraints</a>对象</li>
+<li>bias_constraints：施加在偏置上的约束项，为<a href="../../other/constraints">Constraints</a>对象</li>
+<li>dropout：0~1之间的浮点数，控制输入线性变换的神经元断开比例</li>
+<li>recurrent_dropout：0~1之间的浮点数，控制循环状态的线性变换的神经元断开比例</li>
+<li>其他参数参考Recurrent的说明</li>
+</ul>
+<h3 id="shape_2">输入shape</h3>
+<p>若data_format='channels_first'， 为形如(samples,time, channels, rows, cols)的5D tensor
+若data_format='channels_last' 为形如(samples,time, rows, cols, channels)的5D tensor</p>
+<h3 id="shape_3">输出shape</h3>
+<p>if return_sequences：
+    if data_format='channels_first' ：5D tensor (samples, time, filters, output_row, output_col)
+    if data_format='channels_last'  ：5D tensor (samples, time, output_row, output_col, filters)
+else
+    if data_format ='channels_first' :4D tensor (samples, filters, output_row, output_col)
+    if data_format='channels_last'   :4D tensor  (samples, output_row, output_col, filters) (o_row和o_col由filter和padding决定)</p>
+<h3 id="_10">参考文献</h3>
+<p><a href="http://arxiv.org/abs/1506.04214v1">Convolutional LSTM Network: A Machine Learning Approach for Precipitation Nowcasting</a> 
+* 当前的实现不包含cell输出上的反馈循环（feedback loop）</p>
+<h2 id="simplernncell">SimpleRNNCell层</h2>
+<pre><code class="python hljs">keras.layers.SimpleRNNCell(units, activation=<span class="hljs-string">'tanh'</span>, use_bias=<span class="hljs-keyword">True</span>, kernel_initializer=<span class="hljs-string">'glorot_uniform'</span>, recurrent_initializer=<span class="hljs-string">'orthogonal'</span>, bias_initializer=<span class="hljs-string">'zeros'</span>, kernel_regularizer=<span class="hljs-keyword">None</span>, recurrent_regularizer=<span class="hljs-keyword">None</span>, bias_regularizer=<span class="hljs-keyword">None</span>, kernel_constraint=<span class="hljs-keyword">None</span>, recurrent_constraint=<span class="hljs-keyword">None</span>, bias_constraint=<span class="hljs-keyword">None</span>, dropout=<span class="hljs-number">0.0</span>, recurrent_dropout=<span class="hljs-number">0.0</span>)
+</code></pre>
+
+<p>SinpleRNN的Cell类</p>
+<h3 id="_11">参数</h3>
+<ul>
+<li>
+<p>units：输出维度</p>
+</li>
+<li>
+<p>activation：激活函数，为预定义的激活函数名（参考<a href="../../other/activations">激活函数</a>）</p>
+</li>
+<li>
+<p>use_bias: 布尔值，是否使用偏置项</p>
+</li>
+<li>
+<p>kernel_initializer：权值初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>recurrent_initializer：循环核的初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>bias_initializer：权值初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>kernel_regularizer：施加在权重上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>bias_regularizer：施加在偏置向量上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>recurrent_regularizer：施加在循环核上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>activity_regularizer：施加在输出上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>kernel_constraints：施加在权重上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>recurrent_constraints：施加在循环核上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>bias_constraints：施加在偏置上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>dropout：0~1之间的浮点数，控制输入线性变换的神经元断开比例</p>
+</li>
+<li>
+<p>recurrent_dropout：0~1之间的浮点数，控制循环状态的线性变换的神经元断开比例</p>
+</li>
+</ul>
+<h2 id="grucell">GRUCell层</h2>
+<pre><code class="python hljs">keras.layers.GRUCell(units, activation=<span class="hljs-string">'tanh'</span>, recurrent_activation=<span class="hljs-string">'hard_sigmoid'</span>, use_bias=<span class="hljs-keyword">True</span>, kernel_initializer=<span class="hljs-string">'glorot_uniform'</span>, recurrent_initializer=<span class="hljs-string">'orthogonal'</span>, bias_initializer=<span class="hljs-string">'zeros'</span>, kernel_regularizer=<span class="hljs-keyword">None</span>, recurrent_regularizer=<span class="hljs-keyword">None</span>, bias_regularizer=<span class="hljs-keyword">None</span>, kernel_constraint=<span class="hljs-keyword">None</span>, recurrent_constraint=<span class="hljs-keyword">None</span>, bias_constraint=<span class="hljs-keyword">None</span>, dropout=<span class="hljs-number">0.0</span>, recurrent_dropout=<span class="hljs-number">0.0</span>, implementation=<span class="hljs-number">1</span>)
+</code></pre>
+
+<p>GRU的Cell类</p>
+<h3 id="_12">参数</h3>
+<ul>
+<li>
+<p>units：输出维度</p>
+</li>
+<li>
+<p>activation：激活函数，为预定义的激活函数名（参考<a href="../../other/activations">激活函数</a>）</p>
+</li>
+<li>
+<p>use_bias: 布尔值，是否使用偏置项</p>
+</li>
+<li>
+<p>kernel_initializer：权值初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>recurrent_initializer：循环核的初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>bias_initializer：权值初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>kernel_regularizer：施加在权重上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>bias_regularizer：施加在偏置向量上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>recurrent_regularizer：施加在循环核上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>activity_regularizer：施加在输出上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>kernel_constraints：施加在权重上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>recurrent_constraints：施加在循环核上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>bias_constraints：施加在偏置上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>dropout：0~1之间的浮点数，控制输入线性变换的神经元断开比例</p>
+</li>
+<li>
+<p>recurrent_dropout：0~1之间的浮点数，控制循环状态的线性变换的神经元断开比例</p>
+</li>
+<li>其他参数参考Recurrent的说明</li>
+</ul>
+<h2 id="lstmcell">LSTMCell层</h2>
+<pre><code class="python hljs">keras.layers.LSTMCell(units, activation=<span class="hljs-string">'tanh'</span>, recurrent_activation=<span class="hljs-string">'hard_sigmoid'</span>, use_bias=<span class="hljs-keyword">True</span>, kernel_initializer=<span class="hljs-string">'glorot_uniform'</span>, recurrent_initializer=<span class="hljs-string">'orthogonal'</span>, bias_initializer=<span class="hljs-string">'zeros'</span>, unit_forget_bias=<span class="hljs-keyword">True</span>, kernel_regularizer=<span class="hljs-keyword">None</span>, recurrent_regularizer=<span class="hljs-keyword">None</span>, bias_regularizer=<span class="hljs-keyword">None</span>, kernel_constraint=<span class="hljs-keyword">None</span>, recurrent_constraint=<span class="hljs-keyword">None</span>, bias_constraint=<span class="hljs-keyword">None</span>, dropout=<span class="hljs-number">0.0</span>, recurrent_dropout=<span class="hljs-number">0.0</span>, implementation=<span class="hljs-number">1</span>)
+</code></pre>
+
+<p>LSTM的Cell类</p>
+<h3 id="_13">参数</h3>
+<ul>
+<li>
+<p>units：输出维度</p>
+</li>
+<li>
+<p>activation：激活函数，为预定义的激活函数名（参考<a href="../../other/activations">激活函数</a>）</p>
+</li>
+<li>
+<p>use_bias: 布尔值，是否使用偏置项</p>
+</li>
+<li>
+<p>kernel_initializer：权值初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>recurrent_initializer：循环核的初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>bias_initializer：权值初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>kernel_regularizer：施加在权重上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>bias_regularizer：施加在偏置向量上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>recurrent_regularizer：施加在循环核上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>activity_regularizer：施加在输出上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>kernel_constraints：施加在权重上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>recurrent_constraints：施加在循环核上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>bias_constraints：施加在偏置上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>dropout：0~1之间的浮点数，控制输入线性变换的神经元断开比例</p>
+</li>
+<li>
+<p>recurrent_dropout：0~1之间的浮点数，控制循环状态的线性变换的神经元断开比例</p>
+</li>
+<li>其他参数参考Recurrent的说明</li>
+</ul>
+<h2 id="stackedrnncells">StackedRNNCells层</h2>
+<pre><code class="python hljs">keras.layers.StackedRNNCells(cells)
+</code></pre>
+
+<p>这是一个wrapper，用于将多个recurrent cell包装起来，使其行为类型单个cell。该层用于实现搞笑的stacked RNN</p>
+<h3 id="_14">参数</h3>
+<ul>
+<li>cells：list，其中每个元素都是一个cell对象</li>
+</ul>
+<h3 id="_15">例子</h3>
+<pre><code class="python hljs">cells = [
+    keras.layers.LSTMCell(output_dim),
+    keras.layers.LSTMCell(output_dim),
+    keras.layers.LSTMCell(output_dim),
+]
+
+inputs = keras.Input((timesteps, input_dim))
+x = keras.layers.StackedRNNCells(cells)(inputs)
+</code></pre>
+
+<h2 id="cudnngru">CuDNNGRU层</h2>
+<pre><code class="python hljs">keras.layers.CuDNNGRU(units, kernel_initializer=<span class="hljs-string">'glorot_uniform'</span>, recurrent_initializer=<span class="hljs-string">'orthogonal'</span>, bias_initializer=<span class="hljs-string">'zeros'</span>, kernel_regularizer=<span class="hljs-keyword">None</span>, recurrent_regularizer=<span class="hljs-keyword">None</span>, bias_regularizer=<span class="hljs-keyword">None</span>, activity_regularizer=<span class="hljs-keyword">None</span>, kernel_constraint=<span class="hljs-keyword">None</span>, recurrent_constraint=<span class="hljs-keyword">None</span>, bias_constraint=<span class="hljs-keyword">None</span>, return_sequences=<span class="hljs-keyword">False</span>, return_state=<span class="hljs-keyword">False</span>, stateful=<span class="hljs-keyword">False</span>)
+</code></pre>
+
+<p>基于CuDNN的快速GRU实现，只能在GPU上运行，只能使用tensoflow为后端</p>
+<h3 id="_16">参数</h3>
+<ul>
+<li>
+<p>units：输出维度</p>
+</li>
+<li>
+<p>activation：激活函数，为预定义的激活函数名（参考<a href="../../other/activations">激活函数</a>）</p>
+</li>
+<li>
+<p>use_bias: 布尔值，是否使用偏置项</p>
+</li>
+<li>
+<p>kernel_initializer：权值初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>recurrent_initializer：循环核的初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>bias_initializer：权值初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>kernel_regularizer：施加在权重上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>bias_regularizer：施加在偏置向量上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>recurrent_regularizer：施加在循环核上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>activity_regularizer：施加在输出上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>kernel_constraints：施加在权重上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>recurrent_constraints：施加在循环核上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>bias_constraints：施加在偏置上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>dropout：0~1之间的浮点数，控制输入线性变换的神经元断开比例</p>
+</li>
+<li>
+<p>recurrent_dropout：0~1之间的浮点数，控制循环状态的线性变换的神经元断开比例</p>
+</li>
+<li>其他参数参考Recurrent的说明</li>
+</ul>
+<h2 id="cudnnlstm">CuDNNLSTM层</h2>
+<pre><code class="python hljs">keras.layers.CuDNNLSTM(units, kernel_initializer=<span class="hljs-string">'glorot_uniform'</span>, recurrent_initializer=<span class="hljs-string">'orthogonal'</span>, bias_initializer=<span class="hljs-string">'zeros'</span>, unit_forget_bias=<span class="hljs-keyword">True</span>, kernel_regularizer=<span class="hljs-keyword">None</span>, recurrent_regularizer=<span class="hljs-keyword">None</span>, bias_regularizer=<span class="hljs-keyword">None</span>, activity_regularizer=<span class="hljs-keyword">None</span>, kernel_constraint=<span class="hljs-keyword">None</span>, recurrent_constraint=<span class="hljs-keyword">None</span>, bias_constraint=<span class="hljs-keyword">None</span>, return_sequences=<span class="hljs-keyword">False</span>, return_state=<span class="hljs-keyword">False</span>, stateful=<span class="hljs-keyword">False</span>)
+</code></pre>
+
+<p>基于CuDNN的快速LSTM实现，只能在GPU上运行，只能使用tensoflow为后端</p>
+<h3 id="_17">参数</h3>
+<ul>
+<li>
+<p>units：输出维度</p>
+</li>
+<li>
+<p>activation：激活函数，为预定义的激活函数名（参考<a href="../../other/activations">激活函数</a>）</p>
+</li>
+<li>
+<p>use_bias: 布尔值，是否使用偏置项</p>
+</li>
+<li>
+<p>kernel_initializer：权值初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>recurrent_initializer：循环核的初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>bias_initializer：权值初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>kernel_regularizer：施加在权重上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>bias_regularizer：施加在偏置向量上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>recurrent_regularizer：施加在循环核上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>activity_regularizer：施加在输出上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>kernel_constraints：施加在权重上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>recurrent_constraints：施加在循环核上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>bias_constraints：施加在偏置上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>dropout：0~1之间的浮点数，控制输入线性变换的神经元断开比例</p>
+</li>
+<li>
+<p>recurrent_dropout：0~1之间的浮点数，控制循环状态的线性变换的神经元断开比例</p>
+</li>
+<li>其他参数参考Recurrent的说明</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../embedding_layer/" class="btn btn-neutral float-right" title="嵌入层Embedding">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../locally_connected_layer/" class="btn btn-neutral" title="局部连接层Locally-connented"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr><div><div id="rtd-c822kqb5" class="ethical-rtd"><div class="ethical-footer"><div class="ethical-content"><a href="https://readthedocs.org/sustainability/click/294/FZ4tx9O04c7B/" rel="nofollow" target="_blank" class="ethical-image-link"><img src="https://readthedocs.org/sustainability/view/294/FZ4tx9O04c7B/"></a><div class="ethical-text">A complete cloud platform designed for developers.<br><a href="https://readthedocs.org/sustainability/click/294/FZ4tx9O04c7B/" rel="nofollow" target="_blank">Try it free - $100 credit</a></div></div><div class="ethical-callout"><small><em><a href="https://readthedocs.org/sustainability/advertising/">Sponsored</a><span> · </span><a href="https://docs.readthedocs.io/en/latest/ethical-advertising.html">Ads served ethically</a></em></small></div></div></div><hr></div>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions"><!-- Inserted RTD Footer -->
+<div class="injected">
+
+  
+
+      
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+         <strong> 
+        <dd><a href="https://keras-cn.readthedocs.io/en/latest/layers/recurrent_layer/">latest</a></dd>
+         </strong> 
+        
+      </dl>
+      
+      
+
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/pdf/latest/">PDF</a></dd>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/htmlzip/latest/">HTML</a></dd>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/epub/latest/">Epub</a></dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        <!-- These are kept as relative links for internal installs that are http -->
+        <dt>On Read the Docs</dt>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/">Project Home</a>
+        </dd>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/builds/">Builds</a>
+        </dd>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/downloads/">Downloads</a>
+        </dd>
+      </dl>
+      
+
+      
+
+      
+      <dl>
+        <dt>On GitHub</dt>
+        <dd>
+          <a href="https://github.com/MoyanZitto/keras-cn/blob/master/home/docs/checkouts/readthedocs.org/user_builds/keras-cn/checkouts/latest/docs/layers/recurrent_layer.md">View</a>
+        </dd>
+        <dd>
+          <a href="https://github.com/MoyanZitto/keras-cn/edit/master/home/docs/checkouts/readthedocs.org/user_builds/keras-cn/checkouts/latest/docs/layers/recurrent_layer.md">Edit</a>
+        </dd>
+      </dl>
+      
+      
+
+      
+      <dl>
+        <dt>Search</dt>
+        <dd>
+          <div style="padding: 6px;">
+            <form id="flyout-search-form" class="wy-form" target="_blank" action="//readthedocs.org/projects/keras-cn/search/" method="get">
+              <input type="text" name="q" placeholder="Search docs">
+              </form>
+          </div>
+        </dd>
+      </dl>
+      
+
+
+
+      <hr>
+      
+        <small>
+          <span>Hosted by <a href="https://readthedocs.org">Read the Docs</a></span>
+          <span> · </span>
+          <a href="https://docs.readthedocs.io/en/latest/privacy-policy.html">Privacy Policy</a>
+        </small>
+      
+
+      
+
+</div>
+</div>
+  </div>
+
+
+
+</body></html>

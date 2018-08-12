@@ -1,0 +1,1858 @@
+<!DOCTYPE html><!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]--><!--[if gt IE 8]><!--><html class=" js flexbox flexboxlegacy canvas canvastext no-webgl touch no-geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent no-video no-audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en" style=""><!--<![endif]--><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="BigMoyan">
+  
+  <title>keras后端Backend - Keras中文文档</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css">
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css">
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="https://media.readthedocs.org/css/badge_only.css" rel="stylesheet">
+  <link href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" rel="stylesheet">
+
+  
+  <script async="" src="https://www.google-analytics.com/analytics.js"></script><script>
+    // Current page data
+    var mkdocs_page_name = "keras后端Backend";
+    var mkdocs_page_input_path = "backend.md";
+    var mkdocs_page_url = "/backend/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+  <script src="../readthedocs-data.js"></script>
+  <script src="https://media.readthedocs.org/static/core/js/readthedocs-doc-embed.js"></script>
+  <script src="https://media.readthedocs.org/javascript/readthedocs-analytics.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Keras中文文档</a>
+        <div role="search">
+  <form id="mkdocs-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs">
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./..info.html">主页</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>keras新手指南</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../for_beginners/concepts/info.html">一些基本概念</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../for_beginners/FAQ/info.html">常见问题与解答</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../for_beginners/keras_linux/info.html">Keras安装和配置指南(Linux)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../for_beginners/keras_windows/info.html">Keras安装和配置指南(Windows)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../for_beginners/trap/info.html">Keras使用陷阱</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>快速开始</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../getting_started/sequential_model/info.html">序贯模型</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../getting_started/functional_API/info.html">函数式模型</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>模型</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../models/about_model/info.html">关于Keras模型</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../models/sequential/info.html">序贯模型API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../models/model/info.html">函数式模型API</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>网络层</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../layers/about_layer/info.html">关于Keras层</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../layers/core_layer/info.html">常用层Core</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../layers/convolutional_layer/info.html">卷积层Convolutional</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../layers/pooling_layer/info.html">池化层Pooling</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../layers/locally_connected_layer/info.html">局部连接层Locally-connented</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../layers/recurrent_layer/info.html">循环层Recurrent</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../layers/embedding_layer/info.html">嵌入层Embedding</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../layers/merge/info.html">融合层Merge</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../layers/advanced_activation_layer/info.html">高级激活层Advanced Activation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../layers/normalization_layer/info.html">规范层BatchNormalization</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../layers/noise_layer/info.html">噪声层Noise</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../layers/wrapper/info.html">包装器Wrapper</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../layers/writting_layer/info.html">编写自己的层</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>数据预处理</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../preprocessing/sequence/info.html">序列预处理</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../preprocessing/text/info.html">文本预处理</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../preprocessing/image/info.html">图片预处理</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>网络配置</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../other/objectives/info.html">损失函数loss</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../other/optimizers/info.html">优化器Optimizer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../other/activations/info.html">激活函数Activation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../other/metrics/info.html">性能评估Metrices</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../other/initializations/info.html">初始化方法Initializers</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../other/regularizers/info.html">正则项Regularizer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../other/constraints/info.html">约束项Constraint</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../other/callbacks/info.html">回调函数Callback</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>协助使用Keras</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../other/application/info.html">预训练模型Application</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../other/datasets/info.html">常用数据库Dataset</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../other/visualization/info.html">可视化visualization</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../utils/info.html">工具</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    </li><li class="toctree-l1 current">
+        <a class="current" href="././info.html">keras后端Backend</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#keras">Keras后端</a></li>
+                
+                    <li><a class="toctree-l4" href="#_1">什么是“后端”</a></li>
+                
+                    <li><a class="toctree-l4" href="#_2">切换后端</a></li>
+                
+                    <li><a class="toctree-l4" href="#kerasjson">keras.json 细节</a></li>
+                
+                    <li><a class="toctree-l4" href="#keras_1">使用抽象的Keras后端来编写代码</a></li>
+                
+                    <li><a class="toctree-l4" href="#kera">Kera后端函数</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../scikit-learn_API/info.html">scikit-learn接口</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../acknowledgement/info.html">致谢</a>
+        
+    </li>
+<li>
+          
+        </li></ul>
+      </div>
+      &nbsp;
+    <div id="rtd-51wci6hn" class="ethical-rtd"></div></nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Keras中文文档</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> »</li>
+    
+      
+    
+    <li>keras后端Backend</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="keras">Keras后端</h1>
+<h2 id="_1">什么是“后端”</h2>
+<p>Keras是一个模型级的库，提供了快速构建深度学习网络的模块。Keras并不处理如张量乘法、卷积等底层操作。这些操作依赖于某种特定的、优化良好的张量操作库。Keras依赖于处理张量的库就称为“后端引擎”。Keras提供了三种后端引擎Theano/Tensorflow/CNTK，并将其函数统一封装，使得用户可以以同一个接口调用不同后端引擎的函数</p>
+<ul>
+<li><a href="http://deeplearning.net/software/theano/">Theano</a>是一个开源的符号主义张量操作框架，由蒙特利尔大学LISA/MILA实验室开发。</li>
+<li><a href="http://www.tensorflow.org/">TensorFlow</a>是一个符号主义的张量操作框架，由Google开发。</li>
+<li><a href="https://www.microsoft.com/en-us/cognitive-toolkit/">CNTK</a>是一个由微软开发的商业级工具包。</li>
+</ul>
+<p>在未来，我们有可能要添加更多的后端选项。</p>
+<h2 id="_2">切换后端</h2>
+<p>注意：Windows用户请把<code>$Home</code>改为<code>%USERPROFILE%</code></p>
+<p>如果你至少运行过一次Keras，你将在下面的目录下找到Keras的配置文件：</p>
+<p><code>$HOME/.keras/keras.json</code></p>
+<p>如果该目录下没有该文件，你可以手动创建一个</p>
+<p>文件的默认配置如下：</p>
+<pre><code class="hljs json">{
+    "<span class="hljs-attribute">image_data_format</span>": <span class="hljs-value"><span class="hljs-string">"channels_last"</span></span>,
+    "<span class="hljs-attribute">epsilon</span>": <span class="hljs-value"><span class="hljs-number">1e-07</span></span>,
+    "<span class="hljs-attribute">floatx</span>": <span class="hljs-value"><span class="hljs-string">"float32"</span></span>,
+    "<span class="hljs-attribute">backend</span>": <span class="hljs-value"><span class="hljs-string">"tensorflow"</span>
+</span>}
+</code></pre>
+
+<p>将<code>backend</code>字段的值改写为你需要使用的后端：<code>theano</code>或<code>tensorflow</code>或者<code>CNTK</code>，即可完成后端的切换</p>
+<p>我们也可以通过定义环境变量<code>KERAS_BACKEND</code>来覆盖上面配置文件中定义的后端：</p>
+<pre><code class="python hljs">KERAS_BACKEND=tensorflow python -c <span class="hljs-string">"from keras import backend;"</span>
+Using TensorFlow backend.
+</code></pre>
+
+<h2 id="kerasjson">keras.json 细节</h2>
+<pre><code class="python hljs">{
+    <span class="hljs-string">"image_data_format"</span>: <span class="hljs-string">"channels_last"</span>,
+    <span class="hljs-string">"epsilon"</span>: <span class="hljs-number">1e-07</span>,
+    <span class="hljs-string">"floatx"</span>: <span class="hljs-string">"float32"</span>,
+    <span class="hljs-string">"backend"</span>: <span class="hljs-string">"tensorflow"</span>
+}
+</code></pre>
+
+<p>你可以更改以上<code>~/.keras/keras.json</code>中的配置</p>
+<ul>
+<li>
+<p><code>iamge_data_format</code>：字符串，"channels_last"或"channels_first"，该选项指定了Keras将要使用的维度顺序，可通过<code>keras.backend.image_data_format()</code>来获取当前的维度顺序。对2D数据来说，"channels_last"假定维度顺序为(rows,cols,channels)而"channels_first"假定维度顺序为(channels, rows, cols)。对3D数据而言，"channels_last"假定(conv_dim1, conv_dim2, conv_dim3, channels)，"channels_first"则是(channels, conv_dim1, conv_dim2, conv_dim3)</p>
+</li>
+<li>
+<p><code>epsilon</code>：浮点数，防止除0错误的小数字</p>
+</li>
+<li><code>floatx</code>：字符串，<code>"float16"</code>, <code>"float32"</code>, <code>"float64"</code>之一，为浮点数精度</li>
+<li><code>backend</code>：字符串，所使用的后端，为"tensorflow"或"theano"</li>
+</ul>
+<h2 id="keras_1">使用抽象的Keras后端来编写代码</h2>
+<p>如果你希望你编写的Keras模块能够同时在Theano和TensorFlow两个后端上使用，你可以通过Keras后端接口来编写代码，这里是一个简介：</p>
+<pre><code class="python hljs"><span class="hljs-keyword">from</span> keras <span class="hljs-keyword">import</span> backend <span class="hljs-keyword">as</span> K
+</code></pre>
+
+<p>下面的代码实例化了一个输入占位符，等价于<code>tf.placeholder()</code> ，<code>T.matrix()</code>，<code>T.tensor3()</code>等</p>
+<pre><code class="python hljs">input = K.placeholder(shape=(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>))
+<span class="hljs-comment"># also works:</span>
+input = K.placeholder(shape=(<span class="hljs-keyword">None</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>))
+<span class="hljs-comment"># also works:</span>
+input = K.placeholder(ndim=<span class="hljs-number">3</span>)
+</code></pre>
+
+<p>下面的代码实例化了一个共享变量（shared），等价于<code>tf.variable()</code>或 <code>theano.shared()</code></p>
+<pre><code class="python hljs">val = np.random.random((<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>))
+var = K.variable(value=val)
+
+<span class="hljs-comment"># all-zeros variable:</span>
+var = K.zeros(shape=(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>))
+<span class="hljs-comment"># all-ones:</span>
+var = K.ones(shape=(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>))
+</code></pre>
+
+<p>大多数你需要的张量操作都可以通过统一的Keras后端接口完成，而不关心具体执行这些操作的是Theano还是TensorFlow</p>
+<pre><code class="python hljs">a = b + c * K.abs(d)
+c = K.dot(a, K.transpose(b))
+a = K.sum(b, axis=<span class="hljs-number">2</span>)
+a = K.softmax(b)
+a = concatenate([b, c], axis=-<span class="hljs-number">1</span>)
+<span class="hljs-comment"># etc...</span>
+</code></pre>
+
+<h2 id="kera">Kera后端函数</h2>
+<h3 id="backend">backend</h3>
+<pre><code class="python hljs">backend()
+</code></pre>
+
+<p>返回当前后端</p>
+<h3 id="epsilon">epsilon</h3>
+<pre><code class="python hljs">epsilon()
+</code></pre>
+
+<p>以数值形式返回一个（一般来说很小的）数，用以防止除0错误</p>
+<h3 id="set_epsilon">set_epsilon</h3>
+<pre><code class="python hljs">set_epsilon(e)
+</code></pre>
+
+<p>设置在数值表达式中使用的fuzz factor，用于防止除0错误，该值应该是一个较小的浮点数，示例：</p>
+<pre><code class="python hljs"><span class="hljs-prompt">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> keras <span class="hljs-keyword">import</span> backend <span class="hljs-keyword">as</span> K
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.epsilon()
+<span class="hljs-number">1e-08</span>
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.set_epsilon(<span class="hljs-number">1e-05</span>)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.epsilon()
+<span class="hljs-number">1e-05</span>
+</code></pre>
+
+<h3 id="floatx">floatx</h3>
+<pre><code class="python hljs">floatx()
+</code></pre>
+
+<p>返回默认的浮点数数据类型，为字符串，如 'float16', 'float32', 'float64'</p>
+<h3 id="set_floatxfloatx">set_floatx(floatx)</h3>
+<pre><code class="python hljs">floatx()
+</code></pre>
+
+<p>设置默认的浮点数数据类型，为字符串，如 'float16', 'float32', 'float64',示例：</p>
+<pre><code class="python hljs"><span class="hljs-prompt">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> keras <span class="hljs-keyword">import</span> backend <span class="hljs-keyword">as</span> K
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.floatx()
+<span class="hljs-string">'float32'</span>
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.set_floatx(<span class="hljs-string">'float16'</span>)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.floatx()
+<span class="hljs-string">'float16'</span>
+</code></pre>
+
+<h3 id="cast_to_floatx">cast_to_floatx</h3>
+<pre><code class="python hljs">cast_to_floatx(x)
+</code></pre>
+
+<p>将numpy array转换为默认的Keras floatx类型，x为numpy array，返回值也为numpy array但其数据类型变为floatx。示例：</p>
+<pre><code class="python hljs"><span class="hljs-prompt">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> keras <span class="hljs-keyword">import</span> backend <span class="hljs-keyword">as</span> K
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.floatx()
+<span class="hljs-string">'float32'</span>
+<span class="hljs-prompt">&gt;&gt;&gt; </span>arr = numpy.array([<span class="hljs-number">1.0</span>, <span class="hljs-number">2.0</span>], dtype=<span class="hljs-string">'float64'</span>)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>arr.dtype
+dtype(<span class="hljs-string">'float64'</span>)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>new_arr = K.cast_to_floatx(arr)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>new_arr
+array([ <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>], dtype=float32)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>new_arr.dtype
+dtype(<span class="hljs-string">'float32'</span>)
+</code></pre>
+
+<h3 id="image_data_format">image_data_format</h3>
+<pre><code class="python hljs">image_data_format()
+</code></pre>
+
+<p>返回默认的图像的维度顺序（‘channels_last’或‘channels_first’）</p>
+<h3 id="set_image_data_format">set_image_data_format</h3>
+<pre><code class="python hljs">set_image_data_format(data_format)
+</code></pre>
+
+<p>设置图像的维度顺序（‘tf’或‘th’）,示例：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>from keras import backend as K
+K.image_data_format()
+'channels_first'
+K.set_image_data_format('channels_last')
+K.image_data_format()
+'channels_last'</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<pre><code class="hljs scss">
+### <span class="hljs-function">is_keras_tensor</span>()
+​```python
+<span class="hljs-function">is_keras_tensor</span>(x)
+</code></pre>
+
+<p>判断x是否是keras tensor对象的谓词函数</p>
+<pre><code class="python hljs"><span class="hljs-prompt">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> keras <span class="hljs-keyword">import</span> backend <span class="hljs-keyword">as</span> K
+<span class="hljs-prompt">&gt;&gt;&gt; </span>np_var = numpy.array([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>])
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.is_keras_tensor(np_var)
+<span class="hljs-keyword">False</span>
+<span class="hljs-prompt">&gt;&gt;&gt; </span>keras_var = K.variable(np_var)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.is_keras_tensor(keras_var)  <span class="hljs-comment"># A variable is not a Tensor.</span>
+<span class="hljs-keyword">False</span>
+<span class="hljs-prompt">&gt;&gt;&gt; </span>keras_placeholder = K.placeholder(shape=(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>))
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.is_keras_tensor(keras_placeholder)  <span class="hljs-comment"># A placeholder is a Tensor.</span>
+<span class="hljs-keyword">True</span>
+</code></pre>
+
+<h3 id="get_uid">get_uid</h3>
+<pre><code class="python hljs">get_uid(prefix=<span class="hljs-string">''</span>)
+</code></pre>
+
+<p>获得默认计算图的uid，依据给定的前缀提供一个唯一的UID，参数为表示前缀的字符串，返回值为整数.</p>
+<h3 id="reset_uids">reset_uids</h3>
+<pre><code class="python hljs">reset_uids()
+</code></pre>
+
+<p>重置图的标识符</p>
+<h3 id="is_keras_tensor">is_keras_tensor</h3>
+<pre><code class="python hljs">is_keras_tensor(x)
+</code></pre>
+
+<p>判断x是否是一个Keras tensor，返回一个布尔值，示例</p>
+<pre><code class="python hljs"><span class="hljs-prompt">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> keras <span class="hljs-keyword">import</span> backend <span class="hljs-keyword">as</span> K
+<span class="hljs-prompt">&gt;&gt;&gt; </span>np_var = numpy.array([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>])
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.is_keras_tensor(np_var)
+<span class="hljs-keyword">False</span>
+<span class="hljs-prompt">&gt;&gt;&gt; </span>keras_var = K.variable(np_var)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.is_keras_tensor(keras_var)  <span class="hljs-comment"># A variable is not a Tensor.</span>
+<span class="hljs-keyword">False</span>
+<span class="hljs-prompt">&gt;&gt;&gt; </span>keras_placeholder = K.placeholder(shape=(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>))
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.is_keras_tensor(keras_placeholder)  <span class="hljs-comment"># A placeholder is a Tensor.</span>
+<span class="hljs-keyword">True</span>
+</code></pre>
+
+<h3 id="clear_session">clear_session</h3>
+<pre><code class="python hljs">clear_session()
+</code></pre>
+
+<p>结束当前的TF计算图，并新建一个。有效的避免模型/层的混乱</p>
+<h3 id="manual_variable_initialization">manual_variable_initialization</h3>
+<pre><code class="python hljs">manual_variable_initialization(value)
+</code></pre>
+
+<p>指出变量应该以其默认值被初始化还是由用户手动初始化，参数value为布尔值，默认False代表变量由其默认值初始化</p>
+<h3 id="learning_phase">learning_phase</h3>
+<pre><code class="python hljs">learning_phase()
+</code></pre>
+
+<p>返回训练模式/测试模式的flag，该flag是一个用以传入Keras模型的标记，以决定当前模型执行于训练模式下还是测试模式下</p>
+<h3 id="set_learning_phase">set_learning_phase</h3>
+<pre><code class="python hljs">set_learning_phase()
+</code></pre>
+
+<p>设置训练模式/测试模式0或1</p>
+<h3 id="is_sparse">is_sparse</h3>
+<pre><code class="python hljs">is_sparse(tensor)
+</code></pre>
+
+<p>判断一个tensor是不是一个稀疏的tensor(稀不稀疏由tensor的类型决定，而不是tensor实际上有多稀疏)，返回值是一个布尔值，示例：</p>
+<pre><code class="python hljs"><span class="hljs-prompt">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> keras <span class="hljs-keyword">import</span> backend <span class="hljs-keyword">as</span> K
+<span class="hljs-prompt">&gt;&gt;&gt; </span>a = K.placeholder((<span class="hljs-number">2</span>, <span class="hljs-number">2</span>), sparse=<span class="hljs-keyword">False</span>)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>print(K.is_sparse(a))
+<span class="hljs-keyword">False</span>
+<span class="hljs-prompt">&gt;&gt;&gt; </span>b = K.placeholder((<span class="hljs-number">2</span>, <span class="hljs-number">2</span>), sparse=<span class="hljs-keyword">True</span>)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>print(K.is_sparse(b))
+<span class="hljs-keyword">True</span>
+</code></pre>
+
+<h3 id="to_dense">to_dense</h3>
+<pre><code class="python hljs">to_dense(tensor)
+</code></pre>
+
+<p>将一个稀疏tensor转换一个不稀疏的tensor并返回之，示例：</p>
+<pre><code class="python hljs"><span class="hljs-prompt">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> keras <span class="hljs-keyword">import</span> backend <span class="hljs-keyword">as</span> K
+<span class="hljs-prompt">&gt;&gt;&gt; </span>b = K.placeholder((<span class="hljs-number">2</span>, <span class="hljs-number">2</span>), sparse=<span class="hljs-keyword">True</span>)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>print(K.is_sparse(b))
+<span class="hljs-keyword">True</span>
+<span class="hljs-prompt">&gt;&gt;&gt; </span>c = K.to_dense(b)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>print(K.is_sparse(c))
+<span class="hljs-keyword">False</span>
+</code></pre>
+
+<h3 id="variable">variable</h3>
+<pre><code class="python hljs">variable(value, dtype=<span class="hljs-string">'float32'</span>, name=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>实例化一个张量，返回之</p>
+<p>参数：</p>
+<ul>
+<li>value：用来初始化张量的值</li>
+<li>dtype：张量数据类型</li>
+<li>name：张量的名字（可选）</li>
+</ul>
+<p>示例：</p>
+<pre><code class="python hljs"><span class="hljs-prompt">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> keras <span class="hljs-keyword">import</span> backend <span class="hljs-keyword">as</span> K
+<span class="hljs-prompt">&gt;&gt;&gt; </span>val = np.array([[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>], [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>]])
+<span class="hljs-prompt">&gt;&gt;&gt; </span>kvar = K.variable(value=val, dtype=<span class="hljs-string">'float64'</span>, name=<span class="hljs-string">'example_var'</span>)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.dtype(kvar)
+<span class="hljs-string">'float64'</span>
+<span class="hljs-prompt">&gt;&gt;&gt; </span>print(kvar)
+example_var
+<span class="hljs-prompt">&gt;&gt;&gt; </span>kvar.eval()
+array([[ <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>],
+   [ <span class="hljs-number">3.</span>,  <span class="hljs-number">4.</span>]])
+</code></pre>
+
+<h3 id="placeholder">placeholder</h3>
+<pre><code class="python hljs">placeholder(shape=<span class="hljs-keyword">None</span>, ndim=<span class="hljs-keyword">None</span>, dtype=<span class="hljs-string">'float32'</span>, name=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>实例化一个占位符，返回之</p>
+<p>参数：</p>
+<ul>
+<li>shape：占位符的shape（整数tuple，可能包含None） </li>
+<li>ndim: 占位符张量的阶数，要初始化一个占位符，至少指定<code>shape</code>和<code>ndim</code>之一，如果都指定则使用<code>shape</code></li>
+<li>dtype: 占位符数据类型</li>
+<li>name: 占位符名称（可选）</li>
+</ul>
+<p>示例：</p>
+<pre><code class="python hljs"><span class="hljs-prompt">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> keras <span class="hljs-keyword">import</span> backend <span class="hljs-keyword">as</span> K
+<span class="hljs-prompt">&gt;&gt;&gt; </span>input_ph = K.placeholder(shape=(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>))
+<span class="hljs-prompt">&gt;&gt;&gt; </span>input_ph._keras_shape
+(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>input_ph
+&lt;tf.Tensor <span class="hljs-string">'Placeholder_4:0'</span> shape=(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>) dtype=float32&gt;
+</code></pre>
+
+<h3 id="shape">shape</h3>
+<pre><code class="python hljs">shape(x)
+</code></pre>
+
+<p>返回一个张量的符号shape，符号shape的意思是返回值本身也是一个tensor，示例：</p>
+<pre><code class="python hljs"><span class="hljs-prompt">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> keras <span class="hljs-keyword">import</span> backend <span class="hljs-keyword">as</span> K
+<span class="hljs-prompt">&gt;&gt;&gt; </span>tf_session = K.get_session()
+<span class="hljs-prompt">&gt;&gt;&gt; </span>val = np.array([[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>], [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>]])
+<span class="hljs-prompt">&gt;&gt;&gt; </span>kvar = K.variable(value=val)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>input = keras.backend.placeholder(shape=(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>))
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.shape(kvar)
+&lt;tf.Tensor <span class="hljs-string">'Shape_8:0'</span> shape=(<span class="hljs-number">2</span>,) dtype=int32&gt;
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.shape(input)
+&lt;tf.Tensor <span class="hljs-string">'Shape_9:0'</span> shape=(<span class="hljs-number">3</span>,) dtype=int32&gt;
+__To get integer shape (Instead, you can use K.int_shape(x))__
+
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.shape(kvar).eval(session=tf_session)
+array([<span class="hljs-number">2</span>, <span class="hljs-number">2</span>], dtype=int32)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.shape(input).eval(session=tf_session)
+array([<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>], dtype=int32)
+</code></pre>
+
+<h3 id="int_shape">int_shape</h3>
+<pre><code class="python hljs">int_shape(x)
+</code></pre>
+
+<p>以整数Tuple或None的形式返回张量shape，示例：</p>
+<pre><code class="python hljs"><span class="hljs-prompt">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> keras <span class="hljs-keyword">import</span> backend <span class="hljs-keyword">as</span> K
+<span class="hljs-prompt">&gt;&gt;&gt; </span>input = K.placeholder(shape=(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>))
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.int_shape(input)
+(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>val = np.array([[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>], [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>]])
+<span class="hljs-prompt">&gt;&gt;&gt; </span>kvar = K.variable(value=val)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.int_shape(kvar)
+(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>)
+</code></pre>
+
+<h3 id="ndim">ndim</h3>
+<pre><code class="python hljs">ndim(x)
+</code></pre>
+
+<p>返回张量的阶数，为整数，示例：</p>
+<pre><code class="python hljs"><span class="hljs-prompt">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> keras <span class="hljs-keyword">import</span> backend <span class="hljs-keyword">as</span> K
+<span class="hljs-prompt">&gt;&gt;&gt; </span>input = K.placeholder(shape=(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>))
+<span class="hljs-prompt">&gt;&gt;&gt; </span>val = np.array([[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>], [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>]])
+<span class="hljs-prompt">&gt;&gt;&gt; </span>kvar = K.variable(value=val)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.ndim(input)
+<span class="hljs-number">3</span>
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.ndim(kvar)
+<span class="hljs-number">2</span>
+</code></pre>
+
+<h3 id="dtype">dtype</h3>
+<pre><code class="python hljs">dtype(x)
+</code></pre>
+
+<p>返回张量的数据类型，为字符串，示例：</p>
+<pre><code class="python hljs"><span class="hljs-prompt">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> keras <span class="hljs-keyword">import</span> backend <span class="hljs-keyword">as</span> K
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.dtype(K.placeholder(shape=(<span class="hljs-number">2</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>)))
+<span class="hljs-string">'float32'</span>
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.dtype(K.placeholder(shape=(<span class="hljs-number">2</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>), dtype=<span class="hljs-string">'float32'</span>))
+<span class="hljs-string">'float32'</span>
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.dtype(K.placeholder(shape=(<span class="hljs-number">2</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>), dtype=<span class="hljs-string">'float64'</span>))
+<span class="hljs-string">'float64'</span>
+__Keras variable__
+
+<span class="hljs-prompt">&gt;&gt;&gt; </span>kvar = K.variable(np.array([[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>], [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>]]))
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.dtype(kvar)
+<span class="hljs-string">'float32_ref'</span>
+<span class="hljs-prompt">&gt;&gt;&gt; </span>kvar = K.variable(np.array([[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>], [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>]]), dtype=<span class="hljs-string">'float32'</span>)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.dtype(kvar)
+<span class="hljs-string">'float32_ref'</span>
+</code></pre>
+
+<h3 id="eval">eval</h3>
+<pre><code class="python hljs">eval(x)
+</code></pre>
+
+<p>求得张量的值，返回一个Numpy array，示例：</p>
+<pre><code class="python hljs"><span class="hljs-prompt">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> keras <span class="hljs-keyword">import</span> backend <span class="hljs-keyword">as</span> K
+<span class="hljs-prompt">&gt;&gt;&gt; </span>kvar = K.variable(np.array([[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>], [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>]]), dtype=<span class="hljs-string">'float32'</span>)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.eval(kvar)
+array([[ <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>],
+   [ <span class="hljs-number">3.</span>,  <span class="hljs-number">4.</span>]], dtype=float32)
+</code></pre>
+
+<h3 id="zeros">zeros</h3>
+<pre><code class="python hljs">zeros(shape, dtype=<span class="hljs-string">'float32'</span>, name=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>生成一个全0张量，示例：</p>
+<pre><code class="python hljs"><span class="hljs-prompt">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> keras <span class="hljs-keyword">import</span> backend <span class="hljs-keyword">as</span> K
+<span class="hljs-prompt">&gt;&gt;&gt; </span>kvar = K.zeros((<span class="hljs-number">3</span>,<span class="hljs-number">4</span>))
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.eval(kvar)
+array([[ <span class="hljs-number">0.</span>,  <span class="hljs-number">0.</span>,  <span class="hljs-number">0.</span>,  <span class="hljs-number">0.</span>],
+   [ <span class="hljs-number">0.</span>,  <span class="hljs-number">0.</span>,  <span class="hljs-number">0.</span>,  <span class="hljs-number">0.</span>],
+   [ <span class="hljs-number">0.</span>,  <span class="hljs-number">0.</span>,  <span class="hljs-number">0.</span>,  <span class="hljs-number">0.</span>]], dtype=float32)
+</code></pre>
+
+<h3 id="ones">ones</h3>
+<pre><code class="python hljs">ones(shape, dtype=<span class="hljs-string">'float32'</span>, name=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>生成一个全1张量，示例</p>
+<pre><code class="python hljs"><span class="hljs-prompt">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> keras <span class="hljs-keyword">import</span> backend <span class="hljs-keyword">as</span> K
+<span class="hljs-prompt">&gt;&gt;&gt; </span>kvar = K.ones((<span class="hljs-number">3</span>,<span class="hljs-number">4</span>))
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.eval(kvar)
+array([[ <span class="hljs-number">1.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">1.</span>],
+   [ <span class="hljs-number">1.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">1.</span>],
+   [ <span class="hljs-number">1.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">1.</span>]], dtype=float32)
+</code></pre>
+
+<h3 id="eye">eye</h3>
+<pre><code class="python hljs">eye(size, dtype=<span class="hljs-string">'float32'</span>, name=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>生成一个单位矩阵，示例：</p>
+<pre><code class="python hljs"><span class="hljs-prompt">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> keras <span class="hljs-keyword">import</span> backend <span class="hljs-keyword">as</span> K
+<span class="hljs-prompt">&gt;&gt;&gt; </span>kvar = K.eye(<span class="hljs-number">3</span>)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.eval(kvar)
+array([[ <span class="hljs-number">1.</span>,  <span class="hljs-number">0.</span>,  <span class="hljs-number">0.</span>],
+   [ <span class="hljs-number">0.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">0.</span>],
+   [ <span class="hljs-number">0.</span>,  <span class="hljs-number">0.</span>,  <span class="hljs-number">1.</span>]], dtype=float32)
+</code></pre>
+
+<h3 id="zeros_like">zeros_like</h3>
+<pre><code class="python hljs">zeros_like(x, name=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>生成与另一个张量x的shape相同的全0张量，示例：</p>
+<pre><code class="python hljs"><span class="hljs-prompt">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> keras <span class="hljs-keyword">import</span> backend <span class="hljs-keyword">as</span> K
+<span class="hljs-prompt">&gt;&gt;&gt; </span>kvar = K.variable(np.random.random((<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)))
+<span class="hljs-prompt">&gt;&gt;&gt; </span>kvar_zeros = K.zeros_like(kvar)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.eval(kvar_zeros)
+array([[ <span class="hljs-number">0.</span>,  <span class="hljs-number">0.</span>,  <span class="hljs-number">0.</span>],
+   [ <span class="hljs-number">0.</span>,  <span class="hljs-number">0.</span>,  <span class="hljs-number">0.</span>]], dtype=float32)
+</code></pre>
+
+<h3 id="ones_like">ones_like</h3>
+<pre><code class="python hljs">ones_like(x, name=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>生成与另一个张量shape相同的全1张量，示例：</p>
+<pre><code class="python hljs"><span class="hljs-prompt">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> keras <span class="hljs-keyword">import</span> backend <span class="hljs-keyword">as</span> K
+<span class="hljs-prompt">&gt;&gt;&gt; </span>kvar = K.variable(np.random.random((<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)))
+<span class="hljs-prompt">&gt;&gt;&gt; </span>kvar_ones = K.ones_like(kvar)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.eval(kvar_ones)
+array([[ <span class="hljs-number">1.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">1.</span>],
+   [ <span class="hljs-number">1.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">1.</span>]], dtype=float32)
+</code></pre>
+
+<h3 id="random_uniform_variable">random_uniform_variable</h3>
+<pre><code class="python hljs">random_uniform_variable(shape, low, high, dtype=<span class="hljs-keyword">None</span>, name=<span class="hljs-keyword">None</span>, seed=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>初始化一个Keras变量，其数值为从一个均匀分布中采样的样本，返回之。</p>
+<p>参数：</p>
+<ul>
+<li>shape：张量shape</li>
+<li>low：浮点数，均匀分布之下界</li>
+<li>high：浮点数，均匀分布之上界</li>
+<li>dtype：数据类型</li>
+<li>name：张量名</li>
+<li>seed：随机数种子</li>
+</ul>
+<p>示例：</p>
+<pre><code class="python hljs"><span class="hljs-prompt">&gt;&gt;&gt; </span>kvar = K.random_uniform_variable((<span class="hljs-number">2</span>,<span class="hljs-number">3</span>), <span class="hljs-number">0</span>, <span class="hljs-number">1</span>)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>kvar
+&lt;tensorflow.python.ops.variables.Variable object at <span class="hljs-number">0x10ab40b10</span>&gt;
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.eval(kvar)
+array([[ <span class="hljs-number">0.10940075</span>,  <span class="hljs-number">0.10047495</span>,  <span class="hljs-number">0.476143</span>  ],
+   [ <span class="hljs-number">0.66137183</span>,  <span class="hljs-number">0.00869417</span>,  <span class="hljs-number">0.89220798</span>]], dtype=float32)
+</code></pre>
+
+<h3 id="count_params">count_params</h3>
+<pre><code class="python hljs">count_params(x)
+</code></pre>
+
+<p>返回张量中标量的个数，示例：</p>
+<pre><code class="python hljs"><span class="hljs-prompt">&gt;&gt;&gt; </span>kvar = K.zeros((<span class="hljs-number">2</span>,<span class="hljs-number">3</span>))
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.count_params(kvar)
+<span class="hljs-number">6</span>
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.eval(kvar)
+array([[ <span class="hljs-number">0.</span>,  <span class="hljs-number">0.</span>,  <span class="hljs-number">0.</span>],
+   [ <span class="hljs-number">0.</span>,  <span class="hljs-number">0.</span>,  <span class="hljs-number">0.</span>]], dtype=float32)
+</code></pre>
+
+<h3 id="cast">cast</h3>
+<pre><code class="python hljs">cast(x, dtype)
+</code></pre>
+
+<p>改变张量的数据类型，dtype只能是<code>float16</code>, <code>float32</code>或<code>float64</code>之一，示例：</p>
+<pre><code class="python hljs"><span class="hljs-prompt">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> keras <span class="hljs-keyword">import</span> backend <span class="hljs-keyword">as</span> K
+<span class="hljs-prompt">&gt;&gt;&gt; </span>input = K.placeholder((<span class="hljs-number">2</span>, <span class="hljs-number">3</span>), dtype=<span class="hljs-string">'float32'</span>)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>input
+&lt;tf.Tensor <span class="hljs-string">'Placeholder_2:0'</span> shape=(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>) dtype=float32&gt;
+__It doesn<span class="hljs-string">'t work in-place as below.__
+
+&gt;&gt;&gt; K.cast(input, dtype='</span>float16<span class="hljs-string">')
+&lt;tf.Tensor '</span>Cast_1:<span class="hljs-number">0</span><span class="hljs-string">' shape=(2, 3) dtype=float16&gt;
+&gt;&gt;&gt; input
+&lt;tf.Tensor '</span>Placeholder_2:<span class="hljs-number">0</span><span class="hljs-string">' shape=(2, 3) dtype=float32&gt;
+__you need to assign it.__
+
+&gt;&gt;&gt; input = K.cast(input, dtype='</span>float16<span class="hljs-string">')
+&gt;&gt;&gt; input
+&lt;tf.Tensor '</span>Cast_2:<span class="hljs-number">0</span><span class="hljs-string">' shape=(2, 3) dtype=float16&gt;```
+</span></code></pre>
+
+<h3 id="update">update</h3>
+<pre><code class="python hljs">update(x, new_x)
+</code></pre>
+
+<p>用new_x更新x</p>
+<h3 id="update_add">update_add</h3>
+<pre><code class="python hljs">update_add(x, increment)
+</code></pre>
+
+<p>通过将x增加increment更新x</p>
+<h3 id="update_sub">update_sub</h3>
+<pre><code class="python hljs">update_sub(x, decrement)
+</code></pre>
+
+<p>通过将x减少decrement更新x</p>
+<h3 id="moving_average_update">moving_average_update</h3>
+<pre><code class="python hljs">moving_average_update(x, value, momentum)
+</code></pre>
+
+<p>含义暂不明确</p>
+<h3 id="dot">dot</h3>
+<pre><code class="python hljs">dot(x, y)
+</code></pre>
+
+<p>求两个张量的乘积。当试图计算两个N阶张量的乘积时，与Theano行为相同，如<code>(2, 3).(4, 3, 5) = (2, 4, 5))</code>，示例：</p>
+<pre><code class="python hljs"><span class="hljs-prompt">&gt;&gt;&gt; </span>x = K.placeholder(shape=(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>))
+<span class="hljs-prompt">&gt;&gt;&gt; </span>y = K.placeholder(shape=(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>))
+<span class="hljs-prompt">&gt;&gt;&gt; </span>xy = K.dot(x, y)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>xy
+&lt;tf.Tensor <span class="hljs-string">'MatMul_9:0'</span> shape=(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>) dtype=float32&gt;
+</code></pre>
+
+<pre><code class="python hljs"><span class="hljs-prompt">&gt;&gt;&gt; </span>x = K.placeholder(shape=(<span class="hljs-number">32</span>, <span class="hljs-number">28</span>, <span class="hljs-number">3</span>))
+<span class="hljs-prompt">&gt;&gt;&gt; </span>y = K.placeholder(shape=(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>))
+<span class="hljs-prompt">&gt;&gt;&gt; </span>xy = K.dot(x, y)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>xy
+&lt;tf.Tensor <span class="hljs-string">'MatMul_9:0'</span> shape=(<span class="hljs-number">32</span>, <span class="hljs-number">28</span>, <span class="hljs-number">4</span>) dtype=float32&gt;
+</code></pre>
+
+<p>Theano-like的行为示例：</p>
+<pre><code class="python hljs"><span class="hljs-prompt">&gt;&gt;&gt; </span>x = K.random_uniform_variable(shape=(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>), low=<span class="hljs-number">0</span>, high=<span class="hljs-number">1</span>)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>y = K.ones((<span class="hljs-number">4</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>))
+<span class="hljs-prompt">&gt;&gt;&gt; </span>xy = K.dot(x, y)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.int_shape(xy)
+(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>)
+</code></pre>
+
+<h3 id="batch_dot">batch_dot</h3>
+<pre><code class="python hljs">batch_dot(x, y, axes=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>按批进行张量乘法，该函数用于计算x和y的点积，其中x和y都是成batch出现的数据。即它的数据shape形如<code>(batch_size,:)</code>。batch_dot将产生比输入张量维度低的张量，如果张量的维度被减至1，则通过<code>expand_dims</code>保证其维度至少为2
+例如，假设<code>x = [[1, 2],[3,4]]</code> ， <code>y = [[5, 6],[7, 8]]</code>，则<code>batch_dot(x, y, axes=1) = [[17, 53]]</code>，即<code>x.dot(y.T)</code>的主对角元素，此过程中我们没有计算过反对角元素的值</p>
+<p>参数：</p>
+<ul>
+<li>x,y：阶数大于等于2的张量，在tensorflow下，只支持大于等于3阶的张量</li>
+<li>axes：目标结果的维度，为整数或整数列表，<code>axes[0]</code>和<code>axes[1]</code>应相同</li>
+</ul>
+<p>示例：
+假设<code>x=[[1,2],[3,4]]</code>，<code>y=[[5,6],[7,8]]</code>，则<code>batch_dot(x, y, axes=1)</code>为<code>[[17, 53]]</code>，恰好为<code>x.dot(y.T)</code>的主对角元，整个过程没有计算反对角元的元素。</p>
+<p>我们做一下shape的推导，假设x是一个shape为(100,20)的tensor，y是一个shape为(100,30,20)的tensor，假设<code>axes=(1,2)</code>，则输出tensor的shape通过循环x.shape和y.shape确定：</p>
+<ul>
+<li><code>x.shape[0]</code>：值为100，加入到输入shape里</li>
+<li><code>x.shape[1]</code>：20，不加入输出shape里，因为该维度的值会被求和(dot_axes[0]=1)</li>
+<li><code>y.shape[0]</code>：值为100，不加入到输出shape里，y的第一维总是被忽略</li>
+<li><code>y.shape[1]</code>：30，加入到输出shape里</li>
+<li>
+<p><code>y.shape[2]</code>：20，不加到output shape里，y的第二个维度会被求和(dot_axes[1]=2)</p>
+</li>
+<li>
+<p>结果为(100, 30)</p>
+</li>
+</ul>
+<pre><code class="python hljs"><span class="hljs-prompt">&gt;&gt;&gt; </span>x_batch = K.ones(shape=(<span class="hljs-number">32</span>, <span class="hljs-number">20</span>, <span class="hljs-number">1</span>))
+<span class="hljs-prompt">&gt;&gt;&gt; </span>y_batch = K.ones(shape=(<span class="hljs-number">32</span>, <span class="hljs-number">30</span>, <span class="hljs-number">20</span>))
+<span class="hljs-prompt">&gt;&gt;&gt; </span>xy_batch_dot = K.batch_dot(x_batch, y_batch, axes=[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>])
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.int_shape(xy_batch_dot)
+(<span class="hljs-number">32</span>, <span class="hljs-number">1</span>, <span class="hljs-number">30</span>)
+</code></pre>
+
+<h3 id="transpose">transpose</h3>
+<pre><code class="python hljs">transpose(x)
+</code></pre>
+
+<p>张量转置，返回转置后的tensor，示例：</p>
+<pre><code class="python hljs"><span class="hljs-prompt">&gt;&gt;&gt; </span>var = K.variable([[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]])
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.eval(var)
+array([[ <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">3.</span>],
+   [ <span class="hljs-number">4.</span>,  <span class="hljs-number">5.</span>,  <span class="hljs-number">6.</span>]], dtype=float32)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>var_transposed = K.transpose(var)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>K.eval(var_transposed)
+array([[ <span class="hljs-number">1.</span>,  <span class="hljs-number">4.</span>],
+   [ <span class="hljs-number">2.</span>,  <span class="hljs-number">5.</span>],
+   [ <span class="hljs-number">3.</span>,  <span class="hljs-number">6.</span>]], dtype=float32)
+
+<span class="hljs-prompt">&gt;&gt;&gt; </span>input = K.placeholder((<span class="hljs-number">2</span>, <span class="hljs-number">3</span>))
+<span class="hljs-prompt">&gt;&gt;&gt; </span>input
+&lt;tf.Tensor <span class="hljs-string">'Placeholder_11:0'</span> shape=(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>) dtype=float32&gt;
+<span class="hljs-prompt">&gt;&gt;&gt; </span>input_transposed = K.transpose(input)
+<span class="hljs-prompt">&gt;&gt;&gt; </span>input_transposed
+&lt;tf.Tensor <span class="hljs-string">'transpose_4:0'</span> shape=(<span class="hljs-number">3</span>, <span class="hljs-number">2</span>) dtype=float32&gt;
+
+</code></pre>
+
+<h3 id="gather">gather</h3>
+<pre><code class="python hljs">gather(reference, indices)
+</code></pre>
+
+<p>在给定的张量中检索给定下标的向量</p>
+<p>参数：</p>
+<ul>
+<li>reference：张量</li>
+<li>indices：整数张量，其元素为要查询的下标</li>
+</ul>
+<p>返回值：一个与<code>reference</code>数据类型相同的张量</p>
+<h3 id="max">max</h3>
+<pre><code class="python hljs">max(x, axis=<span class="hljs-keyword">None</span>, keepdims=<span class="hljs-keyword">False</span>)
+</code></pre>
+
+<p>求张量中的最大值</p>
+<h3 id="min">min</h3>
+<pre><code class="python hljs">min(x, axis=<span class="hljs-keyword">None</span>, keepdims=<span class="hljs-keyword">False</span>)
+</code></pre>
+
+<p>求张量中的最小值</p>
+<h3 id="sum">sum</h3>
+<pre><code class="python hljs">sum(x, axis=<span class="hljs-keyword">None</span>, keepdims=<span class="hljs-keyword">False</span>)
+</code></pre>
+
+<p>在给定轴上计算张量中元素之和</p>
+<h3 id="prod">prod</h3>
+<pre><code class="python hljs">prod(x, axis=<span class="hljs-keyword">None</span>, keepdims=<span class="hljs-keyword">False</span>)
+</code></pre>
+
+<p>在给定轴上计算张量中元素之积</p>
+<h3 id="cumsum">cumsum</h3>
+<pre><code class="python hljs">cumsum(x, axis=<span class="hljs-number">0</span>)
+</code></pre>
+
+<p>在给定轴上求张量的累积和</p>
+<h3 id="cumprod">cumprod</h3>
+<pre><code class="python hljs">cumprod(x, axis=<span class="hljs-number">0</span>)
+</code></pre>
+
+<p>在给定轴上求张量的累积积</p>
+<h3 id="var">var</h3>
+<pre><code class="python hljs">var(x, axis=<span class="hljs-keyword">None</span>, keepdims=<span class="hljs-keyword">False</span>)
+</code></pre>
+
+<p>在给定轴上计算张量方差</p>
+<h3 id="std">std</h3>
+<pre><code class="python hljs">std(x, axis=<span class="hljs-keyword">None</span>, keepdims=<span class="hljs-keyword">False</span>)
+</code></pre>
+
+<p>在给定轴上求张量元素之标准差</p>
+<h3 id="mean">mean</h3>
+<pre><code class="python hljs">mean(x, axis=<span class="hljs-keyword">None</span>, keepdims=<span class="hljs-keyword">False</span>)
+</code></pre>
+
+<p>在给定轴上求张量元素之均值</p>
+<h3 id="any">any</h3>
+<pre><code class="python hljs">any(x, axis=<span class="hljs-keyword">None</span>, keepdims=<span class="hljs-keyword">False</span>)
+</code></pre>
+
+<p>按位或，返回数据类型为uint8的张量（元素为0或1）</p>
+<h3 id="all">all</h3>
+<pre><code class="python hljs">any(x, axis=<span class="hljs-keyword">None</span>, keepdims=<span class="hljs-keyword">False</span>)
+</code></pre>
+
+<p>按位与，返回类型为uint8de tensor</p>
+<h3 id="argmax">argmax</h3>
+<pre><code class="python hljs">argmax(x, axis=-<span class="hljs-number">1</span>)
+</code></pre>
+
+<p>在给定轴上求张量之最大元素下标</p>
+<h3 id="argmin">argmin</h3>
+<pre><code class="python hljs">argmin(x, axis=-<span class="hljs-number">1</span>)
+</code></pre>
+
+<p>在给定轴上求张量之最小元素下标</p>
+<h3 id="square">square</h3>
+<pre><code class="python hljs">square(x)
+</code></pre>
+
+<p>逐元素平方</p>
+<h3 id="abs">abs</h3>
+<pre><code class="python hljs">abs(x)
+</code></pre>
+
+<p>逐元素绝对值</p>
+<h3 id="sqrt">sqrt</h3>
+<pre><code class="python hljs">sqrt(x)
+</code></pre>
+
+<p>逐元素开方</p>
+<h3 id="exp">exp</h3>
+<pre><code class="python hljs">exp(x)
+</code></pre>
+
+<p>逐元素求自然指数</p>
+<h3 id="log">log</h3>
+<pre><code class="python hljs">log(x)
+</code></pre>
+
+<p>逐元素求自然对数</p>
+<h3 id="logsumexp">logsumexp</h3>
+<pre><code class="python hljs">logsumexp(x, axis=<span class="hljs-keyword">None</span>, keepdims=<span class="hljs-keyword">False</span>)
+</code></pre>
+
+<p>在给定轴上计算log(sum(exp()))，该函数在数值稳定性上超过直接计算log(sum(exp()))，可以避免由exp和log导致的上溢和下溢</p>
+<h3 id="round">round</h3>
+<pre><code class="python hljs">round(x)
+</code></pre>
+
+<p>逐元素四舍五入</p>
+<h3 id="sign">sign</h3>
+<pre><code class="python hljs">sign(x)
+</code></pre>
+
+<p>逐元素求元素的符号（+1或-1）</p>
+<h3 id="pow">pow</h3>
+<pre><code class="python hljs">pow(x, a)
+</code></pre>
+
+<p>逐元素求x的a次方</p>
+<h3 id="clip">clip</h3>
+<pre><code class="python hljs">clip(x, min_value, max_value)
+</code></pre>
+
+<p>逐元素clip（将超出指定范围的数强制变为边界值）</p>
+<h3 id="equal">equal</h3>
+<pre><code class="python hljs">equal(x, y)
+</code></pre>
+
+<p>逐元素判相等关系，返回布尔张量</p>
+<h3 id="not_equal">not_equal</h3>
+<pre><code class="python hljs">not_equal(x, y)
+</code></pre>
+
+<p>逐元素判不等关系，返回布尔张量</p>
+<h3 id="greater">greater</h3>
+<pre><code class="python hljs">greater(x,y)
+</code></pre>
+
+<p>逐元素判断x&gt;y关系，返回布尔张量</p>
+<h3 id="greater_equal">greater_equal</h3>
+<pre><code class="python hljs">greater_equal(x,y)
+</code></pre>
+
+<p>逐元素判断x&gt;=y关系，返回布尔张量</p>
+<h3 id="lesser">lesser</h3>
+<pre><code class="python hljs">lesser(x,y)
+</code></pre>
+
+<p>逐元素判断x&lt;y关系，返回布尔张量</p>
+<h3 id="lesser_equal">lesser_equal</h3>
+<pre><code class="python hljs">lesser_equal(x,y)
+</code></pre>
+
+<p>逐元素判断x&lt;=y关系，返回布尔张量</p>
+<h3 id="maximum">maximum</h3>
+<pre><code class="python hljs">maximum(x, y)
+</code></pre>
+
+<p>逐元素取两个张量的最大值</p>
+<h3 id="minimum">minimum</h3>
+<pre><code class="python hljs">minimum(x, y)
+</code></pre>
+
+<p>逐元素取两个张量的最小值</p>
+<h3 id="sin">sin</h3>
+<pre><code class="python hljs">sin(x)
+</code></pre>
+
+<p>逐元素求正弦值</p>
+<h3 id="cos">cos</h3>
+<pre><code class="python hljs">cos(x)
+</code></pre>
+
+<p>逐元素求余弦值</p>
+<h3 id="normalize_batch_in_training">normalize_batch_in_training</h3>
+<pre><code class="python hljs">normalize_batch_in_training(x, gamma, beta, reduction_axes, epsilon=<span class="hljs-number">0.0001</span>)
+</code></pre>
+
+<p>对一个batch数据先计算其均值和方差，然后再进行batch_normalization</p>
+<h3 id="batch_normalization">batch_normalization</h3>
+<pre><code class="python hljs">batch_normalization(x, mean, var, beta, gamma, epsilon=<span class="hljs-number">0.0001</span>)
+</code></pre>
+
+<p>对一个batch的数据进行batch_normalization，计算公式为：
+output = (x-mean)/(sqrt(var)+epsilon)*gamma+beta</p>
+<h3 id="concatenate">concatenate</h3>
+<pre><code class="python hljs">concatenate(tensors, axis=-<span class="hljs-number">1</span>)
+</code></pre>
+
+<p>在给定轴上将一个列表中的张量串联为一个张量 specified axis</p>
+<h3 id="reshape">reshape</h3>
+<pre><code class="python hljs">reshape(x, shape)
+</code></pre>
+
+<p>将张量的shape变换为指定shape</p>
+<h3 id="permute_dimensions">permute_dimensions</h3>
+<pre><code class="python hljs">permute_dimensions(x, pattern)
+</code></pre>
+
+<p>按照给定的模式重排一个张量的轴</p>
+<p>参数：</p>
+<ul>
+<li>pattern：代表维度下标的tuple如<code>(0, 2, 1)</code></li>
+</ul>
+<h3 id="resize_images">resize_images</h3>
+<pre><code class="python hljs">resize_images(X, height_factor, width_factor, dim_ordering)
+</code></pre>
+
+<p>依据给定的缩放因子，改变一个batch图片的shape，参数中的两个因子都为正整数，图片的排列顺序与维度的模式相关，如‘th’和‘tf’</p>
+<h3 id="resize_volumes">resize_volumes</h3>
+<pre><code class="python hljs">resize_volumes(X, depth_factor, height_factor, width_factor, dim_ordering)
+</code></pre>
+
+<p>依据给定的缩放因子，改变一个5D张量数据的shape，参数中的两个因子都为正整数，图片的排列顺序与维度的模式相关，如‘th’和‘tf’。5D数据的形式是<a href="../th">batch, channels, depth, height, width</a>或<a href="../tf">batch, depth, height, width, channels</a></p>
+<h3 id="repeat_elements">repeat_elements</h3>
+<pre><code class="python hljs">repeat_elements(x, rep, axis)
+</code></pre>
+
+<p>在给定轴上重复张量元素<code>rep</code>次，与<code>np.repeat</code>类似。例如，若xshape<code>(s1, s2, s3)</code>并且给定轴为<code>axis=1`，输出张量的shape为`(s1, s2 * rep, s3)</code></p>
+<h3 id="repeat">repeat</h3>
+<pre><code class="python hljs">repeat(x, n)
+</code></pre>
+
+<p>重复2D张量，例如若xshape是<code>(samples, dim)</code>且n为2，则输出张量的shape是<code>(samples, 2, dim)</code></p>
+<h3 id="arange">arange</h3>
+<pre><code class="python hljs">arange(start, stop=<span class="hljs-keyword">None</span>, step=<span class="hljs-number">1</span>, dtype=<span class="hljs-string">'int32'</span>)
+</code></pre>
+
+<p>生成1D的整数序列张量，该函数的参数与Theano的arange函数含义相同，如果只有一个参数被提供了，那么它实际上就是<code>stop</code>参数的值</p>
+<p>为了与tensorflow的默认保持匹配，函数返回张量的默认数据类型是<code>int32</code></p>
+<h3 id="tile">tile</h3>
+<pre><code class="python hljs">tile(x, n)
+</code></pre>
+
+<p>将x在各个维度上重复n次，x为张量，n为与x维度数目相同的列表</p>
+<h3 id="batch_flatten">batch_flatten</h3>
+<pre><code class="python hljs">batch_flatten(x)
+</code></pre>
+
+<p>将一个n阶张量转变为2阶张量，其第一维度保留不变</p>
+<h3 id="expand_dims">expand_dims</h3>
+<pre><code class="python hljs">expand_dims(x, dim=-<span class="hljs-number">1</span>)
+</code></pre>
+
+<p>在下标为<code>dim</code>的轴上增加一维</p>
+<h3 id="squeeze">squeeze</h3>
+<pre><code class="python hljs">squeeze(x, axis)
+</code></pre>
+
+<p>将下标为<code>axis</code>的一维从张量中移除</p>
+<h3 id="temporal_padding">temporal_padding</h3>
+<pre><code class="python hljs">temporal_padding(x, padding=<span class="hljs-number">1</span>)
+</code></pre>
+
+<p>向3D张量中间的那个维度的左右两端填充<code>padding</code>个0值</p>
+<h3 id="asymmetric_temporal_padding">asymmetric_temporal_padding</h3>
+<pre><code class="python hljs">asymmetric_temporal_padding(x, left_pad=<span class="hljs-number">1</span>, right_pad=<span class="hljs-number">1</span>)
+</code></pre>
+
+<p>向3D张量中间的那个维度的一端填充<code>padding</code>个0值</p>
+<h3 id="spatial_2d_padding">spatial_2d_padding</h3>
+<pre><code class="python hljs">spatial_2d_padding(x, padding=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), dim_ordering=<span class="hljs-string">'th'</span>)
+</code></pre>
+
+<p>向4D张量第二和第三维度的左右两端填充<code>padding[0]</code>和<code>padding[1]</code>个0值</p>
+<h3 id="spatial_3d_padding">spatial_3d_padding</h3>
+<pre><code class="python hljs">spatial_3d_padding(x, padding=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>), dim_ordering=<span class="hljs-string">'th'</span>)
+</code></pre>
+
+<p>向5D张量深度、高度和宽度三个维度上填充<code>padding[0]</code>，<code>padding[1]</code>和<code>padding[2]</code>个0值</p>
+<h3 id="stack">stack</h3>
+<pre><code class="python hljs">stack(x, axis=<span class="hljs-number">0</span>)
+</code></pre>
+
+<p>将一个列表中维度数目为R的张量堆积起来形成维度为R+1的新张量</p>
+<h3 id="one-hot">one-hot</h3>
+<pre><code class="python hljs">one_hot(indices, nb_classes)
+</code></pre>
+
+<p>输入为n维的整数张量，形如(batch_size, dim1, dim2, ... dim(n-1))，输出为(n+1)维的one-hot编码，形如(batch_size, dim1, dim2, ... dim(n-1), nb_classes)</p>
+<h3 id="reverse">reverse</h3>
+<pre><code class="python hljs">reverse(x, axes)
+</code></pre>
+
+<p>将一个张量在给定轴上反转</p>
+<h3 id="get_value">get_value</h3>
+<pre><code class="python hljs">get_value(x)
+</code></pre>
+
+<p>以Numpy array的形式返回张量的值</p>
+<h3 id="batch_get_value">batch_get_value</h3>
+<pre><code class="python hljs">batch_get_value(x)
+</code></pre>
+
+<p>以Numpy array list的形式返回多个张量的值</p>
+<h3 id="set_value">set_value</h3>
+<pre><code class="python hljs">set_value(x, value)
+</code></pre>
+
+<p>从numpy array将值载入张量中</p>
+<h3 id="batch_set_value">batch_set_value</h3>
+<pre><code class="python hljs">batch_set_value(tuples)
+</code></pre>
+
+<p>将多个值载入多个张量变量中</p>
+<p>参数：</p>
+<ul>
+<li>tuples: 列表，其中的元素形如<code>(tensor, value)</code>。<code>value</code>是要载入的Numpy array数据</li>
+</ul>
+<h3 id="print_tensor">print_tensor</h3>
+<pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">print_tensor</span><span class="hljs-params">(x, message=<span class="hljs-string">''</span>)</span></span>
+</code></pre>
+
+<p>在求值时打印张量的信息，并返回原张量</p>
+<h3 id="function">function</h3>
+<pre><code class="python hljs">function(inputs, outputs, updates=[])
+</code></pre>
+
+<p>实例化一个Keras函数</p>
+<p>参数：</p>
+<ul>
+<li>inputs:：列表，其元素为占位符或张量变量</li>
+<li>outputs：输出张量的列表</li>
+<li>updates：列表，其元素是形如<code>&lt;tf.Tensor 'AssignAdd_9:0' shape=() dtype=float32_ref&gt;</code>的张量.</li>
+</ul>
+<h3 id="gradients">gradients</h3>
+<pre><code class="python hljs">gradients(loss, variables)
+</code></pre>
+
+<p>返回loss函数关于variables的梯度，variables为张量变量的列表</p>
+<h3 id="stop_gradient">stop_gradient</h3>
+<pre><code class="python hljs">stop_gradient(variables)
+</code></pre>
+
+<p>Returns <code>variables</code> but with zero gradient with respect to every other variables.</p>
+<h3 id="rnn">rnn</h3>
+<pre><code class="python hljs">rnn(step_function, inputs, initial_states, go_backwards=<span class="hljs-keyword">False</span>, mask=<span class="hljs-keyword">None</span>, constants=<span class="hljs-keyword">None</span>, unroll=<span class="hljs-keyword">False</span>, input_length=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>在张量的时间维上迭代</p>
+<p>参数：</p>
+<ul>
+<li>inputs： 形如<code>(samples, time, ...)</code>的时域信号的张量，阶数至少为3</li>
+<li>step_function：每个时间步要执行的函数
+  其参数：  </li>
+<li>input：形如<code>(samples, ...)</code>的张量，不含时间维，代表某个时间步时一个batch的样本    </li>
+<li>states：张量列表
+    其返回值：</li>
+<li>output：形如<code>(samples, ...)</code>的张量<ul>
+<li>new_states：张量列表，与‘states’的长度相同    </li>
+</ul>
+</li>
+<li>initial_states：形如<code>(samples, ...)</code>的张量，包含了<code>step_function</code>状态的初始值。</li>
+<li>go_backwards：布尔值，若设为True，则逆向迭代序列</li>
+<li>mask：形如<code>(samples, time, 1)</code>的二值张量，需要屏蔽的数据元素上值为1</li>
+<li>constants：按时间步传递给函数的常数列表</li>
+<li>unroll：当使用TensorFlow时，RNN总是展开的。当使用Theano时，设置该值为<code>True</code>将展开递归网络</li>
+<li>input_length：使用TensorFlow时不需要此值，在使用Theano时，如果要展开递归网络，必须指定输入序列</li>
+</ul>
+<p>返回值：形如<code>(last_output, outputs, new_states)</code>的tuple</p>
+<ul>
+<li>last_output：rnn最后的输出，形如<code>(samples, ...)</code></li>
+<li>outputs：形如<code>(samples, time, ...)</code>的张量，每个在[s,t]点的输出对应于样本s在t时间的输出</li>
+<li>new_states: 列表，其元素为形如<code>(samples, ...)</code>的张量，代表每个样本的最后一个状态</li>
+</ul>
+<h3 id="switch">switch</h3>
+<pre><code class="python hljs">switch(condition, then_expression, else_expression)
+</code></pre>
+
+<p>依据给定的条件‘condition’（整数或布尔值）在两个表达式之间切换，注意两个表达式都应该是具有同样shape的符号化张量表达式</p>
+<p>参数：</p>
+<ul>
+<li>condition：标量张量</li>
+<li>then_expression：TensorFlow表达式</li>
+<li>else_expression: TensorFlow表达式</li>
+</ul>
+<h3 id="in_train_phase">in_train_phase</h3>
+<pre><code class="python hljs">in_train_phase(x, alt)
+</code></pre>
+
+<p>如果处于训练模式，则选择x，否则选择alt，注意alt应该与x的shape相同</p>
+<h3 id="in_test_phase">in_test_phase</h3>
+<pre><code class="python hljs">in_test_phase(x, alt)
+</code></pre>
+
+<p>如果处于测试模式，则选择x，否则选择alt，注意alt应该与x的shape相同</p>
+<h3 id="relu">relu</h3>
+<pre><code class="python hljs">relu(x, alpha=<span class="hljs-number">0.0</span>, max_value=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>修正线性单元</p>
+<p>参数：</p>
+<ul>
+<li>alpha：负半区斜率</li>
+<li>max_value: 饱和门限</li>
+</ul>
+<h3 id="elu">elu</h3>
+<pre><code class="python hljs">elu(x, alpha=<span class="hljs-number">1.0</span>)
+</code></pre>
+
+<p>指数线性单元</p>
+<p>参数：</p>
+<ul>
+<li>x：输入张量</li>
+<li>alpha: 标量</li>
+</ul>
+<h3 id="softmax">softmax</h3>
+<pre><code class="python hljs">softmax(x)
+</code></pre>
+
+<p>返回张量的softmax值</p>
+<h3 id="softplus">softplus</h3>
+<pre><code class="python hljs">softplus(x)
+</code></pre>
+
+<p>返回张量的softplus值</p>
+<h3 id="softsign">softsign</h3>
+<pre><code class="python hljs">softsign(x)
+</code></pre>
+
+<p>返回张量的softsign值</p>
+<h3 id="categorical_crossentropy">categorical_crossentropy</h3>
+<pre><code class="python hljs">categorical_crossentropy(output, target, from_logits=<span class="hljs-keyword">False</span>)
+</code></pre>
+
+<p>计算输出张量和目标张量的Categorical crossentropy（类别交叉熵），目标张量与输出张量必须shape相同</p>
+<h3 id="sparse_categorical_crossentropy">sparse_categorical_crossentropy</h3>
+<pre><code class="python hljs">sparse_categorical_crossentropy(output, target, from_logits=<span class="hljs-keyword">False</span>)
+</code></pre>
+
+<p>计算输出张量和目标张量的Categorical crossentropy（类别交叉熵），目标张量必须是整型张量</p>
+<h3 id="binary_crossentropy">binary_crossentropy</h3>
+<pre><code class="python hljs">binary_crossentropy(output, target, from_logits=<span class="hljs-keyword">False</span>)
+</code></pre>
+
+<p>计算输出张量和目标张量的交叉熵</p>
+<h3 id="sigmoid">sigmoid</h3>
+<pre><code class="python hljs">sigmoid(x)
+</code></pre>
+
+<p>逐元素计算sigmoid值</p>
+<h3 id="hard_sigmoid">hard_sigmoid</h3>
+<pre><code class="python hljs">hard_sigmoid(x)
+</code></pre>
+
+<p>该函数是分段线性近似的sigmoid，计算速度更快</p>
+<h3 id="tanh">tanh</h3>
+<pre><code class="python hljs">tanh(x)
+</code></pre>
+
+<p>逐元素计算sigmoid值</p>
+<h3 id="dropout">dropout</h3>
+<pre><code class="python hljs">dropout(x, level, seed=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>随机将x中一定比例的值设置为0，并放缩整个tensor</p>
+<p>参数：</p>
+<ul>
+<li>x：张量</li>
+<li>level：x中设置成0的元素比例</li>
+<li>seed：随机数种子</li>
+</ul>
+<h3 id="l2_normalize">l2_normalize</h3>
+<pre><code class="python hljs">l2_normalize(x, axis)
+</code></pre>
+
+<p>在给定轴上对张量进行L2范数规范化</p>
+<h3 id="in_top_k">in_top_k</h3>
+<pre><code class="python hljs">in_top_k(predictions, targets, k)
+</code></pre>
+
+<p>判断目标是否在predictions的前k大值位置</p>
+<p>参数：</p>
+<ul>
+<li>predictions：预测值张量, shape为(batch_size, classes), 数据类型float32</li>
+<li>targets：真值张量, shape为(batch_size,),数据类型为int32或int64</li>
+<li>k：整数</li>
+</ul>
+<h3 id="conv1d">conv1d</h3>
+<pre><code class="python hljs">conv1d(x, kernel, strides=<span class="hljs-number">1</span>, border_mode=<span class="hljs-string">'valid'</span>, image_shape=<span class="hljs-keyword">None</span>, filter_shape=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>1D卷积</p>
+<p>参数：</p>
+<ul>
+<li>kernel：卷积核张量</li>
+<li>strides：步长，整型</li>
+<li>border_mode：“same”，“valid”之一的字符串</li>
+</ul>
+<h3 id="conv2d">conv2d</h3>
+<pre><code class="python hljs">conv2d(x, kernel, strides=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), border_mode=<span class="hljs-string">'valid'</span>, dim_ordering=<span class="hljs-string">'th'</span>, image_shape=<span class="hljs-keyword">None</span>, filter_shape=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>2D卷积</p>
+<p>参数：</p>
+<ul>
+<li>kernel：卷积核张量</li>
+<li>strides：步长，长为2的tuple</li>
+<li>border_mode：“same”，“valid”之一的字符串</li>
+<li>dim_ordering：“tf”和“th”之一，维度排列顺序</li>
+</ul>
+<h3 id="deconv2d">deconv2d</h3>
+<pre><code class="python hljs">deconv2d(x, kernel, output_shape, strides=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), border_mode=<span class="hljs-string">'valid'</span>, dim_ordering=<span class="hljs-string">'th'</span>, image_shape=<span class="hljs-keyword">None</span>, filter_shape=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>2D反卷积（转置卷积）</p>
+<p>参数：</p>
+<ul>
+<li>x：输入张量</li>
+<li>kernel：卷积核张量</li>
+<li>output_shape: 输出shape的1D的整数张量</li>
+<li>strides：步长，tuple类型</li>
+<li>border_mode：“same”或“valid”</li>
+<li>dim_ordering：“tf”或“th”</li>
+</ul>
+<h3 id="conv3d">conv3d</h3>
+<pre><code class="python hljs">conv3d(x, kernel, strides=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>), border_mode=<span class="hljs-string">'valid'</span>, dim_ordering=<span class="hljs-string">'th'</span>, volume_shape=<span class="hljs-keyword">None</span>, filter_shape=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>3D卷积</p>
+<p>参数：</p>
+<ul>
+<li>x：输入张量</li>
+<li>kernel：卷积核张量</li>
+<li>strides：步长，tuple类型</li>
+<li>border_mode：“same”或“valid”</li>
+<li>dim_ordering：“tf”或“th”</li>
+</ul>
+<h3 id="pool2d">pool2d</h3>
+<pre><code class="python hljs">pool2d(x, pool_size, strides=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), border_mode=<span class="hljs-string">'valid'</span>, dim_ordering=<span class="hljs-string">'th'</span>, pool_mode=<span class="hljs-string">'max'</span>)
+</code></pre>
+
+<p>2D池化</p>
+<p>参数：</p>
+<ul>
+<li>pool_size：含有两个整数的tuple，池的大小</li>
+<li>strides：含有两个整数的tuple，步长</li>
+<li>border_mode：“same”，“valid”之一的字符串</li>
+<li>dim_ordering：“tf”和“th”之一，维度排列顺序</li>
+<li>pool_mode: “max”，“avg”之一，池化方式</li>
+</ul>
+<h3 id="pool3d">pool3d</h3>
+<pre><code class="python hljs">pool3d(x, pool_size, strides=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>), border_mode=<span class="hljs-string">'valid'</span>, dim_ordering=<span class="hljs-string">'th'</span>, pool_mode=<span class="hljs-string">'max'</span>)
+</code></pre>
+
+<p>3D池化</p>
+<p>参数：</p>
+<ul>
+<li>pool_size：含有3个整数的tuple，池的大小</li>
+<li>strides：含有3个整数的tuple，步长</li>
+<li>border_mode：“same”，“valid”之一的字符串</li>
+<li>dim_ordering：“tf”和“th”之一，维度排列顺序</li>
+<li>pool_mode: “max”，“avg”之一，池化方式</li>
+</ul>
+<h3 id="bias_add">bias_add</h3>
+<pre><code class="python hljs">bias_add(x, bias, data_format=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>为张量增加一个偏置项</p>
+<h3 id="random_normal">random_normal</h3>
+<pre><code class="python hljs">random_normal(shape, mean=<span class="hljs-number">0.0</span>, stddev=<span class="hljs-number">1.0</span>, dtype=<span class="hljs-keyword">None</span>, seed=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>返回具有正态分布值的张量，mean和stddev为均值和标准差</p>
+<h3 id="random_uniform">random_uniform</h3>
+<pre><code class="python hljs">random_uniform(shape, minval=<span class="hljs-number">0.0</span>, maxval=<span class="hljs-number">1.0</span>, dtype=<span class="hljs-keyword">None</span>, seed=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>返回具有均匀分布值的张量，minval和maxval是均匀分布的下上界</p>
+<h3 id="random_binomial">random_binomial</h3>
+<pre><code class="python hljs">random_binomial(shape, p=<span class="hljs-number">0.0</span>, dtype=<span class="hljs-keyword">None</span>, seed=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>返回具有二项分布值的张量，p是二项分布参数</p>
+<h3 id="truncated_normall">truncated_normall</h3>
+<pre><code class="python hljs">truncated_normal(shape, mean=<span class="hljs-number">0.0</span>, stddev=<span class="hljs-number">1.0</span>, dtype=<span class="hljs-keyword">None</span>, seed=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>返回具有截尾正态分布值的张量，在距离均值两个标准差之外的数据将会被截断并重新生成</p>
+<h3 id="ctc_label_dense_to_sparse">ctc_label_dense_to_sparse</h3>
+<pre><code class="python hljs">ctc_label_dense_to_sparse(labels, label_lengths)
+</code></pre>
+
+<p>将ctc标签从稠密形式转换为稀疏形式</p>
+<h3 id="ctc_batch_cost">ctc_batch_cost</h3>
+<pre><code class="python hljs">ctc_batch_cost(y_true, y_pred, input_length, label_length)
+</code></pre>
+
+<p>在batch上运行CTC损失算法</p>
+<p>参数：</p>
+<ul>
+<li>y_true：形如(samples，max_tring_length)的张量，包含标签的真值</li>
+<li>y_pred：形如(samples，time_steps，num_categories)的张量，包含预测值或输出的softmax值</li>
+<li>input_length：形如(samples，1)的张量，包含y_pred中每个batch的序列长</li>
+<li>label_length：形如(samples，1)的张量，包含y_true中每个batch的序列长</li>
+</ul>
+<p>返回值：形如(samoles，1)的tensor，包含了每个元素的CTC损失</p>
+<h3 id="ctc_decode">ctc_decode</h3>
+<pre><code class="python hljs">ctc_decode(y_pred, input_length, greedy=<span class="hljs-keyword">True</span>, beam_width=<span class="hljs-keyword">None</span>, dict_seq_lens=<span class="hljs-keyword">None</span>, dict_values=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>使用贪婪算法或带约束的字典搜索算法解码softmax的输出</p>
+<p>参数：</p>
+<ul>
+<li>y_pred：形如(samples，time_steps，num_categories)的张量，包含预测值或输出的softmax值</li>
+<li>input_length：形如(samples，1)的张量，包含y_pred中每个batch的序列长</li>
+<li>greedy：设置为True使用贪婪算法，速度快</li>
+<li>dict_seq_lens：dic_values列表中各元素的长度</li>
+<li>dict_values：列表的列表，代表字典</li>
+</ul>
+<p>返回值：形如(samples，time_steps，num_catgories)的张量，包含了路径可能性（以softmax概率的形式）。注意仍然需要一个用来取出argmax和处理空白标签的函数</p>
+<h3 id="map_fn">map_fn</h3>
+<pre><code class="python hljs">map_fn(fn, elems, name=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>元素elems在函数fn上的映射，并返回结果</p>
+<p>参数：</p>
+<ul>
+<li>fn：函数</li>
+<li>elems：张量</li>
+<li>name：节点的名字</li>
+</ul>
+<p>返回值：返回一个张量，该张量的第一维度等于elems，第二维度取决于fn</p>
+<h3 id="foldl">foldl</h3>
+<pre><code class="python hljs">foldl(fn, elems, initializer=<span class="hljs-keyword">None</span>, name=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>减少elems，用fn从左到右连接它们</p>
+<p>参数：</p>
+<ul>
+<li>fn：函数，例如：lambda acc, x: acc + x</li>
+<li>elems：张量</li>
+<li>initializer：初始化的值(elems[0])</li>
+<li>name：节点名</li>
+</ul>
+<p>返回值：与initializer的类型和形状一致</p>
+<h3 id="foldr">foldr</h3>
+<pre><code class="python hljs">foldr(fn, elems, initializer=<span class="hljs-keyword">None</span>, name=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>减少elems，用fn从右到左连接它们</p>
+<p>参数：</p>
+<ul>
+<li>fn：函数，例如：lambda acc, x: acc + x</li>
+<li>elems：张量</li>
+<li>initializer：初始化的值（elems[-1]）</li>
+<li>name：节点名</li>
+</ul>
+<p>返回值：与initializer的类型和形状一致</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../scikit-learn_API/" class="btn btn-neutral float-right" title="scikit-learn接口">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../utils/" class="btn btn-neutral" title="工具"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr><div><div id="rtd-k12lhajjl" class="ethical-rtd"><div class="ethical-footer"><div class="ethical-content"><a href="https://readthedocs.org/sustainability/click/294/bMY8w24uVOfM/" rel="nofollow" target="_blank" class="ethical-image-link"><img src="https://readthedocs.org/sustainability/view/294/bMY8w24uVOfM/"></a><div class="ethical-text">A complete cloud platform designed for developers.<br><a href="https://readthedocs.org/sustainability/click/294/bMY8w24uVOfM/" rel="nofollow" target="_blank">Try it free - $100 credit</a></div></div><div class="ethical-callout"><small><em><a href="https://readthedocs.org/sustainability/advertising/">Sponsored</a><span> · </span><a href="https://docs.readthedocs.io/en/latest/ethical-advertising.html">Ads served ethically</a></em></small></div></div></div><hr></div>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions"><!-- Inserted RTD Footer -->
+<div class="injected">
+
+  
+
+      
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+         <strong> 
+        <dd><a href="https://keras-cn.readthedocs.io/en/latest/backend/">latest</a></dd>
+         </strong> 
+        
+      </dl>
+      
+      
+
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/pdf/latest/">PDF</a></dd>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/htmlzip/latest/">HTML</a></dd>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/epub/latest/">Epub</a></dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        <!-- These are kept as relative links for internal installs that are http -->
+        <dt>On Read the Docs</dt>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/">Project Home</a>
+        </dd>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/builds/">Builds</a>
+        </dd>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/downloads/">Downloads</a>
+        </dd>
+      </dl>
+      
+
+      
+
+      
+      <dl>
+        <dt>On GitHub</dt>
+        <dd>
+          <a href="https://github.com/MoyanZitto/keras-cn/blob/master/home/docs/checkouts/readthedocs.org/user_builds/keras-cn/checkouts/latest/docs/backend.md">View</a>
+        </dd>
+        <dd>
+          <a href="https://github.com/MoyanZitto/keras-cn/edit/master/home/docs/checkouts/readthedocs.org/user_builds/keras-cn/checkouts/latest/docs/backend.md">Edit</a>
+        </dd>
+      </dl>
+      
+      
+
+      
+      <dl>
+        <dt>Search</dt>
+        <dd>
+          <div style="padding: 6px;">
+            <form id="flyout-search-form" class="wy-form" target="_blank" action="//readthedocs.org/projects/keras-cn/search/" method="get">
+              <input type="text" name="q" placeholder="Search docs">
+              </form>
+          </div>
+        </dd>
+      </dl>
+      
+
+
+
+      <hr>
+      
+        <small>
+          <span>Hosted by <a href="https://readthedocs.org">Read the Docs</a></span>
+          <span> · </span>
+          <a href="https://docs.readthedocs.io/en/latest/privacy-policy.html">Privacy Policy</a>
+        </small>
+      
+
+      
+
+</div>
+</div>
+  </div>
+
+
+
+</body></html>

@@ -1,0 +1,891 @@
+<!DOCTYPE html><!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]--><!--[if gt IE 8]><!--><html class=" js flexbox flexboxlegacy canvas canvastext no-webgl touch no-geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent no-video no-audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en" style=""><!--<![endif]--><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="BigMoyan">
+  
+  <title>常用层Core - Keras中文文档</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css">
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css">
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="https://media.readthedocs.org/css/badge_only.css" rel="stylesheet">
+  <link href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" rel="stylesheet">
+
+  
+  <script async="" src="https://www.google-analytics.com/analytics.js"></script><script>
+    // Current page data
+    var mkdocs_page_name = "常用层Core";
+    var mkdocs_page_input_path = "layers/core_layer.md";
+    var mkdocs_page_url = "/layers/core_layer/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../readthedocs-data.js"></script>
+  <script src="https://media.readthedocs.org/static/core/js/readthedocs-doc-embed.js"></script>
+  <script src="https://media.readthedocs.org/javascript/readthedocs-analytics.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Keras中文文档</a>
+        <div role="search">
+  <form id="mkdocs-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs">
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../..info.html">主页</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>keras新手指南</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/concepts/info.html">一些基本概念</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/FAQ/info.html">常见问题与解答</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/keras_linux/info.html">Keras安装和配置指南(Linux)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/keras_windows/info.html">Keras安装和配置指南(Windows)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/trap/info.html">Keras使用陷阱</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>快速开始</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../getting_started/sequential_model/info.html">序贯模型</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../getting_started/functional_API/info.html">函数式模型</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>模型</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../models/about_model/info.html">关于Keras模型</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../models/sequential/info.html">序贯模型API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../models/model/info.html">函数式模型API</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>网络层</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../about_layer/info.html">关于Keras层</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="././info.html">常用层Core</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#_1">常用层</a></li>
+                
+                    <li><a class="toctree-l4" href="#dense">Dense层</a></li>
+                
+                    <li><a class="toctree-l4" href="#activation">Activation层</a></li>
+                
+                    <li><a class="toctree-l4" href="#dropout">Dropout层</a></li>
+                
+                    <li><a class="toctree-l4" href="#flatten">Flatten层</a></li>
+                
+                    <li><a class="toctree-l4" href="#reshape">Reshape层</a></li>
+                
+                    <li><a class="toctree-l4" href="#permute">Permute层</a></li>
+                
+                    <li><a class="toctree-l4" href="#repeatvector">RepeatVector层</a></li>
+                
+                    <li><a class="toctree-l4" href="#lambda">Lambda层</a></li>
+                
+                    <li><a class="toctree-l4" href="#activityregularizer">ActivityRegularizer层</a></li>
+                
+                    <li><a class="toctree-l4" href="#masking">Masking层</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../convolutional_layer/info.html">卷积层Convolutional</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../pooling_layer/info.html">池化层Pooling</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../locally_connected_layer/info.html">局部连接层Locally-connented</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../recurrent_layer/info.html">循环层Recurrent</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../embedding_layer/info.html">嵌入层Embedding</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../merge/info.html">融合层Merge</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../advanced_activation_layer/info.html">高级激活层Advanced Activation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../normalization_layer/info.html">规范层BatchNormalization</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../noise_layer/info.html">噪声层Noise</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../wrapper/info.html">包装器Wrapper</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../writting_layer/info.html">编写自己的层</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>数据预处理</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../preprocessing/sequence/info.html">序列预处理</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../preprocessing/text/info.html">文本预处理</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../preprocessing/image/info.html">图片预处理</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>网络配置</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/objectives/info.html">损失函数loss</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/optimizers/info.html">优化器Optimizer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/activations/info.html">激活函数Activation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/metrics/info.html">性能评估Metrices</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/initializations/info.html">初始化方法Initializers</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/regularizers/info.html">正则项Regularizer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/constraints/info.html">约束项Constraint</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/callbacks/info.html">回调函数Callback</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>协助使用Keras</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/application/info.html">预训练模型Application</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/datasets/info.html">常用数据库Dataset</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/visualization/info.html">可视化visualization</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../utils/info.html">工具</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../../backend/info.html">keras后端Backend</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../../scikit-learn_API/info.html">scikit-learn接口</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../../acknowledgement/info.html">致谢</a>
+        
+    </li>
+<li>
+          
+        </li></ul>
+      </div>
+      &nbsp;
+    <div id="rtd-38oiccqv" class="ethical-rtd"></div></nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Keras中文文档</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> »</li>
+    
+      
+        
+          <li>网络层 »</li>
+        
+      
+    
+    <li>常用层Core</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">常用层</h1>
+<p>常用层对应于core模块，core内部定义了一系列常用的网络层，包括全连接、激活层等</p>
+<h2 id="dense">Dense层</h2>
+<pre><code class="python hljs">keras.layers.core.Dense(units, activation=<span class="hljs-keyword">None</span>, use_bias=<span class="hljs-keyword">True</span>, kernel_initializer=<span class="hljs-string">'glorot_uniform'</span>, bias_initializer=<span class="hljs-string">'zeros'</span>, kernel_regularizer=<span class="hljs-keyword">None</span>, bias_regularizer=<span class="hljs-keyword">None</span>, activity_regularizer=<span class="hljs-keyword">None</span>, kernel_constraint=<span class="hljs-keyword">None</span>, bias_constraint=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>Dense就是常用的全连接层，所实现的运算是<code>output = activation(dot(input, kernel)+bias)</code>。其中<code>activation</code>是逐元素计算的激活函数，<code>kernel</code>是本层的权值矩阵，<code>bias</code>为偏置向量，只有当<code>use_bias=True</code>才会添加。</p>
+<p>如果本层的输入数据的维度大于2，则会先被压为与<code>kernel</code>相匹配的大小。</p>
+<p>这里是一个使用示例：</p>
+<pre><code class="python hljs"><span class="hljs-comment"># as first layer in a sequential model:</span>
+<span class="hljs-comment"># as first layer in a sequential model:</span>
+model = Sequential()
+model.add(Dense(<span class="hljs-number">32</span>, input_shape=(<span class="hljs-number">16</span>,)))
+<span class="hljs-comment"># now the model will take as input arrays of shape (*, 16)</span>
+<span class="hljs-comment"># and output arrays of shape (*, 32)</span>
+
+<span class="hljs-comment"># after the first layer, you don't need to specify</span>
+<span class="hljs-comment"># the size of the input anymore:</span>
+model.add(Dense(<span class="hljs-number">32</span>))
+</code></pre>
+
+<h3 id="_2">参数：</h3>
+<ul>
+<li>
+<p>units：大于0的整数，代表该层的输出维度。</p>
+</li>
+<li>
+<p>activation：激活函数，为预定义的激活函数名（参考<a href="../../other/activations">激活函数</a>），或逐元素（element-wise）的Theano函数。如果不指定该参数，将不会使用任何激活函数（即使用线性激活函数：a(x)=x）</p>
+</li>
+<li>
+<p>use_bias: 布尔值，是否使用偏置项</p>
+</li>
+<li>
+<p>kernel_initializer：权值初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>bias_initializer：偏置向量初始化方法，为预定义初始化方法名的字符串，或用于初始化偏置向量的初始化器。参考<a href="../../other/initializations">initializers</a></p>
+</li>
+<li>
+<p>kernel_regularizer：施加在权重上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>bias_regularizer：施加在偏置向量上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>activity_regularizer：施加在输出上的正则项，为<a href="../../other/regularizers">Regularizer</a>对象</p>
+</li>
+<li>
+<p>kernel_constraints：施加在权重上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+<li>
+<p>bias_constraints：施加在偏置上的约束项，为<a href="../../other/constraints">Constraints</a>对象</p>
+</li>
+</ul>
+<h3 id="_3">输入</h3>
+<p>形如(batch_size, ..., input_dim)的nD张量，最常见的情况为(batch_size, input_dim)的2D张量</p>
+<h3 id="_4">输出</h3>
+<p>形如(batch_size, ..., units)的nD张量，最常见的情况为(batch_size, units)的2D张量</p>
+<hr>
+<p><a name="activation">
+<font color="#404040"></font></a></p><a name="activation"><font color="#404040">
+<h2 id="activation">Activation层</h2>
+</font></a><p><a name="activation"><font color="#404040"></font></a></p>
+<pre><code class="python hljs">keras.layers.core.Activation(activation)
+</code></pre>
+
+<p>激活层对一个层的输出施加激活函数</p>
+<h3 id="_5">参数</h3>
+<ul>
+<li>activation：将要使用的激活函数，为预定义激活函数名或一个Tensorflow/Theano的函数。参考<a href="../../other/activations">激活函数</a></li>
+</ul>
+<h3 id="shape">输入shape</h3>
+<p>任意，当使用激活层作为第一层时，要指定<code>input_shape</code></p>
+<h3 id="shape_1">输出shape</h3>
+<p>与输入shape相同</p>
+<hr>
+<p>
+<font color="#404040"></font></p><font color="#404040">
+<h2 id="dropout">Dropout层</h2>
+</font><p><font color="#404040"></font></p>
+<pre><code class="python hljs">keras.layers.core.Dropout(rate, noise_shape=<span class="hljs-keyword">None</span>, seed=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>为输入数据施加Dropout。Dropout将在训练过程中每次更新参数时按一定概率（rate）随机断开输入神经元，Dropout层用于防止过拟合。</p>
+<h3 id="_6">参数</h3>
+<ul>
+<li>
+<p>rate：0~1的浮点数，控制需要断开的神经元的比例</p>
+</li>
+<li>
+<p>noise_shape：整数张量，为将要应用在输入上的二值Dropout mask的shape，例如你的输入为(batch_size, timesteps, features)，并且你希望在各个时间步上的Dropout mask都相同，则可传入noise_shape=(batch_size, 1, features)。</p>
+</li>
+<li>
+<p>seed：整数，使用的随机数种子</p>
+</li>
+</ul>
+<h3 id="_7">参考文献</h3>
+<ul>
+<li><a href="http://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pdf">Dropout: A Simple Way to Prevent Neural Networks from Overfitting</a></li>
+</ul>
+<hr>
+<h2 id="flatten">Flatten层</h2>
+<pre><code class="python hljs">keras.layers.core.Flatten()
+</code></pre>
+
+<p>Flatten层用来将输入“压平”，即把多维的输入一维化，常用在从卷积层到全连接层的过渡。Flatten不影响batch的大小。</p>
+<h3 id="_8">例子</h3>
+<pre><code class="python hljs">model = Sequential()
+model.add(Convolution2D(<span class="hljs-number">64</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>,
+            border_mode=<span class="hljs-string">'same'</span>,
+            input_shape=(<span class="hljs-number">3</span>, <span class="hljs-number">32</span>, <span class="hljs-number">32</span>)))
+<span class="hljs-comment"># now: model.output_shape == (None, 64, 32, 32)</span>
+
+model.add(Flatten())
+<span class="hljs-comment"># now: model.output_shape == (None, 65536)</span>
+</code></pre>
+
+<hr>
+<h2 id="reshape">Reshape层</h2>
+<pre><code class="python hljs">keras.layers.core.Reshape(target_shape)
+</code></pre>
+
+<p>Reshape层用来将输入shape转换为特定的shape</p>
+<h3 id="_9">参数</h3>
+<ul>
+<li>target_shape：目标shape，为整数的tuple，不包含样本数目的维度（batch大小）</li>
+</ul>
+<h3 id="shape_2">输入shape</h3>
+<p>任意，但输入的shape必须固定。当使用该层为模型首层时，需要指定<code>input_shape</code>参数</p>
+<h3 id="shape_3">输出shape</h3>
+<p><code>(batch_size,)+target_shape</code></p>
+<h3 id="_10">例子</h3>
+<pre><code class="python hljs"><span class="hljs-comment"># as first layer in a Sequential model</span>
+model = Sequential()
+model.add(Reshape((<span class="hljs-number">3</span>, <span class="hljs-number">4</span>), input_shape=(<span class="hljs-number">12</span>,)))
+<span class="hljs-comment"># now: model.output_shape == (None, 3, 4)</span>
+<span class="hljs-comment"># note: `None` is the batch dimension</span>
+
+<span class="hljs-comment"># as intermediate layer in a Sequential model</span>
+model.add(Reshape((<span class="hljs-number">6</span>, <span class="hljs-number">2</span>)))
+<span class="hljs-comment"># now: model.output_shape == (None, 6, 2)</span>
+
+<span class="hljs-comment"># also supports shape inference using `-1` as dimension</span>
+model.add(Reshape((-<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>)))
+<span class="hljs-comment"># now: model.output_shape == (None, 3, 2, 2)</span>
+</code></pre>
+
+<hr>
+<h2 id="permute">Permute层</h2>
+<pre><code class="python hljs">keras.layers.core.Permute(dims)
+</code></pre>
+
+<p>Permute层将输入的维度按照给定模式进行重排，例如，当需要将RNN和CNN网络连接时，可能会用到该层。</p>
+<h3 id="_11">参数</h3>
+<ul>
+<li>dims：整数tuple，指定重排的模式，不包含样本数的维度。重拍模式的下标从1开始。例如（2，1）代表将输入的第二个维度重拍到输出的第一个维度，而将输入的第一个维度重排到第二个维度</li>
+</ul>
+<h3 id="_12">例子</h3>
+<pre><code class="python hljs">model = Sequential()
+model.add(Permute((<span class="hljs-number">2</span>, <span class="hljs-number">1</span>), input_shape=(<span class="hljs-number">10</span>, <span class="hljs-number">64</span>)))
+<span class="hljs-comment"># now: model.output_shape == (None, 64, 10)</span>
+<span class="hljs-comment"># note: `None` is the batch dimension</span>
+</code></pre>
+
+<h3 id="shape_4">输入shape</h3>
+<p>任意，当使用激活层作为第一层时，要指定<code>input_shape</code></p>
+<h3 id="shape_5">输出shape</h3>
+<p>与输入相同，但是其维度按照指定的模式重新排列</p>
+<hr>
+<h2 id="repeatvector">RepeatVector层</h2>
+<pre><code class="python hljs">keras.layers.core.RepeatVector(n)
+</code></pre>
+
+<p>RepeatVector层将输入重复n次</p>
+<h3 id="_13">参数</h3>
+<ul>
+<li>n：整数，重复的次数</li>
+</ul>
+<h3 id="shape_6">输入shape</h3>
+<p>形如（nb_samples, features）的2D张量</p>
+<h3 id="shape_7">输出shape</h3>
+<p>形如（nb_samples, n, features）的3D张量</p>
+<h3 id="_14">例子</h3>
+<pre><code class="python hljs">model = Sequential()
+model.add(Dense(<span class="hljs-number">32</span>, input_dim=<span class="hljs-number">32</span>))
+<span class="hljs-comment"># now: model.output_shape == (None, 32)</span>
+<span class="hljs-comment"># note: `None` is the batch dimension</span>
+
+model.add(RepeatVector(<span class="hljs-number">3</span>))
+<span class="hljs-comment"># now: model.output_shape == (None, 3, 32)</span>
+
+</code></pre>
+
+<hr>
+<h2 id="lambda">Lambda层</h2>
+<pre><code class="python hljs">keras.layers.core.Lambda(function, output_shape=<span class="hljs-keyword">None</span>, mask=<span class="hljs-keyword">None</span>, arguments=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>本函数用以对上一层的输出施以任何Theano/TensorFlow表达式</p>
+<h3 id="_15">参数</h3>
+<ul>
+<li>
+<p>function：要实现的函数，该函数仅接受一个变量，即上一层的输出</p>
+</li>
+<li>
+<p>output_shape：函数应该返回的值的shape，可以是一个tuple，也可以是一个根据输入shape计算输出shape的函数</p>
+</li>
+<li>
+<p>mask: 掩膜</p>
+</li>
+<li>
+<p>arguments：可选，字典，用来记录向函数中传递的其他关键字参数</p>
+</li>
+</ul>
+<h3 id="_16">例子</h3>
+<pre><code class="python hljs"><span class="hljs-comment"># add a x -&gt; x^2 layer</span>
+model.add(Lambda(<span class="hljs-keyword">lambda</span> x: x ** <span class="hljs-number">2</span>))
+</code></pre>
+
+<pre><code class="python hljs"><span class="hljs-comment"># add a layer that returns the concatenation</span>
+<span class="hljs-comment"># of the positive part of the input and</span>
+<span class="hljs-comment"># the opposite of the negative part</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">antirectifier</span><span class="hljs-params">(x)</span>:</span>
+    x -= K.mean(x, axis=<span class="hljs-number">1</span>, keepdims=<span class="hljs-keyword">True</span>)
+    x = K.l2_normalize(x, axis=<span class="hljs-number">1</span>)
+    pos = K.relu(x)
+    neg = K.relu(-x)
+    <span class="hljs-keyword">return</span> K.concatenate([pos, neg], axis=<span class="hljs-number">1</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">antirectifier_output_shape</span><span class="hljs-params">(input_shape)</span>:</span>
+    shape = list(input_shape)
+    <span class="hljs-keyword">assert</span> len(shape) == <span class="hljs-number">2</span>  <span class="hljs-comment"># only valid for 2D tensors</span>
+    shape[-<span class="hljs-number">1</span>] *= <span class="hljs-number">2</span>
+    <span class="hljs-keyword">return</span> tuple(shape)
+
+model.add(Lambda(antirectifier,
+         output_shape=antirectifier_output_shape))
+</code></pre>
+
+<h3 id="shape_8">输入shape</h3>
+<p>任意，当使用该层作为第一层时，要指定<code>input_shape</code></p>
+<h3 id="shape_9">输出shape</h3>
+<p>由<code>output_shape</code>参数指定的输出shape，当使用tensorflow时可自动推断</p>
+<hr>
+<h2 id="activityregularizer">ActivityRegularizer层</h2>
+<pre><code class="python hljs">keras.layers.core.ActivityRegularization(l1=<span class="hljs-number">0.0</span>, l2=<span class="hljs-number">0.0</span>)
+</code></pre>
+
+<p>经过本层的数据不会有任何变化，但会基于其激活值更新损失函数值</p>
+<h3 id="_17">参数</h3>
+<ul>
+<li>
+<p>l1：1范数正则因子（正浮点数）</p>
+</li>
+<li>
+<p>l2：2范数正则因子（正浮点数）</p>
+</li>
+</ul>
+<h3 id="shape_10">输入shape</h3>
+<p>任意，当使用该层作为第一层时，要指定<code>input_shape</code></p>
+<h3 id="shape_11">输出shape</h3>
+<p>与输入shape相同</p>
+<hr>
+<h2 id="masking">Masking层</h2>
+<pre><code class="python hljs">keras.layers.core.Masking(mask_value=<span class="hljs-number">0.0</span>)
+</code></pre>
+
+<p>使用给定的值对输入的序列信号进行“屏蔽”，用以定位需要跳过的时间步</p>
+<p>对于输入张量的时间步，即输入张量的第1维度（维度从0开始算，见例子），如果输入张量在该时间步上都等于<code>mask_value</code>，则该时间步将在模型接下来的所有层（只要支持masking）被跳过（屏蔽）。</p>
+<p>如果模型接下来的一些层不支持masking，却接受到masking过的数据，则抛出异常。</p>
+<h3 id="_18">例子</h3>
+<p>考虑输入数据<code>x</code>是一个形如(samples,timesteps,features)的张量，现将其送入LSTM层。因为你缺少时间步为3和5的信号，所以你希望将其掩盖。这时候应该：</p>
+<ul>
+<li>
+<p>赋值<code>x[:,3,:] = 0.</code>，<code>x[:,5,:] = 0.</code></p>
+</li>
+<li>
+<p>在LSTM层之前插入<code>mask_value=0.</code>的<code>Masking</code>层</p>
+</li>
+</ul>
+<pre><code class="python hljs">model = Sequential()
+model.add(Masking(mask_value=<span class="hljs-number">0.</span>, input_shape=(timesteps, features)))
+model.add(LSTM(<span class="hljs-number">32</span>))
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../convolutional_layer/" class="btn btn-neutral float-right" title="卷积层Convolutional">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../about_layer/" class="btn btn-neutral" title="关于Keras层"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr><div><div id="rtd-zshv98o" class="ethical-rtd"><div class="ethical-footer"><div class="ethical-content"><a href="https://readthedocs.org/sustainability/click/294/ilyKp9hPAGay/" rel="nofollow" target="_blank" class="ethical-image-link"><img src="https://readthedocs.org/sustainability/view/294/ilyKp9hPAGay/"></a><div class="ethical-text">A complete cloud platform designed for developers.<br><a href="https://readthedocs.org/sustainability/click/294/ilyKp9hPAGay/" rel="nofollow" target="_blank">Try it free - $100 credit</a></div></div><div class="ethical-callout"><small><em><a href="https://readthedocs.org/sustainability/advertising/">Sponsored</a><span> · </span><a href="https://docs.readthedocs.io/en/latest/ethical-advertising.html">Ads served ethically</a></em></small></div></div></div><hr></div>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions"><!-- Inserted RTD Footer -->
+<div class="injected">
+
+  
+
+      
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+         <strong> 
+        <dd><a href="https://keras-cn.readthedocs.io/en/latest/layers/core_layer/">latest</a></dd>
+         </strong> 
+        
+      </dl>
+      
+      
+
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/pdf/latest/">PDF</a></dd>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/htmlzip/latest/">HTML</a></dd>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/epub/latest/">Epub</a></dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        <!-- These are kept as relative links for internal installs that are http -->
+        <dt>On Read the Docs</dt>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/">Project Home</a>
+        </dd>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/builds/">Builds</a>
+        </dd>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/downloads/">Downloads</a>
+        </dd>
+      </dl>
+      
+
+      
+
+      
+      <dl>
+        <dt>On GitHub</dt>
+        <dd>
+          <a href="https://github.com/MoyanZitto/keras-cn/blob/master/home/docs/checkouts/readthedocs.org/user_builds/keras-cn/checkouts/latest/docs/layers/core_layer.md">View</a>
+        </dd>
+        <dd>
+          <a href="https://github.com/MoyanZitto/keras-cn/edit/master/home/docs/checkouts/readthedocs.org/user_builds/keras-cn/checkouts/latest/docs/layers/core_layer.md">Edit</a>
+        </dd>
+      </dl>
+      
+      
+
+      
+      <dl>
+        <dt>Search</dt>
+        <dd>
+          <div style="padding: 6px;">
+            <form id="flyout-search-form" class="wy-form" target="_blank" action="//readthedocs.org/projects/keras-cn/search/" method="get">
+              <input type="text" name="q" placeholder="Search docs">
+              </form>
+          </div>
+        </dd>
+      </dl>
+      
+
+
+
+      <hr>
+      
+        <small>
+          <span>Hosted by <a href="https://readthedocs.org">Read the Docs</a></span>
+          <span> · </span>
+          <a href="https://docs.readthedocs.io/en/latest/privacy-policy.html">Privacy Policy</a>
+        </small>
+      
+
+      
+
+</div>
+</div>
+  </div>
+
+
+
+</body></html>

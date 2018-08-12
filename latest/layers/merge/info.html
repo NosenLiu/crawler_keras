@@ -1,0 +1,800 @@
+<!DOCTYPE html><!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]--><!--[if gt IE 8]><!--><html class=" js flexbox flexboxlegacy canvas canvastext no-webgl touch no-geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent no-video no-audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en" style=""><!--<![endif]--><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="BigMoyan">
+  
+  <title>融合层Merge - Keras中文文档</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css">
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css">
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="https://media.readthedocs.org/css/badge_only.css" rel="stylesheet">
+  <link href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" rel="stylesheet">
+
+  
+  <script async="" src="https://www.google-analytics.com/analytics.js"></script><script>
+    // Current page data
+    var mkdocs_page_name = "融合层Merge";
+    var mkdocs_page_input_path = "layers/merge.md";
+    var mkdocs_page_url = "/layers/merge/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../readthedocs-data.js"></script>
+  <script src="https://media.readthedocs.org/static/core/js/readthedocs-doc-embed.js"></script>
+  <script src="https://media.readthedocs.org/javascript/readthedocs-analytics.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Keras中文文档</a>
+        <div role="search">
+  <form id="mkdocs-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs">
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../..info.html">主页</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>keras新手指南</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/concepts/info.html">一些基本概念</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/FAQ/info.html">常见问题与解答</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/keras_linux/info.html">Keras安装和配置指南(Linux)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/keras_windows/info.html">Keras安装和配置指南(Windows)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/trap/info.html">Keras使用陷阱</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>快速开始</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../getting_started/sequential_model/info.html">序贯模型</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../getting_started/functional_API/info.html">函数式模型</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>模型</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../models/about_model/info.html">关于Keras模型</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../models/sequential/info.html">序贯模型API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../models/model/info.html">函数式模型API</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>网络层</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../about_layer/info.html">关于Keras层</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../core_layer/info.html">常用层Core</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../convolutional_layer/info.html">卷积层Convolutional</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../pooling_layer/info.html">池化层Pooling</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../locally_connected_layer/info.html">局部连接层Locally-connented</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../recurrent_layer/info.html">循环层Recurrent</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../embedding_layer/info.html">嵌入层Embedding</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="././info.html">融合层Merge</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#merge">Merge层</a></li>
+                
+                    <li><a class="toctree-l4" href="#add">Add</a></li>
+                
+                    <li><a class="toctree-l4" href="#substract">SubStract</a></li>
+                
+                    <li><a class="toctree-l4" href="#multiply">Multiply</a></li>
+                
+                    <li><a class="toctree-l4" href="#average">Average</a></li>
+                
+                    <li><a class="toctree-l4" href="#maximum">Maximum</a></li>
+                
+                    <li><a class="toctree-l4" href="#concatenate">Concatenate</a></li>
+                
+                    <li><a class="toctree-l4" href="#dot">Dot</a></li>
+                
+                    <li><a class="toctree-l4" href="#add_1">add</a></li>
+                
+                    <li><a class="toctree-l4" href="#subtract">subtract</a></li>
+                
+                    <li><a class="toctree-l4" href="#multiply_1">multiply</a></li>
+                
+                    <li><a class="toctree-l4" href="#average_1">average</a></li>
+                
+                    <li><a class="toctree-l4" href="#maximum_1">maximum</a></li>
+                
+                    <li><a class="toctree-l4" href="#concatenate_1">concatenate</a></li>
+                
+                    <li><a class="toctree-l4" href="#dot_1">dot</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../advanced_activation_layer/info.html">高级激活层Advanced Activation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../normalization_layer/info.html">规范层BatchNormalization</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../noise_layer/info.html">噪声层Noise</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../wrapper/info.html">包装器Wrapper</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../writting_layer/info.html">编写自己的层</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>数据预处理</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../preprocessing/sequence/info.html">序列预处理</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../preprocessing/text/info.html">文本预处理</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../preprocessing/image/info.html">图片预处理</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>网络配置</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/objectives/info.html">损失函数loss</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/optimizers/info.html">优化器Optimizer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/activations/info.html">激活函数Activation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/metrics/info.html">性能评估Metrices</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/initializations/info.html">初始化方法Initializers</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/regularizers/info.html">正则项Regularizer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/constraints/info.html">约束项Constraint</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/callbacks/info.html">回调函数Callback</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>协助使用Keras</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/application/info.html">预训练模型Application</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/datasets/info.html">常用数据库Dataset</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../other/visualization/info.html">可视化visualization</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../utils/info.html">工具</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../../backend/info.html">keras后端Backend</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../../scikit-learn_API/info.html">scikit-learn接口</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../../acknowledgement/info.html">致谢</a>
+        
+    </li>
+<li>
+          
+        </li></ul>
+      </div>
+      &nbsp;
+    <div id="rtd-8ncxq8vb" class="ethical-rtd"></div></nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Keras中文文档</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> »</li>
+    
+      
+        
+          <li>网络层 »</li>
+        
+      
+    
+    <li>融合层Merge</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="merge">Merge层</h1>
+<p>Merge层提供了一系列用于融合两个层或两个张量的层对象和方法。以大写首字母开头的是Layer类，以小写字母开头的是张量的函数。小写字母开头的张量函数在内部实际上是调用了大写字母开头的层。</p>
+<h2 id="add">Add</h2>
+<pre><code class="python hljs">keras.layers.Add()
+</code></pre>
+
+<p>添加输入列表的图层。</p>
+<p>该层接收一个相同shape列表张量，并返回它们的和，shape不变。</p>
+<h3 id="example">Example</h3>
+<pre><code class="python hljs"><span class="hljs-keyword">import</span> keras
+
+input1 = keras.layers.Input(shape=(<span class="hljs-number">16</span>,))
+x1 = keras.layers.Dense(<span class="hljs-number">8</span>, activation=<span class="hljs-string">'relu'</span>)(input1)
+input2 = keras.layers.Input(shape=(<span class="hljs-number">32</span>,))
+x2 = keras.layers.Dense(<span class="hljs-number">8</span>, activation=<span class="hljs-string">'relu'</span>)(input2)
+added = keras.layers.Add()([x1, x2])  <span class="hljs-comment"># equivalent to added = keras.layers.add([x1, x2])</span>
+
+out = keras.layers.Dense(<span class="hljs-number">4</span>)(added)
+model = keras.models.Model(inputs=[input1, input2], outputs=out)
+</code></pre>
+
+<h2 id="substract">SubStract</h2>
+<pre><code class="python hljs">keras.layers.Subtract()
+</code></pre>
+
+<p>两个输入的层相减。</p>
+<p>它将大小至少为2，相同Shape的列表张量作为输入，并返回一个张量（输入[0] - 输入[1]），也是相同的Shape。</p>
+<h3 id="example_1">Example</h3>
+<pre><code class="python hljs"><span class="hljs-keyword">import</span> keras
+
+input1 = keras.layers.Input(shape=(<span class="hljs-number">16</span>,))
+x1 = keras.layers.Dense(<span class="hljs-number">8</span>, activation=<span class="hljs-string">'relu'</span>)(input1)
+input2 = keras.layers.Input(shape=(<span class="hljs-number">32</span>,))
+x2 = keras.layers.Dense(<span class="hljs-number">8</span>, activation=<span class="hljs-string">'relu'</span>)(input2)
+<span class="hljs-comment"># Equivalent to subtracted = keras.layers.subtract([x1, x2])</span>
+subtracted = keras.layers.Subtract()([x1, x2])
+
+out = keras.layers.Dense(<span class="hljs-number">4</span>)(subtracted)
+model = keras.models.Model(inputs=[input1, input2], outputs=out)
+</code></pre>
+
+<h2 id="multiply">Multiply</h2>
+<pre><code class="python hljs">keras.layers.Multiply()
+</code></pre>
+
+<p>该层接收一个列表的同shape张量，并返回它们的逐元素积的张量，shape不变。</p>
+<h2 id="average">Average</h2>
+<pre><code class="python hljs">keras.layers.Average()
+</code></pre>
+
+<p>该层接收一个列表的同shape张量，并返回它们的逐元素均值，shape不变。</p>
+<h2 id="maximum">Maximum</h2>
+<pre><code class="python hljs">keras.layers.Maximum()
+</code></pre>
+
+<p>该层接收一个列表的同shape张量，并返回它们的逐元素最大值，shape不变。</p>
+<h2 id="concatenate">Concatenate</h2>
+<pre><code class="python hljs">keras.layers.Concatenate(axis=-<span class="hljs-number">1</span>)
+</code></pre>
+
+<p>该层接收一个列表的同shape张量，并返回它们的按照给定轴相接构成的向量。</p>
+<h3 id="_1">参数</h3>
+<ul>
+<li>axis: 想接的轴</li>
+<li>**kwargs: 普通的Layer关键字参数</li>
+</ul>
+<h2 id="dot">Dot</h2>
+<pre><code class="python hljs">keras.layers.Dot(axes, normalize=<span class="hljs-keyword">False</span>)
+</code></pre>
+
+<p>计算两个tensor中样本的张量乘积。例如，如果两个张量<code>a</code>和<code>b</code>的shape都为（batch_size, n），则输出为形如（batch_size,1）的张量，结果张量每个batch的数据都是a[i,:]和b[i,:]的矩阵（向量）点积。</p>
+<h3 id="_2">参数</h3>
+<ul>
+<li>axes: 整数或整数的tuple，执行乘法的轴。</li>
+<li>normalize: 布尔值，是否沿执行成绩的轴做L2规范化，如果设为True，那么乘积的输出是两个样本的余弦相似性。</li>
+<li>**kwargs: 普通的Layer关键字参数</li>
+</ul>
+<h2 id="add_1">add</h2>
+<pre><code class="python hljs">keras.layers.add(inputs)
+</code></pre>
+
+<p>Add层的函数式包装</p>
+<h3 id="_3">参数：</h3>
+<ul>
+<li>inputs: 长度至少为2的张量列表A</li>
+<li>**kwargs: 普通的Layer关键字参数</li>
+</ul>
+<h3 id="_4">返回值</h3>
+<p>输入列表张量之和</p>
+<h3 id="example_2">Example</h3>
+<pre><code class="python hljs"><span class="hljs-keyword">import</span> keras
+
+input1 = keras.layers.Input(shape=(<span class="hljs-number">16</span>,))
+x1 = keras.layers.Dense(<span class="hljs-number">8</span>, activation=<span class="hljs-string">'relu'</span>)(input1)
+input2 = keras.layers.Input(shape=(<span class="hljs-number">32</span>,))
+x2 = keras.layers.Dense(<span class="hljs-number">8</span>, activation=<span class="hljs-string">'relu'</span>)(input2)
+added = keras.layers.add([x1, x2])
+
+out = keras.layers.Dense(<span class="hljs-number">4</span>)(added)
+model = keras.models.Model(inputs=[input1, input2], outputs=out)
+</code></pre>
+
+<h2 id="subtract">subtract</h2>
+<pre><code class="python hljs">keras.layers.subtract(inputs)
+</code></pre>
+
+<p>Subtract层的函数式包装</p>
+<h3 id="_5">参数：</h3>
+<ul>
+<li>inputs: 长度至少为2的张量列表A</li>
+<li>**kwargs: 普通的Layer关键字参数</li>
+</ul>
+<h3 id="_6">返回值</h3>
+<p>输入张量列表的差别</p>
+<h3 id="example_3">Example</h3>
+<pre><code class="python hljs"><span class="hljs-keyword">import</span> keras
+
+input1 = keras.layers.Input(shape=(<span class="hljs-number">16</span>,))
+x1 = keras.layers.Dense(<span class="hljs-number">8</span>, activation=<span class="hljs-string">'relu'</span>)(input1)
+input2 = keras.layers.Input(shape=(<span class="hljs-number">32</span>,))
+x2 = keras.layers.Dense(<span class="hljs-number">8</span>, activation=<span class="hljs-string">'relu'</span>)(input2)
+subtracted = keras.layers.subtract([x1, x2])
+
+out = keras.layers.Dense(<span class="hljs-number">4</span>)(subtracted)
+model = keras.models.Model(inputs=[input1, input2], outputs=out)
+</code></pre>
+
+<h2 id="multiply_1">multiply</h2>
+<pre><code class="python hljs">keras.layers.multiply(inputs)
+</code></pre>
+
+<p>Multiply的函数式包装</p>
+<h3 id="_7">参数：</h3>
+<ul>
+<li>inputs: 长度至少为2的张量列表</li>
+<li>**kwargs: 普通的Layer关键字参数</li>
+</ul>
+<h3 id="_8">返回值</h3>
+<p>输入列表张量之逐元素积</p>
+<h2 id="average_1">average</h2>
+<pre><code class="python hljs">keras.layers.average(inputs)
+</code></pre>
+
+<p>Average的函数包装</p>
+<h3 id="_9">参数：</h3>
+<ul>
+<li>inputs: 长度至少为2的张量列表</li>
+<li>**kwargs: 普通的Layer关键字参数</li>
+</ul>
+<h3 id="_10">返回值</h3>
+<p>输入列表张量之逐元素均值</p>
+<h2 id="maximum_1">maximum</h2>
+<pre><code class="python hljs">keras.layers.maximum(inputs)
+</code></pre>
+
+<p>Maximum的函数包装</p>
+<h3 id="_11">参数：</h3>
+<ul>
+<li>inputs: 长度至少为2的张量列表</li>
+<li>**kwargs: 普通的Layer关键字参数</li>
+</ul>
+<h3 id="_12">返回值</h3>
+<p>输入列表张量之逐元素均值</p>
+<h2 id="concatenate_1">concatenate</h2>
+<pre><code class="python hljs">keras.layers.concatenate(inputs, axis=-<span class="hljs-number">1</span>)
+</code></pre>
+
+<p>Concatenate的函数包装</p>
+<h3 id="_13">参数</h3>
+<ul>
+<li>inputs: 长度至少为2的张量列</li>
+<li>axis: 相接的轴</li>
+<li>**kwargs: 普通的Layer关键字参数</li>
+</ul>
+<h2 id="dot_1">dot</h2>
+<pre><code class="python hljs">keras.layers.dot(inputs, axes, normalize=<span class="hljs-keyword">False</span>)
+</code></pre>
+
+<p>Dot的函数包装</p>
+<h3 id="_14">参数</h3>
+<ul>
+<li>inputs: 长度至少为2的张量列</li>
+<li>axes: 整数或整数的tuple，执行乘法的轴。</li>
+<li>normalize: 布尔值，是否沿执行成绩的轴做L2规范化，如果设为True，那么乘积的输出是两个样本的余弦相似性。</li>
+<li>**kwargs: 普通的Layer关键字参数</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../advanced_activation_layer/" class="btn btn-neutral float-right" title="高级激活层Advanced Activation">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../embedding_layer/" class="btn btn-neutral" title="嵌入层Embedding"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr><div><div id="rtd-okj4maz3" class="ethical-rtd"><div class="ethical-footer"><div class="ethical-content"><a href="https://readthedocs.org/sustainability/click/294/BPPTAJcH5fA0/" rel="nofollow" target="_blank" class="ethical-image-link"><img src="https://readthedocs.org/sustainability/view/294/BPPTAJcH5fA0/"></a><div class="ethical-text">A complete cloud platform designed for developers.<br><a href="https://readthedocs.org/sustainability/click/294/BPPTAJcH5fA0/" rel="nofollow" target="_blank">Try it free - $100 credit</a></div></div><div class="ethical-callout"><small><em><a href="https://readthedocs.org/sustainability/advertising/">Sponsored</a><span> · </span><a href="https://docs.readthedocs.io/en/latest/ethical-advertising.html">Ads served ethically</a></em></small></div></div></div><hr></div>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions"><!-- Inserted RTD Footer -->
+<div class="injected">
+
+  
+
+      
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+         <strong> 
+        <dd><a href="https://keras-cn.readthedocs.io/en/latest/layers/merge/">latest</a></dd>
+         </strong> 
+        
+      </dl>
+      
+      
+
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/pdf/latest/">PDF</a></dd>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/htmlzip/latest/">HTML</a></dd>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/epub/latest/">Epub</a></dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        <!-- These are kept as relative links for internal installs that are http -->
+        <dt>On Read the Docs</dt>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/">Project Home</a>
+        </dd>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/builds/">Builds</a>
+        </dd>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/downloads/">Downloads</a>
+        </dd>
+      </dl>
+      
+
+      
+
+      
+      <dl>
+        <dt>On GitHub</dt>
+        <dd>
+          <a href="https://github.com/MoyanZitto/keras-cn/blob/master/home/docs/checkouts/readthedocs.org/user_builds/keras-cn/checkouts/latest/docs/layers/merge.md">View</a>
+        </dd>
+        <dd>
+          <a href="https://github.com/MoyanZitto/keras-cn/edit/master/home/docs/checkouts/readthedocs.org/user_builds/keras-cn/checkouts/latest/docs/layers/merge.md">Edit</a>
+        </dd>
+      </dl>
+      
+      
+
+      
+      <dl>
+        <dt>Search</dt>
+        <dd>
+          <div style="padding: 6px;">
+            <form id="flyout-search-form" class="wy-form" target="_blank" action="//readthedocs.org/projects/keras-cn/search/" method="get">
+              <input type="text" name="q" placeholder="Search docs">
+              </form>
+          </div>
+        </dd>
+      </dl>
+      
+
+
+
+      <hr>
+      
+        <small>
+          <span>Hosted by <a href="https://readthedocs.org">Read the Docs</a></span>
+          <span> · </span>
+          <a href="https://docs.readthedocs.io/en/latest/privacy-policy.html">Privacy Policy</a>
+        </small>
+      
+
+      
+
+</div>
+</div>
+  </div>
+
+
+
+</body></html>

@@ -1,0 +1,755 @@
+<!DOCTYPE html><!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]--><!--[if gt IE 8]><!--><html class=" js flexbox flexboxlegacy canvas canvastext no-webgl touch no-geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent no-video no-audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en" style=""><!--<![endif]--><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="BigMoyan">
+  
+  <title>初始化方法Initializers - Keras中文文档</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css">
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css">
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="https://media.readthedocs.org/css/badge_only.css" rel="stylesheet">
+  <link href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" rel="stylesheet">
+
+  
+  <script async="" src="https://www.google-analytics.com/analytics.js"></script><script>
+    // Current page data
+    var mkdocs_page_name = "初始化方法Initializers";
+    var mkdocs_page_input_path = "other/initializations.md";
+    var mkdocs_page_url = "/other/initializations/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../readthedocs-data.js"></script>
+  <script src="https://media.readthedocs.org/static/core/js/readthedocs-doc-embed.js"></script>
+  <script src="https://media.readthedocs.org/javascript/readthedocs-analytics.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Keras中文文档</a>
+        <div role="search">
+  <form id="mkdocs-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs">
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../..info.html">主页</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>keras新手指南</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/concepts/info.html">一些基本概念</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/FAQ/info.html">常见问题与解答</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/keras_linux/info.html">Keras安装和配置指南(Linux)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/keras_windows/info.html">Keras安装和配置指南(Windows)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/trap/info.html">Keras使用陷阱</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>快速开始</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../getting_started/sequential_model/info.html">序贯模型</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../getting_started/functional_API/info.html">函数式模型</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>模型</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../models/about_model/info.html">关于Keras模型</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../models/sequential/info.html">序贯模型API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../models/model/info.html">函数式模型API</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>网络层</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/about_layer/info.html">关于Keras层</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/core_layer/info.html">常用层Core</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/convolutional_layer/info.html">卷积层Convolutional</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/pooling_layer/info.html">池化层Pooling</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/locally_connected_layer/info.html">局部连接层Locally-connented</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/recurrent_layer/info.html">循环层Recurrent</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/embedding_layer/info.html">嵌入层Embedding</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/merge/info.html">融合层Merge</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/advanced_activation_layer/info.html">高级激活层Advanced Activation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/normalization_layer/info.html">规范层BatchNormalization</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/noise_layer/info.html">噪声层Noise</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/wrapper/info.html">包装器Wrapper</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/writting_layer/info.html">编写自己的层</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>数据预处理</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../preprocessing/sequence/info.html">序列预处理</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../preprocessing/text/info.html">文本预处理</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../preprocessing/image/info.html">图片预处理</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>网络配置</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../objectives/info.html">损失函数loss</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../optimizers/info.html">优化器Optimizer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../activations/info.html">激活函数Activation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../metrics/info.html">性能评估Metrices</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="././info.html">初始化方法Initializers</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#_1">初始化方法</a></li>
+                
+                    <li><a class="toctree-l4" href="#initializer">Initializer</a></li>
+                
+                    <li><a class="toctree-l4" href="#_2">预定义初始化方法</a></li>
+                
+                    <li><a class="toctree-l4" href="#_3">自定义初始化器</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../regularizers/info.html">正则项Regularizer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../constraints/info.html">约束项Constraint</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../callbacks/info.html">回调函数Callback</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>协助使用Keras</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../application/info.html">预训练模型Application</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../datasets/info.html">常用数据库Dataset</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../visualization/info.html">可视化visualization</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../utils/info.html">工具</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../../backend/info.html">keras后端Backend</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../../scikit-learn_API/info.html">scikit-learn接口</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../../acknowledgement/info.html">致谢</a>
+        
+    </li>
+<li>
+          
+        </li></ul>
+      </div>
+      &nbsp;
+    <div id="rtd-dgvh7lch" class="ethical-rtd"></div></nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Keras中文文档</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> »</li>
+    
+      
+        
+          <li>网络配置 »</li>
+        
+      
+    
+    <li>初始化方法Initializers</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">初始化方法</h1>
+<p>初始化方法定义了对Keras层设置初始化权重的方法</p>
+<p>不同的层可能使用不同的关键字来传递初始化方法，一般来说指定初始化方法的关键字是<code>kernel_initializer</code> 和 <code>bias_initializer</code>，例如：</p>
+<pre><code class="python hljs">model.add(Dense(<span class="hljs-number">64</span>,
+                kernel_initializer=<span class="hljs-string">'random_uniform'</span>,
+                bias_initializer=<span class="hljs-string">'zeros'</span>))
+</code></pre>
+
+<p>一个初始化器可以由字符串指定（必须是下面的预定义初始化器之一），或一个callable的函数，例如</p>
+<pre><code class="python hljs"><span class="hljs-keyword">from</span> keras <span class="hljs-keyword">import</span> initializers
+
+model.add(Dense(<span class="hljs-number">64</span>, kernel_initializer=initializers.random_normal(stddev=<span class="hljs-number">0.01</span>)))
+
+<span class="hljs-comment"># also works; will use the default parameters.</span>
+model.add(Dense(<span class="hljs-number">64</span>, kernel_initializer=<span class="hljs-string">'random_normal'</span>))
+</code></pre>
+
+<h2 id="initializer">Initializer</h2>
+<p>Initializer是所有初始化方法的父类，不能直接使用，如果想要定义自己的初始化方法，请继承此类。</p>
+<h2 id="_2">预定义初始化方法</h2>
+<h3 id="zeros">Zeros</h3>
+<pre><code class="python hljs">keras.initializers.Zeros()
+</code></pre>
+
+<p>全零初始化</p>
+<h3 id="ones">Ones</h3>
+<pre><code class="python hljs">keras.initializers.Ones()
+</code></pre>
+
+<p>全1初始化</p>
+<h3 id="constant">Constant</h3>
+<pre><code class="python hljs">keras.initializers.Constant(value=<span class="hljs-number">0</span>)
+</code></pre>
+
+<p>初始化为固定值value</p>
+<h3 id="randomnormal">RandomNormal</h3>
+<pre><code class="python hljs">keras.initializers.RandomNormal(mean=<span class="hljs-number">0.0</span>, stddev=<span class="hljs-number">0.05</span>, seed=<span class="hljs-keyword">None</span>))
+</code></pre>
+
+<p>正态分布初始化</p>
+<ul>
+<li>mean：均值</li>
+<li>stddev：标准差</li>
+<li>seed：随机数种子</li>
+</ul>
+<h3 id="randomuniform">RandomUniform</h3>
+<pre><code class="python hljs">keras.initializers.RandomUniform(minval=-<span class="hljs-number">0.05</span>, maxval=<span class="hljs-number">0.05</span>, seed=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>均匀分布初始化
+<em> minval：均匀分布下边界
+</em> maxval：均匀分布上边界
+* seed：随机数种子</p>
+<h3 id="truncatednormal">TruncatedNormal</h3>
+<pre><code class="python hljs">keras.initializers.TruncatedNormal(mean=<span class="hljs-number">0.0</span>, stddev=<span class="hljs-number">0.05</span>, seed=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>截尾高斯分布初始化，该初始化方法与RandomNormal类似，但位于均值两个标准差以外的数据将会被丢弃并重新生成，形成截尾分布。该分布是神经网络权重和滤波器的推荐初始化方法。</p>
+<ul>
+<li>mean：均值</li>
+<li>stddev：标准差</li>
+<li>seed：随机数种子</li>
+</ul>
+<h3 id="variancescaling">VarianceScaling</h3>
+<pre><code class="python hljs">keras.initializers.VarianceScaling(scale=<span class="hljs-number">1.0</span>, mode=<span class="hljs-string">'fan_in'</span>, distribution=<span class="hljs-string">'normal'</span>, seed=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>该初始化方法能够自适应目标张量的shape。</p>
+<p>当<code>distribution="normal"</code>时，样本从0均值，标准差为sqrt(scale / n)的截尾正态分布中产生。其中：</p>
+<pre><code class="hljs autohotkey">* 当<span class="hljs-escape">``</span><span class="hljs-escape">`m</span>ode = <span class="hljs-string">"fan_in"</span><span class="hljs-escape">``</span><span class="hljs-escape">`时</span>，权重张量的输入单元数。
+* 当<span class="hljs-escape">``</span><span class="hljs-escape">`m</span>ode = <span class="hljs-string">"fan_out"</span><span class="hljs-escape">``</span><span class="hljs-escape">`时</span>，权重张量的输出单元数
+* 当<span class="hljs-escape">``</span><span class="hljs-escape">`m</span>ode = <span class="hljs-string">"fan_avg"</span><span class="hljs-escape">``</span><span class="hljs-escape">`时</span>，权重张量的输入输出单元数的均值
+</code></pre>
+<p>当<code>distribution="uniform"</code>时，权重从[-limit, limit]范围内均匀采样，其中limit = limit = sqrt(3 * scale / n)</p>
+<ul>
+<li>scale: 放缩因子，正浮点数</li>
+<li>mode: 字符串，“fan_in”，“fan_out”或“fan_avg”fan_in", "fan_out", "fan_avg".</li>
+<li>distribution: 字符串，“normal”或“uniform”.</li>
+<li>seed: 随机数种子</li>
+</ul>
+<h3 id="orthogonal">Orthogonal</h3>
+<pre><code class="python hljs">keras.initializers.Orthogonal(gain=<span class="hljs-number">1.0</span>, seed=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>用随机正交矩阵初始化</p>
+<ul>
+<li>gain: 正交矩阵的乘性系数</li>
+<li>seed：随机数种子</li>
+</ul>
+<p>参考文献：<a href="http://arxiv.org/abs/1312.6120">Saxe et al.</a></p>
+<h3 id="identiy">Identiy</h3>
+<pre><code class="python hljs">keras.initializers.Identity(gain=<span class="hljs-number">1.0</span>)
+</code></pre>
+
+<p>使用单位矩阵初始化，仅适用于2D方阵</p>
+<ul>
+<li>gain：单位矩阵的乘性系数</li>
+</ul>
+<h3 id="lecun_uniform">lecun_uniform</h3>
+<pre><code class="python hljs">lecun_uniform(seed=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>LeCun均匀分布初始化方法，参数由[-limit, limit]的区间中均匀采样获得，其中limit=sqrt(3 / fan_in), fin_in是权重向量的输入单元数（扇入）</p>
+<ul>
+<li>seed：随机数种子</li>
+</ul>
+<p>参考文献：<a href="http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf">LeCun 98, Efficient Backprop</a></p>
+<h3 id="lecun_normal">lecun_normal</h3>
+<pre><code class="python hljs">lecun_normal(seed=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>LeCun正态分布初始化方法，参数由0均值，标准差为stddev = sqrt(1 / fan_in)的正态分布产生，其中fan_in和fan_out是权重张量的扇入扇出（即输入和输出单元数目）</p>
+<ul>
+<li>seed：随机数种子</li>
+</ul>
+<p>参考文献：</p>
+<p><a href="https://arxiv.org/abs/1706.02515">Self-Normalizing Neural Networks</a>
+<a href="http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf">Efficient Backprop</a></p>
+<h3 id="glorot_normal">glorot_normal</h3>
+<pre><code class="python hljs">glorot_normal(seed=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>Glorot正态分布初始化方法，也称作Xavier正态分布初始化，参数由0均值，标准差为sqrt(2 / (fan_in + fan_out))的正态分布产生，其中fan_in和fan_out是权重张量的扇入扇出（即输入和输出单元数目）</p>
+<ul>
+<li>seed：随机数种子</li>
+</ul>
+<p>参考文献：<a href="http://jmlr.org/proceedings/papers/v9/glorot10a/glorot10a.pdf">Glorot &amp; Bengio, AISTATS 2010</a></p>
+<h3 id="glorot_uniform">glorot_uniform</h3>
+<pre><code class="python hljs">glorot_uniform(seed=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>Glorot均匀分布初始化方法，又成Xavier均匀初始化，参数从[-limit, limit]的均匀分布产生，其中limit为<code>sqrt(6 / (fan_in + fan_out))</code>。fan_in为权值张量的输入单元数，fan_out是权重张量的输出单元数。</p>
+<ul>
+<li>seed：随机数种子</li>
+</ul>
+<p>参考文献：<a href="http://jmlr.org/proceedings/papers/v9/glorot10a/glorot10a.pdf">Glorot &amp; Bengio, AISTATS 2010</a></p>
+<h3 id="he_normal">he_normal</h3>
+<pre><code class="python hljs">he_normal(seed=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>He正态分布初始化方法，参数由0均值，标准差为sqrt(2 / fan_in) 的正态分布产生，其中fan_in权重张量的扇入</p>
+<ul>
+<li>seed：随机数种子</li>
+</ul>
+<p>参考文献：<a href="http://arxiv.org/abs/1502.01852">He et al</a></p>
+<h3 id="he_uniform">he_uniform</h3>
+<pre><code class="python hljs">he_normal(seed=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>LeCun均匀分布初始化方法，参数由[-limit, limit]的区间中均匀采样获得，其中limit=sqrt(6 / fan_in), fin_in是权重向量的输入单元数（扇入）</p>
+<ul>
+<li>seed：随机数种子</li>
+</ul>
+<p>参考文献：<a href="http://arxiv.org/abs/1502.01852">He et al</a></p>
+<h2 id="_3">自定义初始化器</h2>
+<p>如果需要传递自定义的初始化器，则该初始化器必须是callable的，并且接收<code>shape</code>（将被初始化的张量shape）和<code>dtype</code>（数据类型）两个参数，并返回符合<code>shape</code>和<code>dtype</code>的张量。</p>
+<pre><code class="python hljs"><span class="hljs-keyword">from</span> keras <span class="hljs-keyword">import</span> backend <span class="hljs-keyword">as</span> K
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">my_init</span><span class="hljs-params">(shape, dtype=None)</span>:</span>
+    <span class="hljs-keyword">return</span> K.random_normal(shape, dtype=dtype)
+
+model.add(Dense(<span class="hljs-number">64</span>, init=my_init))
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../regularizers/" class="btn btn-neutral float-right" title="正则项Regularizer">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../metrics/" class="btn btn-neutral" title="性能评估Metrices"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr><div><div id="rtd-1wot4g7cl" class="ethical-rtd"><div class="ethical-footer"><div class="ethical-content"><a href="https://readthedocs.org/sustainability/click/294/nWS8vxKFmwdR/" rel="nofollow" target="_blank" class="ethical-image-link"><img src="https://readthedocs.org/sustainability/view/294/nWS8vxKFmwdR/"></a><div class="ethical-text">A complete cloud platform designed for developers.<br><a href="https://readthedocs.org/sustainability/click/294/nWS8vxKFmwdR/" rel="nofollow" target="_blank">Try it free - $100 credit</a></div></div><div class="ethical-callout"><small><em><a href="https://readthedocs.org/sustainability/advertising/">Sponsored</a><span> · </span><a href="https://docs.readthedocs.io/en/latest/ethical-advertising.html">Ads served ethically</a></em></small></div></div></div><hr></div>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions"><!-- Inserted RTD Footer -->
+<div class="injected">
+
+  
+
+      
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+         <strong> 
+        <dd><a href="https://keras-cn.readthedocs.io/en/latest/other/initializations/">latest</a></dd>
+         </strong> 
+        
+      </dl>
+      
+      
+
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/pdf/latest/">PDF</a></dd>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/htmlzip/latest/">HTML</a></dd>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/epub/latest/">Epub</a></dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        <!-- These are kept as relative links for internal installs that are http -->
+        <dt>On Read the Docs</dt>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/">Project Home</a>
+        </dd>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/builds/">Builds</a>
+        </dd>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/downloads/">Downloads</a>
+        </dd>
+      </dl>
+      
+
+      
+
+      
+      <dl>
+        <dt>On GitHub</dt>
+        <dd>
+          <a href="https://github.com/MoyanZitto/keras-cn/blob/master/home/docs/checkouts/readthedocs.org/user_builds/keras-cn/checkouts/latest/docs/other/initializations.md">View</a>
+        </dd>
+        <dd>
+          <a href="https://github.com/MoyanZitto/keras-cn/edit/master/home/docs/checkouts/readthedocs.org/user_builds/keras-cn/checkouts/latest/docs/other/initializations.md">Edit</a>
+        </dd>
+      </dl>
+      
+      
+
+      
+      <dl>
+        <dt>Search</dt>
+        <dd>
+          <div style="padding: 6px;">
+            <form id="flyout-search-form" class="wy-form" target="_blank" action="//readthedocs.org/projects/keras-cn/search/" method="get">
+              <input type="text" name="q" placeholder="Search docs">
+              </form>
+          </div>
+        </dd>
+      </dl>
+      
+
+
+
+      <hr>
+      
+        <small>
+          <span>Hosted by <a href="https://readthedocs.org">Read the Docs</a></span>
+          <span> · </span>
+          <a href="https://docs.readthedocs.io/en/latest/privacy-policy.html">Privacy Policy</a>
+        </small>
+      
+
+      
+
+</div>
+</div>
+  </div>
+
+
+
+</body></html>

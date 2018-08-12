@@ -1,0 +1,1059 @@
+<!DOCTYPE html><!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]--><!--[if gt IE 8]><!--><html class=" js flexbox flexboxlegacy canvas canvastext no-webgl touch no-geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent no-video no-audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en" style=""><!--<![endif]--><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="BigMoyan">
+  
+  <title>预训练模型Application - Keras中文文档</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css">
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css">
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="https://media.readthedocs.org/css/badge_only.css" rel="stylesheet">
+  <link href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" rel="stylesheet">
+
+  
+  <script async="" src="https://www.google-analytics.com/analytics.js"></script><script>
+    // Current page data
+    var mkdocs_page_name = "预训练模型Application";
+    var mkdocs_page_input_path = "other/application.md";
+    var mkdocs_page_url = "/other/application/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../readthedocs-data.js"></script>
+  <script src="https://media.readthedocs.org/static/core/js/readthedocs-doc-embed.js"></script>
+  <script src="https://media.readthedocs.org/javascript/readthedocs-analytics.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Keras中文文档</a>
+        <div role="search">
+  <form id="mkdocs-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs">
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../..info.html">主页</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>keras新手指南</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/concepts/info.html">一些基本概念</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/FAQ/info.html">常见问题与解答</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/keras_linux/info.html">Keras安装和配置指南(Linux)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/keras_windows/info.html">Keras安装和配置指南(Windows)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../for_beginners/trap/info.html">Keras使用陷阱</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>快速开始</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../getting_started/sequential_model/info.html">序贯模型</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../getting_started/functional_API/info.html">函数式模型</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>模型</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../models/about_model/info.html">关于Keras模型</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../models/sequential/info.html">序贯模型API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../models/model/info.html">函数式模型API</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>网络层</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/about_layer/info.html">关于Keras层</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/core_layer/info.html">常用层Core</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/convolutional_layer/info.html">卷积层Convolutional</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/pooling_layer/info.html">池化层Pooling</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/locally_connected_layer/info.html">局部连接层Locally-connented</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/recurrent_layer/info.html">循环层Recurrent</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/embedding_layer/info.html">嵌入层Embedding</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/merge/info.html">融合层Merge</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/advanced_activation_layer/info.html">高级激活层Advanced Activation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/normalization_layer/info.html">规范层BatchNormalization</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/noise_layer/info.html">噪声层Noise</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/wrapper/info.html">包装器Wrapper</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../layers/writting_layer/info.html">编写自己的层</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>数据预处理</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../preprocessing/sequence/info.html">序列预处理</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../preprocessing/text/info.html">文本预处理</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../preprocessing/image/info.html">图片预处理</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>网络配置</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../objectives/info.html">损失函数loss</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../optimizers/info.html">优化器Optimizer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../activations/info.html">激活函数Activation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../metrics/info.html">性能评估Metrices</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../initializations/info.html">初始化方法Initializers</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../regularizers/info.html">正则项Regularizer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../constraints/info.html">约束项Constraint</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../callbacks/info.html">回调函数Callback</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>协助使用Keras</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="././info.html">预训练模型Application</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#application">Application应用</a></li>
+                
+                    <li><a class="toctree-l4" href="#_1">可用的模型</a></li>
+                
+                    <li><a class="toctree-l4" href="#_2">图片分类模型的示例</a></li>
+                
+                    <li><a class="toctree-l4" href="#_3">模型信息</a></li>
+                
+                    <li><a class="toctree-l4" href="#xception">Xception模型</a></li>
+                
+                    <li><a class="toctree-l4" href="#vgg16_1">VGG16模型</a></li>
+                
+                    <li><a class="toctree-l4" href="#vgg19_1">VGG19模型</a></li>
+                
+                    <li><a class="toctree-l4" href="#resnet50">ResNet50模型</a></li>
+                
+                    <li><a class="toctree-l4" href="#inceptionv3">InceptionV3模型</a></li>
+                
+                    <li><a class="toctree-l4" href="#inceptionresnetv2">InceptionResNetV2模型</a></li>
+                
+                    <li><a class="toctree-l4" href="#mobilenet">MobileNet模型</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../datasets/info.html">常用数据库Dataset</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../visualization/info.html">可视化visualization</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../../utils/info.html">工具</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../../backend/info.html">keras后端Backend</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../../scikit-learn_API/info.html">scikit-learn接口</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../../acknowledgement/info.html">致谢</a>
+        
+    </li>
+<li>
+          
+        </li></ul>
+      </div>
+      &nbsp;
+    <div id="rtd-yhii9oi5f" class="ethical-rtd"></div></nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Keras中文文档</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> »</li>
+    
+      
+        
+          <li>协助使用Keras »</li>
+        
+      
+    
+    <li>预训练模型Application</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="application">Application应用</h1>
+<p>Kera的应用模块Application提供了带有预训练权重的Keras模型，这些模型可以用来进行预测、特征提取和finetune</p>
+<p>模型的预训练权重将下载到<code>~/.keras/models/</code>并在载入模型时自动载入</p>
+<h2 id="_1">可用的模型</h2>
+<p>应用于图像分类的模型,权重训练自ImageNet：
+<em> <a href="#xception">Xception</a>
+</em> <a href="#vgg16">VGG16</a>
+<em> <a href="#vgg19">VGG19</a>
+</em> <a href="#resnet50">ResNet50</a>
+<em> <a href="#inceptionv3">InceptionV3</a>
+</em> <a href="#inceptionresnetv2">InceptionResNetV2</a>
+* <a href="#mobilenet">MobileNet</a></p>
+<p>所有的这些模型(除了Xception和MobileNet)都兼容Theano和Tensorflow，并会自动基于<code>~/.keras/keras.json</code>的Keras的图像维度进行自动设置。例如，如果你设置<code>data_format="channel_last"</code>，则加载的模型将按照TensorFlow的维度顺序来构造，即“Width-Height-Depth”的顺序</p>
+<p>Xception模型仅在TensorFlow下可用，因为它依赖的SeparableConvolution层仅在TensorFlow可用。MobileNet仅在TensorFlow下可用，因为它依赖的DepethwiseConvolution层仅在TF下可用。</p>
+<p>以上模型（暂时除了MobileNet）的预训练权重可以在我的<a href="http://pan.baidu.com/s/1geHmOpH">百度网盘</a>下载，如果有更新的话会在这里报告</p>
+<hr>
+<h2 id="_2">图片分类模型的示例</h2>
+<h3 id="resnet50imagenet">利用ResNet50网络进行ImageNet分类</h3>
+<pre><code class="python hljs"><span class="hljs-keyword">from</span> keras.applications.resnet50 <span class="hljs-keyword">import</span> ResNet50
+<span class="hljs-keyword">from</span> keras.preprocessing <span class="hljs-keyword">import</span> image
+<span class="hljs-keyword">from</span> keras.applications.resnet50 <span class="hljs-keyword">import</span> preprocess_input, decode_predictions
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+model = ResNet50(weights=<span class="hljs-string">'imagenet'</span>)
+
+img_path = <span class="hljs-string">'elephant.jpg'</span>
+img = image.load_img(img_path, target_size=(<span class="hljs-number">224</span>, <span class="hljs-number">224</span>))
+x = image.img_to_array(img)
+x = np.expand_dims(x, axis=<span class="hljs-number">0</span>)
+x = preprocess_input(x)
+
+preds = model.predict(x)
+<span class="hljs-comment"># decode the results into a list of tuples (class, description, probability)</span>
+<span class="hljs-comment"># (one such list for each sample in the batch)</span>
+print(<span class="hljs-string">'Predicted:'</span>, decode_predictions(preds, top=<span class="hljs-number">3</span>)[<span class="hljs-number">0</span>])
+<span class="hljs-comment"># Predicted: [(u'n02504013', u'Indian_elephant', 0.82658225), (u'n01871265', u'tusker', 0.1122357), (u'n02504458', u'African_elephant', 0.061040461)]</span>
+
+</code></pre>
+
+<h3 id="vgg16">利用VGG16提取特征</h3>
+<pre><code class="python hljs"><span class="hljs-keyword">from</span> keras.applications.vgg16 <span class="hljs-keyword">import</span> VGG16
+<span class="hljs-keyword">from</span> keras.preprocessing <span class="hljs-keyword">import</span> image
+<span class="hljs-keyword">from</span> keras.applications.vgg16 <span class="hljs-keyword">import</span> preprocess_input
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+model = VGG16(weights=<span class="hljs-string">'imagenet'</span>, include_top=<span class="hljs-keyword">False</span>)
+
+img_path = <span class="hljs-string">'elephant.jpg'</span>
+img = image.load_img(img_path, target_size=(<span class="hljs-number">224</span>, <span class="hljs-number">224</span>))
+x = image.img_to_array(img)
+x = np.expand_dims(x, axis=<span class="hljs-number">0</span>)
+x = preprocess_input(x)
+
+features = model.predict(x)
+</code></pre>
+
+<h3 id="vgg19">从VGG19的任意中间层中抽取特征</h3>
+<pre><code class="python hljs"><span class="hljs-keyword">from</span> keras.applications.vgg19 <span class="hljs-keyword">import</span> VGG19
+<span class="hljs-keyword">from</span> keras.preprocessing <span class="hljs-keyword">import</span> image
+<span class="hljs-keyword">from</span> keras.applications.vgg19 <span class="hljs-keyword">import</span> preprocess_input
+<span class="hljs-keyword">from</span> keras.models <span class="hljs-keyword">import</span> Model
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+base_model = VGG19(weights=<span class="hljs-string">'imagenet'</span>)
+model = Model(inputs=base_model.input, outputs=base_model.get_layer(<span class="hljs-string">'block4_pool'</span>).output)
+
+img_path = <span class="hljs-string">'elephant.jpg'</span>
+img = image.load_img(img_path, target_size=(<span class="hljs-number">224</span>, <span class="hljs-number">224</span>))
+x = image.img_to_array(img)
+x = np.expand_dims(x, axis=<span class="hljs-number">0</span>)
+x = preprocess_input(x)
+
+block4_pool_features = model.predict(x)
+</code></pre>
+
+<h3 id="fine-tune-inceptionv3">在新类别上fine-tune inceptionV3</h3>
+<pre><code class="python hljs"><span class="hljs-keyword">from</span> keras.applications.inception_v3 <span class="hljs-keyword">import</span> InceptionV3
+<span class="hljs-keyword">from</span> keras.preprocessing <span class="hljs-keyword">import</span> image
+<span class="hljs-keyword">from</span> keras.models <span class="hljs-keyword">import</span> Model
+<span class="hljs-keyword">from</span> keras.layers <span class="hljs-keyword">import</span> Dense, GlobalAveragePooling2D
+<span class="hljs-keyword">from</span> keras <span class="hljs-keyword">import</span> backend <span class="hljs-keyword">as</span> K
+
+<span class="hljs-comment"># create the base pre-trained model</span>
+base_model = InceptionV3(weights=<span class="hljs-string">'imagenet'</span>, include_top=<span class="hljs-keyword">False</span>)
+
+<span class="hljs-comment"># add a global spatial average pooling layer</span>
+x = base_model.output
+x = GlobalAveragePooling2D()(x)
+<span class="hljs-comment"># let's add a fully-connected layer</span>
+x = Dense(<span class="hljs-number">1024</span>, activation=<span class="hljs-string">'relu'</span>)(x)
+<span class="hljs-comment"># and a logistic layer -- let's say we have 200 classes</span>
+predictions = Dense(<span class="hljs-number">200</span>, activation=<span class="hljs-string">'softmax'</span>)(x)
+
+<span class="hljs-comment"># this is the model we will train</span>
+model = Model(inputs=base_model.input, outputs=predictions)
+
+<span class="hljs-comment"># first: train only the top layers (which were randomly initialized)</span>
+<span class="hljs-comment"># i.e. freeze all convolutional InceptionV3 layers</span>
+<span class="hljs-keyword">for</span> layer <span class="hljs-keyword">in</span> base_model.layers:
+    layer.trainable = <span class="hljs-keyword">False</span>
+
+<span class="hljs-comment"># compile the model (should be done *after* setting layers to non-trainable)</span>
+model.compile(optimizer=<span class="hljs-string">'rmsprop'</span>, loss=<span class="hljs-string">'categorical_crossentropy'</span>)
+
+<span class="hljs-comment"># train the model on the new data for a few epochs</span>
+model.fit_generator(...)
+
+<span class="hljs-comment"># at this point, the top layers are well trained and we can start fine-tuning</span>
+<span class="hljs-comment"># convolutional layers from inception V3. We will freeze the bottom N layers</span>
+<span class="hljs-comment"># and train the remaining top layers.</span>
+
+<span class="hljs-comment"># let's visualize layer names and layer indices to see how many layers</span>
+<span class="hljs-comment"># we should freeze:</span>
+<span class="hljs-keyword">for</span> i, layer <span class="hljs-keyword">in</span> enumerate(base_model.layers):
+   print(i, layer.name)
+
+<span class="hljs-comment"># we chose to train the top 2 inception blocks, i.e. we will freeze</span>
+<span class="hljs-comment"># the first 249 layers and unfreeze the rest:</span>
+<span class="hljs-keyword">for</span> layer <span class="hljs-keyword">in</span> model.layers[:<span class="hljs-number">249</span>]:
+   layer.trainable = <span class="hljs-keyword">False</span>
+<span class="hljs-keyword">for</span> layer <span class="hljs-keyword">in</span> model.layers[<span class="hljs-number">249</span>:]:
+   layer.trainable = <span class="hljs-keyword">True</span>
+
+<span class="hljs-comment"># we need to recompile the model for these modifications to take effect</span>
+<span class="hljs-comment"># we use SGD with a low learning rate</span>
+<span class="hljs-keyword">from</span> keras.optimizers <span class="hljs-keyword">import</span> SGD
+model.compile(optimizer=SGD(lr=<span class="hljs-number">0.0001</span>, momentum=<span class="hljs-number">0.9</span>), loss=<span class="hljs-string">'categorical_crossentropy'</span>)
+
+<span class="hljs-comment"># we train our model again (this time fine-tuning the top 2 inception blocks</span>
+<span class="hljs-comment"># alongside the top Dense layers</span>
+model.fit_generator(...)
+</code></pre>
+
+<h3 id="tensorinceptionv3">在定制的输入tensor上构建InceptionV3</h3>
+<pre><code class="python hljs"><span class="hljs-keyword">from</span> keras.applications.inception_v3 <span class="hljs-keyword">import</span> InceptionV3
+<span class="hljs-keyword">from</span> keras.layers <span class="hljs-keyword">import</span> Input
+
+<span class="hljs-comment"># this could also be the output a different Keras model or layer</span>
+input_tensor = Input(shape=(<span class="hljs-number">224</span>, <span class="hljs-number">224</span>, <span class="hljs-number">3</span>))  <span class="hljs-comment"># this assumes K.image_data_format() == 'channels_last'</span>
+
+model = InceptionV3(input_tensor=input_tensor, weights=<span class="hljs-string">'imagenet'</span>, include_top=<span class="hljs-keyword">True</span>)
+</code></pre>
+
+<hr>
+<h2 id="_3">模型信息</h2>
+<table class="docutils">
+<thead>
+<tr>
+<th align="center">模型</th>
+<th align="center">大小</th>
+<th align="center">Top1准确率</th>
+<th align="center">Top5准确率</th>
+<th align="center">参数数目</th>
+<th align="center">深度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Xception</td>
+<td align="center">88MB</td>
+<td align="center">0.790</td>
+<td align="center">0.945</td>
+<td align="center">22,910,480</td>
+<td align="center">126</td>
+</tr>
+<tr>
+<td align="center">VGG16</td>
+<td align="center">528MB</td>
+<td align="center">0.715</td>
+<td align="center">0.901</td>
+<td align="center">138,357,544</td>
+<td align="center">23</td>
+</tr>
+<tr>
+<td align="center">VGG19</td>
+<td align="center">549MB</td>
+<td align="center">0.727</td>
+<td align="center">0.910</td>
+<td align="center">143,667,240</td>
+<td align="center">26</td>
+</tr>
+<tr>
+<td align="center">ResNet50</td>
+<td align="center">99MB</td>
+<td align="center">0.759</td>
+<td align="center">0.929</td>
+<td align="center">25,636,712</td>
+<td align="center">168</td>
+</tr>
+<tr>
+<td align="center">InceptionV3</td>
+<td align="center">92MB</td>
+<td align="center">0.788</td>
+<td align="center">0.944</td>
+<td align="center">23,851,784</td>
+<td align="center">159</td>
+</tr>
+<tr>
+<td align="center">IncetionResNetV2</td>
+<td align="center">215MB</td>
+<td align="center">0.804</td>
+<td align="center">0.953</td>
+<td align="center">55,873,736</td>
+<td align="center">572</td>
+</tr>
+<tr>
+<td align="center">MobileNet</td>
+<td align="center">17MB</td>
+<td align="center">0.665</td>
+<td align="center">0.871</td>
+<td align="center">4,253,864</td>
+<td align="center">88</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><a name="xception">
+<font color="#404040"></font></a></p><a name="xception"><font color="#404040">
+<h2 id="xception">Xception模型</h2>
+</font></a><p><a name="xception"><font color="#404040"></font>
+</a></p>
+<pre><code class="python hljs">keras.applications.xception.Xception(include_top=<span class="hljs-keyword">True</span>, weights=<span class="hljs-string">'imagenet'</span>,
+                                    input_tensor=<span class="hljs-keyword">None</span>, input_shape=<span class="hljs-keyword">None</span>,
+                                    pooling=<span class="hljs-keyword">None</span>, classes=<span class="hljs-number">1000</span>)
+</code></pre>
+
+<p>Xception V1 模型, 权重由ImageNet训练而言</p>
+<p>在ImageNet上,该模型取得了验证集top1 0.790和top5 0.945的正确率</p>
+<p>注意,该模型目前仅能以TensorFlow为后端使用,由于它依赖于"SeparableConvolution"层,目前该模型只支持channels_last的维度顺序(width, height, channels)</p>
+<p>默认输入图片大小为299x299</p>
+<h3 id="_4">参数</h3>
+<ul>
+<li>include_top：是否保留顶层的3个全连接网络</li>
+<li>weights：None代表随机初始化，即不加载预训练权重。'imagenet'代表加载预训练权重</li>
+<li>input_tensor：可填入Keras tensor作为模型的图像输出tensor</li>
+<li>input_shape：可选，仅当<code>include_top=False</code>有效，应为长为3的tuple，指明输入图片的shape，图片的宽高必须大于71，如(150,150,3)</li>
+<li>
+<p>pooling：当include_top=False时，该参数指定了池化方式。None代表不池化，最后一个卷积层的输出为4D张量。‘avg’代表全局平均池化，‘max’代表全局最大值池化。</p>
+</li>
+<li>
+<p>classes：可选，图片分类的类别数，仅当<code>include_top=True</code>并且不加载预训练权重时可用。</p>
+</li>
+</ul>
+<h3 id="_5">返回值</h3>
+<p>Keras 模型对象</p>
+<h3 id="_6">参考文献</h3>
+<ul>
+<li><a href="https://arxiv.org/abs/1610.02357">Xception: Deep Learning with Depthwise Separable Convolutions</a></li>
+</ul>
+<h3 id="license">License</h3>
+<p>预训练权重由我们自己训练而来，基于MIT license发布</p>
+<hr>
+<p><a name="vgg16">
+<font color="#404040"></font></a></p><a name="vgg16"><font color="#404040">
+<h2 id="vgg16_1">VGG16模型</h2>
+</font></a><p><a name="vgg16"><font color="#404040"></font>
+</a></p>
+<pre><code class="python hljs">keras.applications.vgg16.VGG16(include_top=<span class="hljs-keyword">True</span>, weights=<span class="hljs-string">'imagenet'</span>,
+                                input_tensor=<span class="hljs-keyword">None</span>, input_shape=<span class="hljs-keyword">None</span>,
+                                pooling=<span class="hljs-keyword">None</span>,
+                                classes=<span class="hljs-number">1000</span>)
+</code></pre>
+
+<p>VGG16模型,权重由ImageNet训练而来</p>
+<p>该模型再Theano和TensorFlow后端均可使用,并接受channels_first和channels_last两种输入维度顺序</p>
+<p>模型的默认输入尺寸时224x224</p>
+<h3 id="_7">参数</h3>
+<ul>
+<li>include_top：是否保留顶层的3个全连接网络</li>
+<li>weights：None代表随机初始化，即不加载预训练权重。'imagenet'代表加载预训练权重</li>
+<li>input_tensor：可填入Keras tensor作为模型的图像输出tensor</li>
+<li>input_shape：可选，仅当<code>include_top=False</code>有效，应为长为3的tuple，指明输入图片的shape，图片的宽高必须大于48，如(200,200,3)</li>
+</ul>
+<h3 id="_8">返回值</h3>
+<ul>
+<li>pooling：当include_top=False时，该参数指定了池化方式。None代表不池化，最后一个卷积层的输出为4D张量。‘avg’代表全局平均池化，‘max’代表全局最大值池化。</li>
+<li>classes：可选，图片分类的类别数，仅当<code>include_top=True</code>并且不加载预训练权重时可用。</li>
+</ul>
+<p>Keras 模型对象</p>
+<h3 id="_9">参考文献</h3>
+<ul>
+<li><a href="https://arxiv.org/abs/1409.1556">Very Deep Convolutional Networks for Large-Scale Image Recognition</a>：如果在研究中使用了VGG，请引用该文</li>
+</ul>
+<h3 id="license_1">License</h3>
+<p>预训练权重由<a href="http://www.robots.ox.ac.uk/~vgg/research/very_deep/">牛津VGG组</a>发布的预训练权重移植而来，基于<a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</a></p>
+<hr>
+<p><a name="vgg19">
+<font color="#404040"></font></a></p><a name="vgg19"><font color="#404040">
+<h2 id="vgg19_1">VGG19模型</h2>
+</font></a><p><a name="vgg19"><font color="#404040"></font>
+</a></p>
+<pre><code class="python hljs">keras.applications.vgg19.VGG19(include_top=<span class="hljs-keyword">True</span>, weights=<span class="hljs-string">'imagenet'</span>,
+                                input_tensor=<span class="hljs-keyword">None</span>, input_shape=<span class="hljs-keyword">None</span>,
+                                pooling=<span class="hljs-keyword">None</span>,
+                                classes=<span class="hljs-number">1000</span>)
+</code></pre>
+
+<p>VGG19模型,权重由ImageNet训练而来</p>
+<p>该模型在Theano和TensorFlow后端均可使用,并接受channels_first和channels_last两种输入维度顺序</p>
+<p>模型的默认输入尺寸时224x224</p>
+<h3 id="_10">参数</h3>
+<ul>
+<li>include_top：是否保留顶层的3个全连接网络</li>
+<li>weights：None代表随机初始化，即不加载预训练权重。'imagenet'代表加载预训练权重</li>
+<li>input_tensor：可填入Keras tensor作为模型的图像输出tensor</li>
+<li>input_shape：可选，仅当<code>include_top=False</code>有效，应为长为3的tuple，指明输入图片的shape，图片的宽高必须大于48，如(200,200,3)</li>
+<li>pooling：当include_top=False时，该参数指定了池化方式。None代表不池化，最后一个卷积层的输出为4D张量。‘avg’代表全局平均池化，‘max’代表全局最大值池化。</li>
+<li>classes：可选，图片分类的类别数，仅当<code>include_top=True</code>并且不加载预训练权重时可用。</li>
+</ul>
+<h3 id="_11">返回值</h3>
+<h3 id="_12">返回值</h3>
+<p>Keras 模型对象</p>
+<h3 id="_13">参考文献</h3>
+<ul>
+<li><a href="https://arxiv.org/abs/1409.1556">Very Deep Convolutional Networks for Large-Scale Image Recognition</a>：如果在研究中使用了VGG，请引用该文</li>
+</ul>
+<h3 id="license_2">License</h3>
+<p>预训练权重由<a href="http://www.robots.ox.ac.uk/~vgg/research/very_deep/">牛津VGG组</a>发布的预训练权重移植而来，基于<a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</a></p>
+<hr>
+<p><a name="resnet50">
+<font color="#404040"></font></a></p><a name="resnet50"><font color="#404040">
+<h2 id="resnet50">ResNet50模型</h2>
+</font></a><p><a name="resnet50"><font color="#404040"></font>
+</a></p>
+<pre><code class="python hljs">keras.applications.resnet50.ResNet50(include_top=<span class="hljs-keyword">True</span>, weights=<span class="hljs-string">'imagenet'</span>,
+                                input_tensor=<span class="hljs-keyword">None</span>, input_shape=<span class="hljs-keyword">None</span>,
+                                pooling=<span class="hljs-keyword">None</span>,
+                                classes=<span class="hljs-number">1000</span>)
+</code></pre>
+
+<p>50层残差网络模型,权重训练自ImageNet</p>
+<p>该模型在Theano和TensorFlow后端均可使用,并接受channels_first和channels_last两种输入维度顺序</p>
+<p>模型的默认输入尺寸时224x224</p>
+<h3 id="_14">参数</h3>
+<ul>
+<li>include_top：是否保留顶层的全连接网络</li>
+<li>weights：None代表随机初始化，即不加载预训练权重。'imagenet'代表加载预训练权重</li>
+<li>input_tensor：可填入Keras tensor作为模型的图像输出tensor</li>
+<li>input_shape：可选，仅当<code>include_top=False</code>有效，应为长为3的tuple，指明输入图片的shape，图片的宽高必须大于197，如(200,200,3)</li>
+<li>pooling：当include_top=False时，该参数指定了池化方式。None代表不池化，最后一个卷积层的输出为4D张量。‘avg’代表全局平均池化，‘max’代表全局最大值池化。</li>
+<li>classes：可选，图片分类的类别数，仅当<code>include_top=True</code>并且不加载预训练权重时可用。</li>
+</ul>
+<h3 id="_15">返回值</h3>
+<p>Keras 模型对象</p>
+<h3 id="_16">参考文献</h3>
+<ul>
+<li><a href="https://arxiv.org/abs/1512.03385">Deep Residual Learning for Image Recognition</a>：如果在研究中使用了ResNet50，请引用该文</li>
+</ul>
+<h3 id="license_3">License</h3>
+<p>预训练权重由<a href="https://github.com/KaimingHe/deep-residual-networks">Kaiming He</a>发布的预训练权重移植而来，基于<a href="https://github.com/KaimingHe/deep-residual-networks/blob/master/LICENSE">MIT License</a></p>
+<hr>
+<p><a name="inceptionv3">
+<font color="#404040"></font></a></p><a name="inceptionv3"><font color="#404040">
+<h2 id="inceptionv3">InceptionV3模型</h2>
+</font></a><p><a name="inceptionv3"><font color="#404040"></font>
+</a></p>
+<pre><code class="python hljs">keras.applications.inception_v3.InceptionV3(include_top=<span class="hljs-keyword">True</span>,
+                                            weights=<span class="hljs-string">'imagenet'</span>,
+                                            input_tensor=<span class="hljs-keyword">None</span>,
+                                            input_shape=<span class="hljs-keyword">None</span>,
+                                            pooling=<span class="hljs-keyword">None</span>,
+                                            classes=<span class="hljs-number">1000</span>)
+</code></pre>
+
+<p>InceptionV3网络,权重训练自ImageNet</p>
+<p>该模型在Theano和TensorFlow后端均可使用,并接受channels_first和channels_last两种输入维度顺序</p>
+<p>模型的默认输入尺寸时299x299</p>
+<h3 id="_17">参数</h3>
+<ul>
+<li>include_top：是否保留顶层的全连接网络</li>
+<li>weights：None代表随机初始化，即不加载预训练权重。'imagenet'代表加载预训练权重</li>
+<li>input_tensor：可填入Keras tensor作为模型的图像输出tensor</li>
+<li>input_shape：可选，仅当<code>include_top=False</code>有效，应为长为3的tuple，指明输入图片的shape，图片的宽高必须大于197，如(200,200,3)</li>
+<li>pooling：当include_top=False时，该参数指定了池化方式。None代表不池化，最后一个卷积层的输出为4D张量。‘avg’代表全局平均池化，‘max’代表全局最大值池化。</li>
+<li>classes：可选，图片分类的类别数，仅当<code>include_top=True</code>并且不加载预训练权重时可用。</li>
+</ul>
+<h3 id="_18">返回值</h3>
+<p>Keras 模型对象</p>
+<h3 id="_19">参考文献</h3>
+<ul>
+<li><a href="http://arxiv.org/abs/1512.00567">Rethinking the Inception Architecture for Computer Vision</a>：如果在研究中使用了InceptionV3，请引用该文</li>
+</ul>
+<h3 id="license_4">License</h3>
+<p>预训练权重由我们自己训练而来，基于<a href="https://github.com/KaimingHe/deep-residual-networks/blob/master/LICENSE">MIT License</a></p>
+<hr>
+<p><a name="inceptionresnetv2">
+<font color="#404040"></font></a></p><a name="inceptionresnetv2"><font color="#404040">
+<h2 id="inceptionresnetv2">InceptionResNetV2模型</h2>
+</font></a><p><a name="inceptionresnetv2"><font color="#404040"></font>
+</a></p>
+<pre><code class="python hljs">keras.applications.inception_resnet_v2.InceptionResNetV2(include_top=<span class="hljs-keyword">True</span>, weights=<span class="hljs-string">'imagenet'</span>, input_tensor=<span class="hljs-keyword">None</span>, input_shape=<span class="hljs-keyword">None</span>, pooling=<span class="hljs-keyword">None</span>, classes=<span class="hljs-number">1000</span>)
+</code></pre>
+
+<p>InceptionResNetV2网络,权重训练自ImageNet</p>
+<p>该模型在Theano、TensorFlow和CNTK后端均可使用,并接受channels_first和channels_last两种输入维度顺序</p>
+<p>模型的默认输入尺寸时299x299</p>
+<h3 id="_20">参数</h3>
+<ul>
+<li>include_top：是否保留顶层的全连接网络</li>
+<li>weights：None代表随机初始化，即不加载预训练权重。'imagenet'代表加载预训练权重</li>
+<li>input_tensor：可填入Keras tensor作为模型的图像输出tensor</li>
+<li>input_shape：可选，仅当<code>include_top=False</code>有效，应为长为3的tuple，指明输入图片的shape，图片的宽高必须大于197，如(200,200,3)</li>
+<li>pooling：当include_top=False时，该参数指定了池化方式。None代表不池化，最后一个卷积层的输出为4D张量。‘avg’代表全局平均池化，‘max’代表全局最大值池化。</li>
+<li>classes：可选，图片分类的类别数，仅当<code>include_top=True</code>并且不加载预训练权重时可用。</li>
+</ul>
+<h3 id="_21">返回值</h3>
+<p>Keras 模型对象</p>
+<h3 id="_22">参考文献</h3>
+<ul>
+<li><a href="https://arxiv.org/abs/1602.07261">Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning</a>：如果在研究中使用了InceptionV3，请引用该文</li>
+</ul>
+<h3 id="license_5">License</h3>
+<p>预训练权重基于<a href="https://github.com/tensorflow/models/blob/master/LICENSE">the Apache License</a></p>
+<hr>
+<p><a name="mobilenet">
+<font color="#404040"></font></a></p><a name="mobilenet"><font color="#404040">
+<h2 id="mobilenet">MobileNet模型</h2>
+</font></a><p><a name="mobilenet"><font color="#404040"></font>
+</a></p>
+<pre><code class="python hljs">keras.applications.mobilenet.MobileNet(input_shape=<span class="hljs-keyword">None</span>, alpha=<span class="hljs-number">1.0</span>, depth_multiplier=<span class="hljs-number">1</span>, dropout=<span class="hljs-number">1e-3</span>, include_top=<span class="hljs-keyword">True</span>, weights=<span class="hljs-string">'imagenet'</span>, input_tensor=<span class="hljs-keyword">None</span>, pooling=<span class="hljs-keyword">None</span>, classes=<span class="hljs-number">1000</span>)
+</code></pre>
+
+<p>MobileNet网络,权重训练自ImageNet</p>
+<p>该模型仅在TensorFlow后端均可使用,因此仅channels_last维度顺序可用。当需要以<code>load_model()</code>加载MobileNet时，需要在<code>custom_object</code>中传入<code>relu6</code>和<code>DepthwiseConv2D</code>，即：</p>
+<pre><code class="python hljs">model = load_model(<span class="hljs-string">'mobilenet.h5'</span>, custom_objects={
+                   <span class="hljs-string">'relu6'</span>: mobilenet.relu6,
+                   <span class="hljs-string">'DepthwiseConv2D'</span>: mobilenet.DepthwiseConv2D})
+</code></pre>
+
+<p>模型的默认输入尺寸时224x224</p>
+<h3 id="_23">参数</h3>
+<ul>
+<li>include_top：是否保留顶层的全连接网络</li>
+<li>weights：None代表随机初始化，即不加载预训练权重。'imagenet'代表加载预训练权重</li>
+<li>input_tensor：可填入Keras tensor作为模型的图像输出tensor</li>
+<li>input_shape：可选，仅当<code>include_top=False</code>有效，应为长为3的tuple，指明输入图片的shape，图片的宽高必须大于197，如(200,200,3)</li>
+<li>pooling：当include_top=False时，该参数指定了池化方式。None代表不池化，最后一个卷积层的输出为4D张量。‘avg’代表全局平均池化，‘max’代表全局最大值池化。</li>
+<li>classes：可选，图片分类的类别数，仅当<code>include_top=True</code>并且不加载预训练权重时可用。</li>
+<li>alpha: 控制网络的宽度：</li>
+<li>如果alpha&lt;1，则同比例的减少每层的滤波器个数</li>
+<li>如果alpha&gt;1，则同比例增加每层的滤波器个数</li>
+<li>如果alpha=1，使用默认的滤波器个数</li>
+<li>depth_multiplier：depthwise卷积的深度乘子，也称为（分辨率乘子）</li>
+<li>dropout：dropout比例</li>
+</ul>
+<h3 id="_24">返回值</h3>
+<p>Keras 模型对象</p>
+<h3 id="_25">参考文献</h3>
+<ul>
+<li><a href="https://arxiv.org/pdf/1704.04861.pdf">MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications</a>：如果在研究中使用了MobileNet，请引用该文</li>
+</ul>
+<h3 id="license_6">License</h3>
+<p>预训练基于<a href="https://github.com/tensorflow/models/blob/master/LICENSE">Apache License</a>发布</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../datasets/" class="btn btn-neutral float-right" title="常用数据库Dataset">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../callbacks/" class="btn btn-neutral" title="回调函数Callback"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr><div><div id="rtd-qp5c2h93" class="ethical-rtd"><div class="ethical-footer"><div class="ethical-content"><a href="https://readthedocs.org/sustainability/click/294/hLGTfvHhEl1f/" rel="nofollow" target="_blank" class="ethical-image-link"><img src="https://readthedocs.org/sustainability/view/294/hLGTfvHhEl1f/"></a><div class="ethical-text">A complete cloud platform designed for developers.<br><a href="https://readthedocs.org/sustainability/click/294/hLGTfvHhEl1f/" rel="nofollow" target="_blank">Try it free - $100 credit</a></div></div><div class="ethical-callout"><small><em><a href="https://readthedocs.org/sustainability/advertising/">Sponsored</a><span> · </span><a href="https://docs.readthedocs.io/en/latest/ethical-advertising.html">Ads served ethically</a></em></small></div></div></div><hr></div>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions"><!-- Inserted RTD Footer -->
+<div class="injected">
+
+  
+
+      
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+         <strong> 
+        <dd><a href="https://keras-cn.readthedocs.io/en/latest/other/application/">latest</a></dd>
+         </strong> 
+        
+      </dl>
+      
+      
+
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/pdf/latest/">PDF</a></dd>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/htmlzip/latest/">HTML</a></dd>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/epub/latest/">Epub</a></dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        <!-- These are kept as relative links for internal installs that are http -->
+        <dt>On Read the Docs</dt>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/">Project Home</a>
+        </dd>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/builds/">Builds</a>
+        </dd>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/downloads/">Downloads</a>
+        </dd>
+      </dl>
+      
+
+      
+
+      
+      <dl>
+        <dt>On GitHub</dt>
+        <dd>
+          <a href="https://github.com/MoyanZitto/keras-cn/blob/master/home/docs/checkouts/readthedocs.org/user_builds/keras-cn/checkouts/latest/docs/other/application.md">View</a>
+        </dd>
+        <dd>
+          <a href="https://github.com/MoyanZitto/keras-cn/edit/master/home/docs/checkouts/readthedocs.org/user_builds/keras-cn/checkouts/latest/docs/other/application.md">Edit</a>
+        </dd>
+      </dl>
+      
+      
+
+      
+      <dl>
+        <dt>Search</dt>
+        <dd>
+          <div style="padding: 6px;">
+            <form id="flyout-search-form" class="wy-form" target="_blank" action="//readthedocs.org/projects/keras-cn/search/" method="get">
+              <input type="text" name="q" placeholder="Search docs">
+              </form>
+          </div>
+        </dd>
+      </dl>
+      
+
+
+
+      <hr>
+      
+        <small>
+          <span>Hosted by <a href="https://readthedocs.org">Read the Docs</a></span>
+          <span> · </span>
+          <a href="https://docs.readthedocs.io/en/latest/privacy-policy.html">Privacy Policy</a>
+        </small>
+      
+
+      
+
+</div>
+</div>
+  </div>
+
+
+
+</body></html>

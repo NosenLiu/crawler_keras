@@ -1,0 +1,816 @@
+<!DOCTYPE html><!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]--><!--[if gt IE 8]><!--><html class=" js flexbox flexboxlegacy canvas canvastext no-webgl touch no-geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent no-video no-audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en" style=""><!--<![endif]--><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="BigMoyan">
+  
+  <title>工具 - Keras中文文档</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css">
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css">
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="https://media.readthedocs.org/css/badge_only.css" rel="stylesheet">
+  <link href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" rel="stylesheet">
+
+  
+  <script async="" src="https://www.google-analytics.com/analytics.js"></script><script>
+    // Current page data
+    var mkdocs_page_name = "工具";
+    var mkdocs_page_input_path = "utils.md";
+    var mkdocs_page_url = "/utils/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+  <script src="../readthedocs-data.js"></script>
+  <script src="https://media.readthedocs.org/static/core/js/readthedocs-doc-embed.js"></script>
+  <script src="https://media.readthedocs.org/javascript/readthedocs-analytics.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Keras中文文档</a>
+        <div role="search">
+  <form id="mkdocs-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs">
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./..info.html">主页</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>keras新手指南</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../for_beginners/concepts/info.html">一些基本概念</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../for_beginners/FAQ/info.html">常见问题与解答</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../for_beginners/keras_linux/info.html">Keras安装和配置指南(Linux)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../for_beginners/keras_windows/info.html">Keras安装和配置指南(Windows)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../for_beginners/trap/info.html">Keras使用陷阱</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>快速开始</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../getting_started/sequential_model/info.html">序贯模型</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../getting_started/functional_API/info.html">函数式模型</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>模型</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../models/about_model/info.html">关于Keras模型</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../models/sequential/info.html">序贯模型API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../models/model/info.html">函数式模型API</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>网络层</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../layers/about_layer/info.html">关于Keras层</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../layers/core_layer/info.html">常用层Core</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../layers/convolutional_layer/info.html">卷积层Convolutional</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../layers/pooling_layer/info.html">池化层Pooling</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../layers/locally_connected_layer/info.html">局部连接层Locally-connented</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../layers/recurrent_layer/info.html">循环层Recurrent</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../layers/embedding_layer/info.html">嵌入层Embedding</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../layers/merge/info.html">融合层Merge</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../layers/advanced_activation_layer/info.html">高级激活层Advanced Activation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../layers/normalization_layer/info.html">规范层BatchNormalization</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../layers/noise_layer/info.html">噪声层Noise</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../layers/wrapper/info.html">包装器Wrapper</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../layers/writting_layer/info.html">编写自己的层</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>数据预处理</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../preprocessing/sequence/info.html">序列预处理</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../preprocessing/text/info.html">文本预处理</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../preprocessing/image/info.html">图片预处理</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>网络配置</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../other/objectives/info.html">损失函数loss</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../other/optimizers/info.html">优化器Optimizer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../other/activations/info.html">激活函数Activation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../other/metrics/info.html">性能评估Metrices</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../other/initializations/info.html">初始化方法Initializers</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../other/regularizers/info.html">正则项Regularizer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../other/constraints/info.html">约束项Constraint</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../other/callbacks/info.html">回调函数Callback</a>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    <ul class="subnav">
+    <li><span>协助使用Keras</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../other/application/info.html">预训练模型Application</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../other/datasets/info.html">常用数据库Dataset</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="./../other/visualization/info.html">可视化visualization</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="././info.html">工具</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#utils">utils 工具</a></li>
+                
+                    <li><a class="toctree-l4" href="#customobjectscope">CustomObjectScope</a></li>
+                
+                    <li><a class="toctree-l4" href="#hdf5matrix">HDF5Matrix</a></li>
+                
+                    <li><a class="toctree-l4" href="#sequence">Sequence</a></li>
+                
+                    <li><a class="toctree-l4" href="#to_categorical">to_categorical</a></li>
+                
+                    <li><a class="toctree-l4" href="#normalize">normalize</a></li>
+                
+                    <li><a class="toctree-l4" href="#convert_all_kernels_in_model">convert_all_kernels_in_model</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+</li><li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../backend/info.html">keras后端Backend</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../scikit-learn_API/info.html">scikit-learn接口</a>
+        
+    </li>
+<li>
+          
+            </li><li>
+    </li><li class="toctree-l1 ">
+        <a class="" href="./../acknowledgement/info.html">致谢</a>
+        
+    </li>
+<li>
+          
+        </li></ul>
+      </div>
+      &nbsp;
+    <div id="rtd-5bsktpv3" class="ethical-rtd"></div></nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Keras中文文档</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> »</li>
+    
+      
+        
+          <li>协助使用Keras »</li>
+        
+      
+    
+    <li>工具</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="utils">utils 工具</h1>
+<p>本模块提供了一系列有用工具</p>
+<h2 id="customobjectscope">CustomObjectScope</h2>
+<pre><code class="python hljs">keras.utils.generic_utils.CustomObjectScope()
+</code></pre>
+
+<p>提供定制类的作用域，在该作用域内全局定制类能够被更改，但在作用域结束后将回到初始状态。
+以<code>with</code>声明开头的代码将能够通过名字访问定制类的实例，在with的作用范围，这些定制类的变动将一直持续，在with作用域结束后，全局定制类的实例将回归其在with作用域前的状态。</p>
+<pre><code class="python hljs"><span class="hljs-keyword">with</span> CustomObjectScope({<span class="hljs-string">"MyObject"</span>:MyObject}):
+    layer = Dense(..., W_regularizer=<span class="hljs-string">"MyObject"</span>)
+    <span class="hljs-comment"># save, load, etc. will recognize custom object by name</span>
+</code></pre>
+
+<hr>
+<h2 id="hdf5matrix">HDF5Matrix</h2>
+<pre><code class="python hljs">keras.utils.io_utils.HDF5Matrix(datapath, dataset, start=<span class="hljs-number">0</span>, end=<span class="hljs-keyword">None</span>, normalizer=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>这是一个使用HDF5数据集代替Numpy数组的方法</p>
+<p>提供<code>start</code>和<code>end</code>参数可以进行切片，另外，还可以提供一个正规化函数或匿名函数，该函数将会在每片数据检索时自动调用。</p>
+<pre><code class="python hljs">x_data = HDF5Matrix(<span class="hljs-string">'input/file.hdf5'</span>, <span class="hljs-string">'data'</span>)
+model.predict(x_data)
+</code></pre>
+
+<ul>
+<li>datapath: 字符串，HDF5文件的路径</li>
+<li>dataset: 字符串，在datapath路径下HDF5数据库名字</li>
+<li>start: 整数，想要的数据切片起点</li>
+<li>end: 整数，想要的数据切片终点</li>
+<li>normalizer: 在每个切片数据检索时自动调用的函数对象</li>
+</ul>
+<hr>
+<h2 id="sequence">Sequence</h2>
+<pre><code class="hljs stylus">keras<span class="hljs-class">.utils</span><span class="hljs-class">.data_utils</span><span class="hljs-class">.Sequence</span>()
+</code></pre>
+
+<p>序列数据的基类，例如一个数据集。
+每个Sequence必须实现<code>__getitem__</code>和<code>__len__</code>方法</p>
+<p>下面是一个例子：</p>
+<pre><code class="python hljs"><span class="hljs-keyword">from</span> skimage.io <span class="hljs-keyword">import</span> imread
+<span class="hljs-keyword">from</span> skimage.transform <span class="hljs-keyword">import</span> resize
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+__Here, `x_set` <span class="hljs-keyword">is</span> list of path to the images__
+
+<span class="hljs-comment"># and `y_set` are the associated classes.</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CIFAR10Sequence</span><span class="hljs-params">(Sequence)</span>:</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, x_set, y_set, batch_size)</span>:</span>
+    self.X,self.y = x_set,y_set
+    self.batch_size = batch_size
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__len__</span><span class="hljs-params">(self)</span>:</span>
+    <span class="hljs-keyword">return</span> len(self.X) // self.batch_size
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__getitem__</span><span class="hljs-params">(self,idx)</span>:</span>
+    batch_x = self.X[idx*self.batch_size:(idx+<span class="hljs-number">1</span>)*self.batch_size]
+    batch_y = self.y[idx*self.batch_size:(idx+<span class="hljs-number">1</span>)*self.batch_size]
+
+    <span class="hljs-keyword">return</span> np.array([
+    resize(imread(file_name), (<span class="hljs-number">200</span>,<span class="hljs-number">200</span>))
+       <span class="hljs-keyword">for</span> file_name <span class="hljs-keyword">in</span> batch_x]), np.array(batch_y)
+
+</code></pre>
+
+<hr>
+<h2 id="to_categorical">to_categorical</h2>
+<pre><code class="python hljs">to_categorical(y, num_classes=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>将类别向量(从0到nb_classes的整数向量)映射为二值类别矩阵, 用于应用到以<code>categorical_crossentropy</code>为目标函数的模型中.</p>
+<h3 id="_1">参数</h3>
+<ul>
+<li>y: 类别向量</li>
+<li>num_classes:总共类别数</li>
+</ul>
+<hr>
+<h2 id="normalize">normalize</h2>
+<pre><code class="python hljs">normalize(x, axis=-<span class="hljs-number">1</span>, order=<span class="hljs-number">2</span>)
+</code></pre>
+
+<p>对numpy数组规范化，返回规范化后的数组</p>
+<h3 id="_2">参数</h3>
+<ul>
+<li>x：待规范化的数据</li>
+<li>axis: 规范化的轴</li>
+<li>order：规范化方法，如2为L2范数</li>
+</ul>
+<hr>
+<h3 id="custom_object_scope">custom_object_scope</h3>
+<pre><code class="python hljs">custom_object_scope()
+</code></pre>
+
+<p>提供定制类的作用域，在该作用域内全局定制类能够被更改，但在作用域结束后将回到初始状态。
+以<code>with</code>声明开头的代码将能够通过名字访问定制类的实例，在with的作用范围，这些定制类的变动将一直持续，在with作用域结束后，全局定制类的实例将回归其在with作用域前的状态。</p>
+<p>本函数返回<code>CustomObjectScope</code>对象</p>
+<pre><code class="python hljs"><span class="hljs-keyword">with</span> custom_object_scope({<span class="hljs-string">"MyObject"</span>:MyObject}):
+    layer = Dense(..., W_regularizer=<span class="hljs-string">"MyObject"</span>)
+    <span class="hljs-comment"># save, load, etc. will recognize custom object by name</span>
+</code></pre>
+
+<hr>
+<h3 id="get_custom_objects">get_custom_objects</h3>
+<pre><code class="python hljs">get_custom_objects()
+</code></pre>
+
+<p>检索全局定制类，推荐利用custom_object_scope更新和清理定制对象，但<code>get_custom_objects</code>可被直接用于访问<code>_GLOBAL_CUSTOM_OBJECTS</code>。本函数返回从名称到类别映射的全局字典。</p>
+<pre><code class="python hljs">get_custom_objects().clear()
+get_custom_objects()[<span class="hljs-string">"MyObject"</span>] = MyObject
+</code></pre>
+
+<hr>
+<h2 id="convert_all_kernels_in_model">convert_all_kernels_in_model</h2>
+<pre><code class="python hljs">convert_all_kernels_in_model(model)
+</code></pre>
+
+<p>将模型中全部卷积核在Theano和TensorFlow模式中切换</p>
+<hr>
+<h3 id="plot_model">plot_model</h3>
+<pre><code class="python hljs">plot_model(model, to_file=<span class="hljs-string">'model.png'</span>, show_shapes=<span class="hljs-keyword">False</span>, show_layer_names=<span class="hljs-keyword">True</span>)
+</code></pre>
+
+<p>绘制模型的结构图</p>
+<hr>
+<h3 id="serialize_keras_object">serialize_keras_object</h3>
+<pre><code class="python hljs">serialize_keras_object(instance)
+</code></pre>
+
+<p>将keras对象序列化</p>
+<hr>
+<h3 id="deserialize_keras_object">deserialize_keras_object</h3>
+<pre><code class="python hljs">eserialize_keras_object(identifier, module_objects=<span class="hljs-keyword">None</span>, custom_objects=<span class="hljs-keyword">None</span>, printable_module_name=<span class="hljs-string">'object'</span>)
+</code></pre>
+
+<p>从序列中恢复keras对象</p>
+<hr>
+<h3 id="get_file">get_file</h3>
+<pre><code class="python hljs">get_file(fname, origin, untar=<span class="hljs-keyword">False</span>, md5_hash=<span class="hljs-keyword">None</span>, file_hash=<span class="hljs-keyword">None</span>, cache_subdir=<span class="hljs-string">'datasets'</span>, hash_algorithm=<span class="hljs-string">'auto'</span>, extract=<span class="hljs-keyword">False</span>, archive_format=<span class="hljs-string">'auto'</span>, cache_dir=<span class="hljs-keyword">None</span>)
+</code></pre>
+
+<p>从给定的URL中下载文件, 可以传递MD5值用于数据校验(下载后或已经缓存的数据均可)</p>
+<p>默认情况下文件会被下载到<code>~/.keras</code>中的<code>cache_subdir</code>文件夹，并将其文件名设为<code>fname</code>，因此例如一个文件<code>example.txt</code>最终将会被存放在`~/.keras/datasets/example.txt~</p>
+<p>tar,tar.gz.tar.bz和zip格式的文件可以被提取，提供哈希码可以在下载后校验文件。命令喊程序<code>shasum</code>和<code>sha256sum</code>可以计算哈希值。</p>
+<h3 id="_3">参数</h3>
+<ul>
+<li>
+<p>fname: 文件名，如果指定了绝对路径<code>/path/to/file.txt</code>,则文件将会保存到该位置。</p>
+</li>
+<li>
+<p>origin: 文件的URL地址</p>
+</li>
+<li>
+<p>untar: 布尔值,是否要进行解压</p>
+</li>
+<li>
+<p>md5_hash: MD5哈希值,用于数据校验，支持<code>sha256</code>和<code>md5</code>哈希</p>
+</li>
+<li>
+<p>cache_subdir: 用于缓存数据的文件夹，若指定绝对路径<code>/path/to/folder</code>则将存放在该路径下。</p>
+</li>
+<li>
+<p>hash_algorithm: 选择文件校验的哈希算法，可选项有'md5', 'sha256', 和'auto'. 默认'auto'自动检测使用的哈希算法</p>
+</li>
+<li>extract: 若为True则试图提取文件，例如tar或zip tries extracting the file as an Archive, like tar or zip.</li>
+<li>archive_format: 试图提取的文件格式，可选为'auto', 'tar', 'zip', 和None. 'tar' 包括tar, tar.gz, tar.bz文件. 默认'auto'是['tar', 'zip']. None或空列表将返回没有匹配。 </li>
+<li>cache_dir: 缓存文件存放地在，参考<a href="../for_beginners/FAQ/#where_config">FAQ</a></li>
+</ul>
+<h3 id="_4">返回值</h3>
+<p>下载后的文件地址</p>
+<h3 id="multi_gpu_model">multi_gpu_model</h3>
+<pre><code class="python hljs">keras.utils.multi_gpu_model(model, gpus)
+</code></pre>
+
+<p>将模型在多个GPU上复制</p>
+<p>特别地，该函数用于单机多卡的数据并行支持，它按照下面的方式工作：</p>
+<p>（1）将模型的输入分为多个子batch
+（2）在每个设备上调用各自的模型，对各自的数据集运行
+（3）将结果连接为一个大的batch（在CPU上）</p>
+<p>例如，你的batch_size是64而gpus=2，则输入会被分为两个大小为32的子batch，在两个GPU上分别运行，通过连接后返回大小为64的结果。 该函数线性的增加了训练速度，最高支持8卡并行。</p>
+<p>该函数只能在tf后端下使用</p>
+<p>参数如下：</p>
+<ul>
+<li>model: Keras模型对象，为了避免OOM错误（内存不足），该模型应在CPU上构建，参考下面的例子。</li>
+<li>gpus: 大或等于2的整数，要并行的GPU数目。</li>
+</ul>
+<p>该函数返回Keras模型对象，它看起来跟普通的keras模型一样，但实际上分布在多个GPU上。</p>
+<p>例子：</p>
+<pre><code class="python hljs"><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf
+<span class="hljs-keyword">from</span> keras.applications <span class="hljs-keyword">import</span> Xception
+<span class="hljs-keyword">from</span> keras.utils <span class="hljs-keyword">import</span> multi_gpu_model
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+num_samples = <span class="hljs-number">1000</span>
+height = <span class="hljs-number">224</span>
+width = <span class="hljs-number">224</span>
+num_classes = <span class="hljs-number">1000</span>
+
+<span class="hljs-comment"># Instantiate the base model</span>
+<span class="hljs-comment"># (here, we do it on CPU, which is optional).</span>
+<span class="hljs-keyword">with</span> tf.device(<span class="hljs-string">'/cpu:0'</span>):
+    model = Xception(weights=<span class="hljs-keyword">None</span>,
+                     input_shape=(height, width, <span class="hljs-number">3</span>),
+                     classes=num_classes)
+
+<span class="hljs-comment"># Replicates the model on 8 GPUs.</span>
+<span class="hljs-comment"># This assumes that your machine has 8 available GPUs.</span>
+parallel_model = multi_gpu_model(model, gpus=<span class="hljs-number">8</span>)
+parallel_model.compile(loss=<span class="hljs-string">'categorical_crossentropy'</span>,
+                       optimizer=<span class="hljs-string">'rmsprop'</span>)
+
+<span class="hljs-comment"># Generate dummy data.</span>
+x = np.random.random((num_samples, height, width, <span class="hljs-number">3</span>))
+y = np.random.random((num_samples, num_classes))
+
+<span class="hljs-comment"># This `fit` call will be distributed on 8 GPUs.</span>
+<span class="hljs-comment"># Since the batch size is 256, each GPU will process 32 samples.</span>
+parallel_model.fit(x, y, epochs=<span class="hljs-number">20</span>, batch_size=<span class="hljs-number">256</span>)
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../backend/" class="btn btn-neutral float-right" title="keras后端Backend">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../other/visualization/" class="btn btn-neutral" title="可视化visualization"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr><div><div id="rtd-hlxngb0k" class="ethical-rtd"><div class="ethical-footer"><div class="ethical-content"><a href="https://readthedocs.org/sustainability/click/294/va3rEEyrUAta/" rel="nofollow" target="_blank" class="ethical-image-link"><img src="https://readthedocs.org/sustainability/view/294/va3rEEyrUAta/"></a><div class="ethical-text">A complete cloud platform designed for developers.<br><a href="https://readthedocs.org/sustainability/click/294/va3rEEyrUAta/" rel="nofollow" target="_blank">Try it free - $100 credit</a></div></div><div class="ethical-callout"><small><em><a href="https://readthedocs.org/sustainability/advertising/">Sponsored</a><span> · </span><a href="https://docs.readthedocs.io/en/latest/ethical-advertising.html">Ads served ethically</a></em></small></div></div></div><hr></div>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions"><!-- Inserted RTD Footer -->
+<div class="injected">
+
+  
+
+      
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+         <strong> 
+        <dd><a href="https://keras-cn.readthedocs.io/en/latest/utils/">latest</a></dd>
+         </strong> 
+        
+      </dl>
+      
+      
+
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/pdf/latest/">PDF</a></dd>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/htmlzip/latest/">HTML</a></dd>
+        
+        <dd><a href="//readthedocs.org/projects/keras-cn/downloads/epub/latest/">Epub</a></dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        <!-- These are kept as relative links for internal installs that are http -->
+        <dt>On Read the Docs</dt>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/">Project Home</a>
+        </dd>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/builds/">Builds</a>
+        </dd>
+        <dd>
+          <a href="//readthedocs.org/projects/keras-cn/downloads/">Downloads</a>
+        </dd>
+      </dl>
+      
+
+      
+
+      
+      <dl>
+        <dt>On GitHub</dt>
+        <dd>
+          <a href="https://github.com/MoyanZitto/keras-cn/blob/master/home/docs/checkouts/readthedocs.org/user_builds/keras-cn/checkouts/latest/docs/utils.md">View</a>
+        </dd>
+        <dd>
+          <a href="https://github.com/MoyanZitto/keras-cn/edit/master/home/docs/checkouts/readthedocs.org/user_builds/keras-cn/checkouts/latest/docs/utils.md">Edit</a>
+        </dd>
+      </dl>
+      
+      
+
+      
+      <dl>
+        <dt>Search</dt>
+        <dd>
+          <div style="padding: 6px;">
+            <form id="flyout-search-form" class="wy-form" target="_blank" action="//readthedocs.org/projects/keras-cn/search/" method="get">
+              <input type="text" name="q" placeholder="Search docs">
+              </form>
+          </div>
+        </dd>
+      </dl>
+      
+
+
+
+      <hr>
+      
+        <small>
+          <span>Hosted by <a href="https://readthedocs.org">Read the Docs</a></span>
+          <span> · </span>
+          <a href="https://docs.readthedocs.io/en/latest/privacy-policy.html">Privacy Policy</a>
+        </small>
+      
+
+      
+
+</div>
+</div>
+  </div>
+
+
+
+</body></html>
